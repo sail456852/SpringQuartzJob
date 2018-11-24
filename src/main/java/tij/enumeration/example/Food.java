@@ -25,9 +25,8 @@ public interface Food {
         BLACK_COFFEE, DECAF_COFFEE, ESPRESSO,
         LATTE, CAPPUCCINO, TEA, HERB_TEA;
     }
-    class InnerClass implements Food{
-        public void infunction() {
-            System.out.println("InnerClass.infunction");
-        }
+    enum ChineseSnack implements Food{
+        DUMPLING, BUN, EVIL_EGG, RICE_NOODLE
     }
+
 }

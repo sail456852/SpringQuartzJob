@@ -1,5 +1,6 @@
 package tij.enumeration.exercise.four;
 
+import tij.enumeration.example.Course;
 import tij.enumeration.example.Enums;
 
 /**
@@ -18,7 +19,7 @@ public enum Meal2 {
 
    private Food [] values;
 
-   private Course(Class<? extends Food> kind){
+   private Meal2(Class<? extends Food> kind){
       values = kind.getEnumConstants();
    }
 
@@ -27,25 +28,35 @@ public enum Meal2 {
    }
 
    public interface Food{
-      enum Appetizer{
+      enum Appetizer implements Food{
          SALAD, SOUP, SPRING_ROLLS;
       }
-      enum MainCourse{
+      enum MainCourse implements Food{
          LASAGNE, BURRITO, PAD_THAI,
          LENTILS, HUMMOUS, VINDALOO;
       }
-      enum Dessert{
+      enum Dessert implements Food{
          TIRAMISU, GELATO, BLACK_FOREST_CAKE,
          FRUIT, CREME_CARAMEL;
       }
-      enum Coffee{
+      enum Coffee implements Food{
          BLACK_COFFEE, DECAF_COFFEE, ESPRESSO,
          LATTE, CAPPUCCINO, TEA, HERB_TEA;
       }
-      enum ChineseSnack{
+      enum ChineseSnack implements Food{
          DUMPLING, BUN, EVIL_EGG, RICE_NOODLE
       }
+   }
 
+
+   public static void main(String[] args) {
+      Meal2[] meal2s = Meal2.values();
+      for (int i = 0; i < 5; i++) {
+         for (Meal2 meal2 : meal2s) {
+            Food food = meal2.randomSelection();
+            System.out.println("food2 = " + food);
+         }
+      }
    }
 
 }

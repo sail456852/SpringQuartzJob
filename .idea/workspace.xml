@@ -2,73 +2,26 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a860a401-5786-4379-90a6-00f00f1cb092" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Java8Tests.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/AbstractHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/AfterHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/AfterHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/BeforeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/BeforeHandlerImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/ProxyFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/TargetClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/TargetInterface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/aop/jdk/TestMyAOP.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/leetCode/Queue.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/jdk/Shuffler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/nio/NioStarter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/CallableE5.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/e1/Fibonacci.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/e1/FibonacciMT.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/e1/MyThreadEx1.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/e3/ExecutorE3.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/e3/ExecutorE4.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/reentralock/LockBasic.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/sharing/EvenChecker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/sharing/EvenGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/cc/sharing/IntGenerator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/collection/E2SimpleCollection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/collection/E4GenericMovie.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/collection/Sequence.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Course.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/EnumImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Enums.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Food.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Generator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/NonEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/EnumImplementation.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/initializationCleanUp/E1String.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/initializationCleanUp/E2String.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tij/nio/demo/GetChannel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/AbstractHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/AfterHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/AfterHandlerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/BeforeHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/BeforeHandlerImpl.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/ProxyFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/TargetClass.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/TargetInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/aop/jdk/TestMyAOP.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/msc/jdk/Shuffler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/msc/nio/NioStarter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/CallableE5.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/e1/Fibonacci.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/e1/FibonacciMT.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/e1/MyThreadEx1.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/e3/ExecutorE3.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/e3/ExecutorE4.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/reentralock/LockBasic.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/sharing/EvenChecker.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/sharing/EvenGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/cc/sharing/IntGenerator.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/collection/E2SimpleCollection.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/collection/E4GenericMovie.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/collection/Sequence.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/tij/nio/demo/GetChannel.java" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Meal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/four/Meal2.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_aspectj_aspectjweaver_1_8_9.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_7_RELEASE.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/TIJ4-code" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Food.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Food.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -137,65 +90,66 @@
         </counts>
       </usages-collector>
     </session>
+    <session id="108442710">
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="http" value="1" />
+          <entry key="java" value="26" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="HTTP Request" value="1" />
+          <entry key="JAVA" value="26" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="java" value="2428" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="JAVA" value="2428" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+        </counts>
+      </usages-collector>
+    </session>
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.63461536">
-      <split-first>
-        <splitter split-orientation="horizontal" split-proportion="0.5">
-          <split-first>
-            <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Food.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="544">
-                      <caret line="32" selection-start-line="32" selection-end-line="32" />
-                      <folding>
-                        <element signature="e#757#758#0" expanded="true" />
-                        <element signature="e#824#825#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-first>
-          <split-second>
-            <leaf>
-              <file pinned="false" current-in-tab="true">
-                <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Enums.java">
-                  <provider selected="true" editor-type-id="text-editor">
-                    <state relative-caret-position="289">
-                      <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-                      <folding>
-                        <element signature="e#729#730#0" expanded="true" />
-                        <element signature="e#787#788#0" expanded="true" />
-                      </folding>
-                    </state>
-                  </provider>
-                </entry>
-              </file>
-            </leaf>
-          </split-second>
-        </splitter>
-      </split-first>
-      <split-second>
-        <leaf>
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Course.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="323">
-                  <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
-                  <folding>
-                    <element signature="e#541#542#0" expanded="true" />
-                    <element signature="e#582#583#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Food.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="357">
+              <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/four/Meal2.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="221">
+              <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#520#521#0" expanded="true" />
+                <element signature="e#565#566#0" expanded="true" />
+                <element signature="e#601#602#0" expanded="true" />
+                <element signature="e#642#643#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -235,9 +189,15 @@
         <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Generator.java" />
         <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/EnumImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/exercise/EnumImplementation.java" />
-        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Course.java" />
         <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Enums.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/EnumImplementation.java" />
         <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Food.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Course.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/example/Meal.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/Food.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/four/Food.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/four/Course.java" />
+        <option value="$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/four/Meal2.java" />
       </list>
     </option>
   </component>
@@ -254,10 +214,9 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7" fullScreen="true">
-    <option name="y" value="27" />
-    <option name="width" value="960" />
-    <option name="height" value="1053" />
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+    <option name="width" value="1440" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -270,6 +229,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -307,8 +267,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -316,125 +274,11 @@
               <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tij" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tij" type="462c0819:PsiDirectoryNode" />
-              <item name="enumeration" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tij" type="462c0819:PsiDirectoryNode" />
-              <item name="enumeration" type="462c0819:PsiDirectoryNode" />
-              <item name="example" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tij" type="462c0819:PsiDirectoryNode" />
-              <item name="enumeration" type="462c0819:PsiDirectoryNode" />
-              <item name="exercise" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tij" type="462c0819:PsiDirectoryNode" />
-              <item name="enumeration" type="462c0819:PsiDirectoryNode" />
-              <item name="exercise" type="462c0819:PsiDirectoryNode" />
-              <item name="EnumImplementation.java" type="529ef68f:ClassesTreeStructureProvider$PsiClassOwnerTreeNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tij" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="TIJ4-code" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="TIJ4-code" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="TIJ4-code" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="annotations" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="TIJ4-code" type="462c0819:PsiDirectoryNode" />
-              <item name="examples" type="462c0819:PsiDirectoryNode" />
-              <item name="xml" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
-              <item name="JShell Console" type="d62648e6:ScratchProjectViewPane$MyRootNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -444,7 +288,7 @@
     <property name="SearchEverywhereHistoryKey" value="Generator&#9;FILE&#9;file:///home/yz/MyProjects/Java8Tests/TIJ4-code/examples/net/mindview/util/Generator.java&#10;Gene&#9;FILE&#9;file:///home/yz/MyProjects/Java8Tests/examples/net/mindview/util/Generator.java" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1542500635577" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543026167753" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/tij/enumeration" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/examples" />
@@ -453,18 +297,22 @@
     <property name="project.structure.last.edited" value="Libraries" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2864222" />
-    <property name="settings.editor.selected.configurable" value="fileTemplates" />
+    <property name="settings.editor.selected.configurable" value="MavenSettings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
-    <key name="CreateClassDialog.RecentsKey">
-      <recent name="tij.enumeration.example" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/tij/enumeration/example/exercise" />
       <recent name="$PROJECT_DIR$/src/main/java/tij/enumeration/example" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="tij.enumeration.exercise.four" />
+      <recent name="tij.enumeration.exercise" />
+    </key>
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="tij.enumeration.example" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -479,7 +327,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.EnumImplementation (1)">
+  <component name="RunManager" selected="Application.Meal2">
     <configuration name="EnumImplementation (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="tij.enumeration.example.exercise.EnumImplementation" />
       <module name="Java8Tests" />
@@ -506,12 +354,25 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GetChannel" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="tij.nio.demo.GetChannel" />
+    <configuration name="Meal" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tij.enumeration.example.Meal" />
       <module name="Java8Tests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="tij.nio.demo.*" />
+          <option name="PATTERN" value="tij.enumeration.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Meal2" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="tij.enumeration.exercise.four.Meal2" />
+      <module name="Java8Tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="tij.enumeration.exercise.four.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -532,36 +393,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="LockBasic.mtTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Java8Tests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="tij.cc.reentralock.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="tij.cc.reentralock" />
-      <option name="MAIN_CLASS_NAME" value="tij.cc.reentralock.LockBasic" />
-      <option name="METHOD_NAME" value="mtTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="Application.NonEnum" />
       <item itemvalue="Application.EnumImplementation" />
-      <item itemvalue="JUnit.LockBasic.mtTest" />
-      <item itemvalue="Application.GetChannel" />
       <item itemvalue="Application.EnumImplementation (1)" />
+      <item itemvalue="Application.Meal" />
+      <item itemvalue="Application.Meal2" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Meal2" />
+        <item itemvalue="Application.Meal" />
+        <item itemvalue="Application.NonEnum" />
         <item itemvalue="Application.EnumImplementation (1)" />
         <item itemvalue="Application.EnumImplementation" />
-        <item itemvalue="Application.GetChannel" />
-        <item itemvalue="JUnit.LockBasic.mtTest" />
-        <item itemvalue="Application.NonEnum" />
       </list>
     </recent_temporary>
   </component>
@@ -586,12 +431,49 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18057000" />
+    <option name="totallyTimeSpent" value="22569000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="-37" width="1920" height="1117" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.18910256" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24606581" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info id="Designer" order="2" />
+      <window_info id="Image Layers" order="3" />
+      <window_info id="UI Designer" order="4" />
+      <window_info id="Favorites" order="5" side_tool="true" />
+      <window_info id="Capture Tool" order="6" />
+      <window_info id="Learn" order="7" />
+      <window_info id="JRebel" order="8" side_tool="true" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32934132" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32771084" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32934132" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3313253" />
+      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="11" weight="0.32902583" />
+      <window_info anchor="bottom" id="JRebel Console" order="12" side_tool="true" />
+      <window_info anchor="bottom" id="JRebel Executor" order="13" />
+      <window_info anchor="bottom" id="Messages" order="14" weight="0.40918162" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Palette" order="3" />
+      <window_info anchor="right" id="Capture Analysis" order="4" />
+      <window_info anchor="right" id="Theme Preview" order="5" />
+      <window_info anchor="right" id="Maven Projects" order="6" />
+      <window_info anchor="right" id="Database" order="7" />
+      <window_info anchor="right" id="Palette&#9;" order="8" />
+      <window_info anchor="right" id="Translate" order="9" weight="0.19711539" />
+    </layout>
+    <layout-to-restore>
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24606581" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -625,13 +507,18 @@
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Translate" order="9" weight="0.19711539" />
-    </layout>
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/TIJ4-code" />
+    </ignored-roots>
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/TIJ4-code/README.md" />
@@ -661,37 +548,11 @@
     <entry file="file://$PROJECT_DIR$/examples/enumerated/SpaceShip.java" />
     <entry file="file://$PROJECT_DIR$/examples/reusing/SpaceShipControls.java" />
     <entry file="file://$PROJECT_DIR$/examples/reusing/SpaceShip.java" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_1.snippet">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/annotations/AtUnitExample1.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/annotations/AtUnitExample3.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/annotations/AtUnitComposition.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/xml/Person.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="8" column="7" selection-start-line="8" selection-start-column="7" selection-end-line="8" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/jshell/jshell_console_1.snippet" />
+    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/annotations/AtUnitExample1.java" />
+    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/annotations/AtUnitExample3.java" />
+    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/annotations/AtUnitComposition.java" />
+    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/xml/Person.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/tij/nio/demo/GetChannel.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="152">
@@ -699,76 +560,145 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/NonEnum.java">
+    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/net/mindview/util/Generator.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/aop/demo/TestController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="24" selection-start-column="24" selection-end-column="24" />
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TIJ4-code/examples/net/mindview/util/Generator.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/aop/demo/requestClient.http">
       <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/aop/demo/TestDate2Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/aop/jdk/AbstractHandler.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="23" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/aop/jdk/AfterHandlerImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/aop/demo/DateHandleAop.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/aop/demo/Date2Long.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
+        <state relative-caret-position="148">
           <caret line="19" column="36" selection-start-line="19" selection-start-column="36" selection-end-line="19" selection-end-column="36" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Generator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
+        <state relative-caret-position="30">
           <caret line="3" column="34" selection-start-line="3" selection-start-column="34" selection-end-line="3" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/EnumImplementation.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="23" column="32" selection-start-line="23" selection-start-column="32" selection-end-line="23" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/EnumImplementation.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="12" column="36" selection-start-line="12" selection-start-column="36" selection-end-line="12" selection-end-column="36" />
+        <state relative-caret-position="179">
+          <caret line="12" column="24" selection-start-line="12" selection-start-column="24" selection-end-line="12" selection-end-column="24" />
           <folding>
             <element signature="imports" expanded="true" />
+            <element signature="e#610#611#0" expanded="true" />
+            <element signature="e#660#661#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/EnumImplementation.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="16" column="5" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/NonEnum.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="40" lean-forward="true" selection-start-line="6" selection-start-column="40" selection-end-line="6" selection-end-column="40" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Course.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="9" selection-start-line="19" selection-start-column="9" selection-end-line="19" selection-end-column="9" />
+        <state relative-caret-position="345">
+          <caret line="25" column="26" selection-start-line="25" selection-start-column="26" selection-end-line="25" selection-end-column="26" />
           <folding>
-            <element signature="e#541#542#0" expanded="true" />
-            <element signature="e#582#583#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Enums.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
-          <folding>
-            <element signature="e#729#730#0" expanded="true" />
-            <element signature="e#787#788#0" expanded="true" />
+            <element signature="e#583#584#0" expanded="true" />
+            <element signature="e#624#625#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Food.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="544">
-          <caret line="32" selection-start-line="32" selection-end-line="32" />
+        <state relative-caret-position="357">
+          <caret line="25" column="37" selection-start-line="25" selection-start-column="37" selection-end-line="25" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Meal.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="51" selection-start-line="8" selection-start-column="51" selection-end-line="8" selection-end-column="51" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/four/Food.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="435">
+          <caret line="29" selection-start-line="29" selection-end-line="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/example/Enums.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
           <folding>
-            <element signature="e#757#758#0" expanded="true" />
-            <element signature="e#824#825#0" expanded="true" />
+            <element signature="e#681#682#0" expanded="true" />
+            <element signature="e#739#740#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/tij/enumeration/exercise/four/Meal2.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="40" column="6" selection-start-line="40" selection-start-column="6" selection-end-line="40" selection-end-column="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#520#521#0" expanded="true" />
+            <element signature="e#565#566#0" expanded="true" />
+            <element signature="e#601#602#0" expanded="true" />
+            <element signature="e#642#643#0" expanded="true" />
           </folding>
         </state>
       </provider>
