@@ -1,11 +1,11 @@
-package aop.demo;
+package spring.springaop;
 
 /**
  * Created by IntelliJ IDEA.<br/>
  * User: Administrator<br/>
  * Date: 2018/11/21<br/>
- * Time: 15:05<br/>
+ * Time: 14:38<br/>
  * To change this template use File | Settings | File Templates.
  */
-public class TestDate2Long {
+public class DateHandleAop {
 }
