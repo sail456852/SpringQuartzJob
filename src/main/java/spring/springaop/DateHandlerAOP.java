@@ -29,7 +29,6 @@ public class DateHandlerAOP {
         for (Object arg : args) {
             System.err.println("arg = " + arg);
         }
-
         try {
             System.err.println("DateHandlerAOP.pointCutAdvice"); // did run but only once
             return joinPoint.proceed(args);
