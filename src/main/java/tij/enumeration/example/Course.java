@@ -13,7 +13,8 @@ public enum Course {
    APPETIZER(Food.Appetizer.class),
    MAINCOURSE(Food.MainCourse.class),
    DESSERT(Food.Dessert.class),
-   COFFEE(Food.Coffee.class);
+   COFFEE(Food.Coffee.class),
+   CHINESESNACK(Food.ChineseSnack.class);
 
    private Food[] values;
 
