@@ -1,32 +1,52 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a860a401-5786-4379-90a6-00f00f1cb092" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/target/classes/tij/enumeration/example/EnumImplementation.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/tij/enumeration/example/EnumImplementation.class" afterDir="false" />
-    </list>
-    <list id="1c417bd2-ee27-4aa6-aa5b-fbc6d9749929" name="DoNotCommit" comment="DoNotCommit">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_logging_commons_logging_1_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__log4j_log4j_1_2_17.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_api_1_7_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_slf4j_slf4j_log4j12_1_7_21.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/Java8Tests_Web_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/Java8Tests_Web_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_aop_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_beans_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_expression_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jcl_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_jdbc_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_test_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_core_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_tx_4_3_8_RELEASE.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_web_5_0_7_RELEASE.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_5_0_7_RELEASE.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_webmvc_4_3_8_RELEASE.xml" afterDir="false" />
+    <list default="true" id="a860a401-5786-4379-90a6-00f00f1cb092" name="Default Changelist" comment="timed job introduced and AOP revised">
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Java8Tests.iml" beforeDir="false" afterPath="$PROJECT_DIR$/Java8Tests.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/AbstractHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/AfterHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/AfterHandlerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/BeforeHandler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/BeforeHandlerImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/ProxyFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/TargetClass.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/TargetInterface.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/aop/jdk/TestMyAOP.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/leetCode/MyQueue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/leetCode/Queue.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/msc/jdk/Shuffler.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/msc/nio/NioStarter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/CallableE5.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/CallableImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/Fibonacci.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/e1/Fibonacci.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/e1/FibonacciMT.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/e1/MyThreadEx1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/e3/ExecutorE3.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/e3/ExecutorE4.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/e3/Finobacci.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/e3/RunnableImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/reentralock/LockBasic.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/sharing/EvenChecker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/sharing/EvenGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/cc/sharing/IntGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/collection/E2SimpleCollection.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/collection/E4GenericMovie.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/collection/Selector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/collection/Sequence$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/collection/Sequence$SequenceSelector.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/collection/Sequence.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/enumeration/example/CartoonCharacter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/enumeration/example/EnumImplementation.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/enumeration/example/Generator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/enumeration/example/NonEnum.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/initializationCleanUp/E1String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/initializationCleanUp/E2String.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/initializationCleanUp/TestString.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/tij/nio/demo/GetChannel.class" beforeDir="false" />
     </list>
+    <list id="1c417bd2-ee27-4aa6-aa5b-fbc6d9749929" name="DoNotCommit" comment="DoNotCommit" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -184,11 +204,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+            <state relative-caret-position="306">
+              <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -196,10 +216,10 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="170">
+            <state relative-caret-position="2312">
               <caret line="136" selection-start-line="136" selection-end-line="136" />
             </state>
           </provider>
@@ -359,39 +379,6 @@
             </path>
             <path>
               <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="springaop" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="spring" type="462c0819:PsiDirectoryNode" />
-              <item name="timedjob" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
               <item name="Scratches and Consoles" type="1a2a3e82:ScratchProjectViewPane$MyProjectNode" />
             </path>
           </expand>
@@ -446,7 +433,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545613318656" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1545613576148" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/tij/enumeration" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/webapp" />
@@ -455,7 +442,7 @@
     <property name="project.structure.last.edited" value="Artifacts" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.3895886" />
-    <property name="settings.editor.selected.configurable" value="MavenSettings" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -554,7 +541,7 @@
       <workItem from="1545372875260" duration="2400000" />
       <workItem from="1545376470136" duration="4373000" />
       <workItem from="1545380916481" duration="1969000" />
-      <workItem from="1545382912853" duration="3670000" />
+      <workItem from="1545382912853" duration="3755000" />
     </task>
     <task id="LOCAL-00001" summary="Spring introduced! and it works!">
       <created>1545379185326</created>
@@ -591,7 +578,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="30538000" />
+    <option name="totallyTimeSpent" value="30623000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -610,12 +597,12 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32934132" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.3275488" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.29067245" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.29067245" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32934132" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.33133733" />
+      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3308026" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" weight="0.32902583" />
@@ -814,13 +801,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="136" selection-start-line="136" selection-end-line="136" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/SchedulingMain.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -844,11 +824,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="22" column="4" selection-start-line="22" selection-start-column="4" selection-end-line="22" selection-end-column="4" />
+        <state relative-caret-position="306">
+          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2312">
+          <caret line="136" selection-start-line="136" selection-end-line="136" />
         </state>
       </provider>
     </entry>
