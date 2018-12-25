@@ -15,7 +15,7 @@ import org.springframework.stereotype.Component;
 @EnableScheduling
 public class SchedulingMain {
 
-    @Scheduled(cron = "0/5 * * * * ?")
+//    @Scheduled(cron = "0/5 * * * * ?") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
     public void timedJob(){
         System.err.println("SchedulingMain.timedJob " + System.currentTimeMillis() );
     }

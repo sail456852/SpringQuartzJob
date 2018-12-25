@@ -15,6 +15,12 @@ import spring.timedjob.SchedulingMain;
 @Configuration
 public class JavaConfig {
 
+    /**
+     * Why are there two instances of thread pool? which makes two threads running almost
+     * simultaneously
+     * @param schedulingMain
+     * @return
+     */
     @Bean
     public MethodInvokingJobDetailFactoryBean timeJobTestBean(SchedulingMain schedulingMain){
         MethodInvokingJobDetailFactoryBean factoryBean = new MethodInvokingJobDetailFactoryBean();
