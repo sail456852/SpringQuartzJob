@@ -11,12 +11,23 @@ import org.springframework.transaction.annotation.Transactional;
  * Date: 2018/12/25<br/>
  * Time: 14:26<br/>
  * To change this template use File | Settings | File Templates.
+ * Order can't determine in which order the methods are called.
+ * Order annotation with low value, can't determine the order of execution
  */
 @Component
 public class TestListener {
 
     @EventListener
-    @Order(1)
+    @Order(10)
+    @Transactional
+    public void listenerSecondHandler(TestChangeEvent event) {
+        System.out.println("TestListener.listenerSecondHandler");
+        TestSource source = (TestSource) event.getSource();
+        System.out.println("source.getMsg() = " + source.getMsg());
+    }
+
+    @EventListener
+    @Order(100)
     @Transactional
     public void listenerHandler(TestChangeEvent event) {
         System.err.println("event = " + event);
