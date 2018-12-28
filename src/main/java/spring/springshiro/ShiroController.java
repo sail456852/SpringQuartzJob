@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Date: 2018/12/25<br/>
  * Time: 17:59<br/>
  * To change this template use File | Settings | File Templates.
+ *  http://127.0.0.1/shiro
  */
 @Controller
 public class ShiroController {

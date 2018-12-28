@@ -100,6 +100,18 @@
             <scope>test</scope>
         </dependency>
 
+        <!--@author: eugene, @date: 2018/12/28-->
+        <dependency>
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-redis</artifactId>
+            <version>1.8.6.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>2.9.0</version>
+        </dependency>
+        <!--@author: eugene, @date: 2018/12/28-->
 
         <dependency>
             <groupId>org.aspectj</groupId>
@@ -161,6 +173,11 @@
             <artifactId>unirest-java</artifactId>
             <version>1.4.9</version>
         </dependency>
+        <dependency>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>7.0</version>
+        </dependency>
 
     </dependencies>
 
@@ -215,5 +232,21 @@
 
         </plugins>
     </build>
+
+
+    <profiles>
+        <profile>
+            <id>localhost</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <redis.host>127.0.0.1</redis.host>
+                <redis.port>6379</redis.port>
+                <redis.pass>aaa</redis.pass>
+            </properties>
+
+        </profile>
+    </profiles>
 
 </project>

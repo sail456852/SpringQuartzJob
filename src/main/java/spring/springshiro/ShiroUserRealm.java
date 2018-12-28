@@ -22,11 +22,13 @@ public class ShiroUserRealm extends AuthorizingRealm {
 
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principals) {
+        System.err.println("ShiroUserRealm.doGetAuthorizationInfo");
         return null;
     }
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken token) throws AuthenticationException {
+        System.err.println("ShiroUserRealm.doGetAuthenticationInfo");
         return null;
     }
 }
