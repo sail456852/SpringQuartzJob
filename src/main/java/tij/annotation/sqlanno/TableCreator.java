@@ -1,7 +1,10 @@
 package tij.annotation.sqlanno;
 
+import com.mchange.v2.c3p0.DriverManagerDataSource;
+import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.util.StringUtils;
 
+import javax.sql.DataSource;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.AnnotatedType;
 import java.lang.reflect.Field;
@@ -53,9 +56,18 @@ public class TableCreator {
                     if (sString.name().length() < 1) {
                         columnName = field.getName().toUpperCase();
                     } else {
-                        columnName = field.getName().toUpperCase();
+                        columnName = sString.name();
                     }
                     columnDefs.add(columnName + "  VARCHAR(" + sString.value() + ")" + getConstraints(sString.constrains()));
+                }
+                if(anns[0] instanceof SQLDouble){
+                    SQLDouble sDouble = (SQLDouble) anns[0];
+                    if (sDouble.name().length() < 1) {
+                        columnName = field.getName().toUpperCase();
+                    } else {
+                        columnName = sDouble.name();
+                    }
+                    columnDefs.add(columnName + "  NUMBER(" + sDouble.value() + ")" + getConstraints(sDouble.constrains()));
                 }
                 StringBuilder createCommand = new StringBuilder("CREATE TABLE " + tableName + "(");
                 for (String columnDef : columnDefs) {
@@ -68,6 +80,16 @@ public class TableCreator {
             }
 
         }
+    }
+
+    private void executeSQL(String sql){
+        DataSource source =  new DriverManagerDataSource();
+        ((DriverManagerDataSource) source).setPassword("Yuzhen@1991");
+        ((DriverManagerDataSource) source).setUser("root");
+        ((DriverManagerDataSource) source).setJdbcUrl("jdbc:mysql:localhost:3306/mysql");
+        JdbcTemplate jdbcTemplate = new JdbcTemplate(source);
+
+        jdbcTemplate.execute("select * from users");
     }
 
     private static String getConstraints(Constraints con) {
