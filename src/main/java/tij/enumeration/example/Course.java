@@ -18,7 +18,7 @@ public enum Course {
 
    private Food[] values;
 
-   private Course(Class<? extends Food> kind){
+   Course(Class<? extends Food> kind){
       values = kind.getEnumConstants();
    }
 

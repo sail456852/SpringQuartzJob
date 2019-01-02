@@ -15,5 +15,5 @@ import java.lang.annotation.Target;
 @Target(ElementType.TYPE)
 @Retention(RetentionPolicy.RUNTIME)
 public @interface DBTable {
-    public String name() default "";
+    String name() default "";
 }

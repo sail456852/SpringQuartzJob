@@ -1,4 +1,4 @@
-var F_merchant_id = '123456789'
+var F_merchant_id = '123456789';
 var db='lepos'+F_merchant_id.substr(-3,1);
 console.log(db);
 var table_no='t_order_by_merchant_'+F_merchant_id.substr(-2,2);

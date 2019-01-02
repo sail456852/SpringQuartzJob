@@ -17,7 +17,7 @@ public class QuartzSessionValidationJob implements Job {
     public static final String SESSION_MANAGER_KEY = "sessionManager";
 
     @Override
-    public void execute(JobExecutionContext context) throws JobExecutionException {
+    public void execute(JobExecutionContext context) {
         JobDataMap mergedJobDataMap = context.getMergedJobDataMap();
         ValidatingSessionManager sessionManager = (ValidatingSessionManager)mergedJobDataMap.get(SESSION_MANAGER_KEY);
         System.err.println("QuartzSessionValidationJob.execute start");

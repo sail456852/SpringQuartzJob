@@ -15,7 +15,7 @@ import javax.servlet.ServletResponse;
  */
 public class UserFilter extends AuthenticationFilter {
     @Override
-    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) throws Exception {
+    protected boolean onAccessDenied(ServletRequest request, ServletResponse response) {
         System.err.println("UserFilter.onAccessDenied");
         return false;
     }

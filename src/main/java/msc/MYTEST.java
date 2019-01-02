@@ -1,6 +1,8 @@
 package msc;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Created by IntelliJ IDEA.<br/>
@@ -32,6 +34,16 @@ public class MYTEST {
         // target: output MYTEST
         String name = this.getClass().getSimpleName();
         System.err.println("name = " + name);
+    }
+
+
+    @Test
+    public void testLogInfo() {
+        Logger logger = LoggerFactory.getLogger(this.getClass().getSimpleName());
+        String character = "GOKU";
+        String anime = "SON GOKU";
+
+        logger.info("testLogInfo() \"character\": " + character + ", \"anime\": " + anime);
     }
 
 }

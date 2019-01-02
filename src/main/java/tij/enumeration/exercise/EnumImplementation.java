@@ -23,7 +23,7 @@ enum CartoonCharacter {
 public class EnumImplementation {
 
     public static void printNext(@NotNull CartoonCharacter rg){
-        System.out.print(rg.next() + ", ");
+        System.out.print(CartoonCharacter.next() + ", ");
     }
 
     public static void main(String[] args) {

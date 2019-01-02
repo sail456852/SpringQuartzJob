@@ -27,7 +27,7 @@ public class UnirestClient {
        count = new AtomicInteger(0);
     }
 
-    public static void main(String[] args) throws UnirestException {
+    public static void main(String[] args) {
         ArrayList<String> validList = new ArrayList<String>();
         ExecutorService exec = Executors.newCachedThreadPool();
         int range = 3;

@@ -23,8 +23,6 @@ class MyQueue {
         return true;
     }
 
-    ;
-
     /**
      * Delete an element from the queue. Return true if the operation is successful.
      */
@@ -49,7 +47,7 @@ class MyQueue {
     public boolean isEmpty() {
         return p_start >= data.size();
     }
-};
+}
 
 public class Queue {
     public static void main(String[] args) {

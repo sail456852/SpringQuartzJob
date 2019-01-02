@@ -30,7 +30,7 @@ class CallableImpl implements Callable<Integer> {
     }
 
     @Override
-    public Integer call() throws Exception {
+    public Integer call() {
         return new Fibonacci(fSize).SumFib();
     }
 }

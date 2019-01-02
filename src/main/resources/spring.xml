@@ -97,11 +97,25 @@
 
     <!--@author: eugene @date: 2018/12/28 -->
 
-    <bean id="userFilter" class="spring.springshiro.UserFilter">
+    <!--@author: eugene @date: 2018/12/29 -->
+    <!-- 相当于调用SecurityUtils.setSecurityManager(securityManager) -->
+    <bean
+            class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="staticMethod"
+                  value="org.apache.shiro.SecurityUtils.setSecurityManager" />
+        <property name="arguments" ref="securityManager" />
     </bean>
 
-    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean" p:loginUrl="/user/login.do"
-          p:unauthorizedUrl="/user/nopermission.do">
+    <bean class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+        <property name="securityManager" ref="securityManager"/>
+    </bean>
+
+    <bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+
+    <bean id="userFilter" class="spring.springshiro.UserFilter"> </bean>
+
+    <bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean"
+          p:unauthorizedUrl="/user/nopermission.do" p:loginUrl="/user/login.do">
         <property name="securityManager" ref="securityManager"/>
         <property name="filters">
             <map>
@@ -116,6 +130,7 @@
             </value>
         </property>
     </bean>
+
     <!--//@author: eugene @date: 2018/12/26 shiro ends-->
 
     <!--@author: eugene, @date: 2018/12/28 redis start-->

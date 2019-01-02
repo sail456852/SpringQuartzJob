@@ -178,6 +178,23 @@
             <artifactId>javaee-api</artifactId>
             <version>7.0</version>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.47</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.6</version>
+        </dependency>
+
+        <!--@author: eugene @date: 2019/1/2 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.46</version>
+        </dependency>
 
     </dependencies>
 
@@ -203,7 +220,7 @@
                     </webApp>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <httpConnector>
-                        <port>80</port>
+                        <port>8080</port>
                     </httpConnector>
                     <reload>manual</reload>
                 </configuration>

@@ -34,7 +34,7 @@ public class SimpleMailSender {
      * @param mailInfo
      *            待发送的邮件信息
      */
-    public static boolean sendHtmlMail(MailSenderInfo mailInfo) throws MessagingException {
+    public static boolean sendHtmlMail(MailSenderInfo mailInfo) {
 
         // 构造一个发送邮件的session
         Session sendMailSession = Session.getInstance(mailInfo.getProperties());
