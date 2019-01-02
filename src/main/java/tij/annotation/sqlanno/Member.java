@@ -15,6 +15,8 @@ public class Member {
     @SQLString(value = 30, constrains = @Constraints(primaryKey = true)) String handle;
     static int memeberCount;
 
+    @SQLDouble(value = 20, name = "MYINCOME") double income;
+
     public String getFirstName() {
         return firstName;
     }
@@ -29,6 +31,14 @@ public class Member {
 
     public String getHandle() {
         return handle;
+    }
+
+    public double getIncome() {
+        return income;
+    }
+
+    public void setIncome(double income) {
+        this.income = income;
     }
 
     @Override
