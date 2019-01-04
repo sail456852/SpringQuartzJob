@@ -4,6 +4,10 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 /**
  * Created by IntelliJ IDEA.<br/>
  * User: eugene<br/>
@@ -44,6 +48,24 @@ public class MYTEST {
         String anime = "SON GOKU";
 
         logger.info("testLogInfo() \"character\": " + character + ", \"anime\": " + anime);
+    }
+    
+    @Test
+    public void testDateConvert() {
+        Date dateUpdateTime =  getDate("2016-08-10 02:23:39");
+        Date dateOriginTime  =  getDate("2016-01-10 02:23:39");
+        boolean after = dateUpdateTime.after(dateOriginTime);
+        System.err.println("after = " + after);
+    }
+
+    public static Date getDate(String fullTime){
+        try {
+            SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            return format.parse(fullTime);
+        } catch (ParseException e) {
+            e.printStackTrace();
+            return new Date();
+        }
     }
 
 }

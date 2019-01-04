@@ -496,7 +496,7 @@ public class Config extends BaseConfig {
 		}
 
 		if (IS_TEST) {
-            String filePath = Thread.currentThread().getContextClassLoader().getResource("").getPath()+"c3p0.properties";
+            String filePath = Thread.currentThread().getContextClassLoader().getResource("").getPath()+ "myc3p0.properties";
             File file = new File(filePath);
             try {
                 java.io.InputStream is = new java.io.FileInputStream(file);
