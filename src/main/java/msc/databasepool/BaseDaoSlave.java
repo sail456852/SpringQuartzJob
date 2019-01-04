@@ -177,9 +177,9 @@ public class BaseDaoSlave {
                 }
                 mapList.add(resultMap);
             }
-            if (isDec) {
-                DbSecurityUtil.dec(mapList);
-            }
+//            if (isDec) {
+//                DbSecurityUtil.dec(mapList);
+//            }
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {

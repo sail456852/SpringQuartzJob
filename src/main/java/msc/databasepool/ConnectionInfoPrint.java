@@ -22,8 +22,8 @@ public class ConnectionInfoPrint {
         System.err.println("ConnectionInfoPrint.main");
         List<Map<String, Object>> maps = businessSlave.executeQuery("select * from t_ditui_account limit 10");
         for (Map<String, Object> map : maps) {
-            String f_name = (String)map.get("F_name");
-            System.err.println("f_name = " + f_name);
+            String f_account_id = map.get("F_account_id").toString();
+            System.err.println("f_account_id = " + f_account_id);
         }
     }
 }
