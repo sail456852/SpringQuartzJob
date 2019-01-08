@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * Date: 2018/12/25<br/>
  * Time: 17:59<br/>
  * To change this template use File | Settings | File Templates.
- *  http://127.0.0.1/shiro
+ *  http://127.0.0.1/8080/shiro
  */
 @Controller
 public class ShiroController {
@@ -19,8 +19,16 @@ public class ShiroController {
     @RequestMapping("/shiro")
     @ResponseBody
     @RequiresPermissions("sales:info:status")
-    public String shiroAuthentication(){
-        System.err.println("ShiroController.shiroAuthentication");
+    public String shiroAuthenticationDeny(){
+        System.err.println("ShiroController.shiroAuthenticationDeny");
+        return "shiro authorization okay";
+    }
+
+    @RequestMapping("/shiroAuthc")
+    @ResponseBody
+//    @RequiresPermissions("sales:info:status")
+    public String shiroAuthenticationAllow(){
+        System.err.println("ShiroController.shiroAuthenticationAllow");
         return "shiro authorization okay";
     }
 }

@@ -32,7 +32,7 @@ public class QuartzSessionValidationScheduler implements SessionValidationSchedu
 
     @Override
     public void enableSessionValidation() {
-        System.out.println("start sessionValidationInterval = " + sessionValidationInterval + " ms ");
+        System.err.println("start sessionValidationInterval = " + sessionValidationInterval + " ms ");
 
         try {
             SimpleTrigger trigger = TriggerBuilder.newTrigger().startNow().withIdentity(JOB_NAME, Scheduler.DEFAULT_GROUP).
@@ -55,7 +55,7 @@ public class QuartzSessionValidationScheduler implements SessionValidationSchedu
 
     @Override
     public void disableSessionValidation() {
-        System.out.println("stop sessionValidationInterval = " + sessionValidationInterval + " ms ");
+        System.err.println("stop sessionValidationInterval = " + sessionValidationInterval + " ms ");
         try {
             Scheduler scheduler = getScheduler();
             if(scheduler == null) return;

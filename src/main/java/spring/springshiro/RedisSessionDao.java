@@ -28,6 +28,7 @@ public class RedisSessionDao extends AbstractSessionDAO {
 
     @Override
     protected Serializable doCreate(Session session) {
+        System.err.println("RedisSessionDao.doCreate");
         Serializable sessionId = generateSessionId(session);
         assignSessionId(session, sessionId);
         ValueOperations<String, Object> ops = redisTemplate.opsForValue();
@@ -37,6 +38,7 @@ public class RedisSessionDao extends AbstractSessionDAO {
 
     @Override
     protected Session doReadSession(Serializable sessionId) {
+        System.err.println("RedisSessionDao.doReadSession");
         Session session = null;
         try {
             ValueOperations<String, Object> ops = redisTemplate.opsForValue();
@@ -49,17 +51,20 @@ public class RedisSessionDao extends AbstractSessionDAO {
 
     @Override
     public void update(Session session) throws UnknownSessionException {
+        System.err.println("RedisSessionDao.update");
         ValueOperations<String, Object> ops = redisTemplate.opsForValue();
         ops.set(session.getId().toString(), session, SESSION_TIME_OUT, TimeUnit.SECONDS);
     }
 
     @Override
     public void delete(Session session) {
+        System.err.println("RedisSessionDao.delete");
         redisTemplate.delete(session.getId().toString());
     }
 
     @Override
     public Collection<Session> getActiveSessions() {
+        System.err.println("RedisSessionDao.getActiveSessions");
         return Collections.emptySet();
     }
 }

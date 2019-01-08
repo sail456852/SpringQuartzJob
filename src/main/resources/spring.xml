@@ -124,8 +124,7 @@
         </property>
         <property name="filterChainDefinitions">
             <value>
-                /account/login = anon
-                /account/adminLogin = anon
+                /shiroAuthc = anon
                 /** = authc
             </value>
         </property>
