@@ -47,6 +47,5 @@ public class AddressUtil {
 		Map<String,String> map = getAddress("114.101028","22.575974");
 		System.out.println(map.get("GeocoderSearchResponse.result.addressComponent.province"));
 		System.out.println(map.get("GeocoderSearchResponse.result.addressComponent.city"));
-		
 	}
 }

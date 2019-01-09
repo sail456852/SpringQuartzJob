@@ -9,6 +9,7 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
+import com.google.common.base.Splitter;
 
 public class CookieUtil {
 	/**
@@ -102,6 +103,19 @@ public class CookieUtil {
 		}
 		return cookieMap;
 	}
+
+
+    /**
+     * cookie string to map
+     * @param cookieStr
+     * @return
+     */
+	public static Map<String, String> cookieStrToMap(String cookieStr){
+        Splitter.MapSplitter mapSplitter = Splitter.onPattern(";").withKeyValueSeparator("=");
+        Map<String, String> split = mapSplitter.split(cookieStr);
+        return split;
+    }
+
 
 
 }

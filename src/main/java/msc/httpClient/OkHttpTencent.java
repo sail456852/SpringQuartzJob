@@ -34,10 +34,10 @@ public class OkHttpTencent {
                 .build();
 
         Response response = client.newCall(request).execute();
-        System.err.println("response = " + response);
-        System.err.println("response = " + response.body().toString());
-        System.err.println("response.body() = " + response.body());
-        System.err.println("response = " + response.message());
+        System.err.println("response = " + response); // print response summary
+        System.err.println("response = " + response.body().string()); // print out the response body
+        System.err.println("response.body() = " + response.body()); // nothing useful
+        System.err.println("response = " + response.message()); // contained in the first response
 
     }
 }
