@@ -10,9 +10,11 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.junit.Before;
 import org.junit.Test;
+import org.riversun.okhttp3.OkHttp3CookieHelper;
 
 import javax.servlet.http.Cookie;
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
@@ -35,6 +37,18 @@ public class DoubanTest {
         Connection conn = Jsoup.connect(url);
         conn.userAgent("Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/31.0.1650.63 Safari/537.36");
         conn.data(params);
+        conn.header("Connection", "keep-alive");
+        conn.header("Pragma", "no-cache");
+        conn.header("Cache-Control", "no-cache");
+        conn.header("Upgrade-Insecure-Requests", "1");
+        conn.header("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36");
+        conn.header("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8");
+        conn.header("Referer", "https://www.douban.com/people/176233839/");
+        conn.header("Accept-Encoding", "gzip, deflate, br");
+        conn.header("Accept-Language", "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7,ja;q=0.6,zh-TW;q=0.5,ru;q=0.4");
+        conn.header("Cookie", "ll=\"118282\"; bid=4Mjyx_dTshw; ps=y; __utmc=30149280; __utmz=30149280.1546919714.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _ga=GA1.2.499911770.1546919714; _gid=GA1.2.1019472763.1546919793; ck=fnPz; push_noty_num=0; push_doumail_num=0; __utmv=30149280.17623; douban-profile-remind=1; _pk_ses.100001.8cb4=*; ap_v=0,6.0; __utma=30149280.499911770.1546919714.1546940298.1546997720.3; __utmt=1; _pk_id.100001.8cb4=513fab81cc411b78.1546919714.3.1546998613.1546940468.; __utmb=30149280.14.10.1546997720");
+        conn.header("cache-control", "no-cache");
+        conn.header("Postman-Token", "509eac00-708c-40c7-a42c-0414b895a023");
         String cstr = "ll=118282; bid=4Mjyx_dTshw; ps=y; " +
 //                "__utmc=30149280; __utmz=30149280.1546919714.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none);" +
                 " _ga=GA1.2.499911770.1546919714; _gid=GA1.2.1019472763.1546919793; ck=fnPz; push_noty_num=0; push_doumail_num=0;" +
@@ -53,30 +67,44 @@ public class DoubanTest {
 
     @Test
     public void okHttp() throws IOException {
-        OkHttpClient client = new OkHttpClient();
+        String url = "https://www.douban.com/doumail/";
+//        OkHttpClient client = new OkHttpClient();
+//
+//        Request request = new Request.Builder()
+//                .url(url)
+//                .get()
+//                .addHeader("Connection", "keep-alive")
+//                .addHeader("Pragma", "no-cache")
+//                .addHeader("Cache-Control", "no-cache")
+//                .addHeader("Upgrade-Insecure-Requests", "1")
+////                .addHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36")
+////                .addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8")
+//                .addHeader("Referer", "https://www.douban.com/people/176233839/")
+//                .addHeader("Accept-Encoding", "gzip, deflate, br")
+//                .addHeader("Accept-Language", "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7,ja;q=0.6,zh-TW;q=0.5,ru;q=0.4")
+//                .addHeader("Cookie", "ll=\"118282\"; bid=4Mjyx_dTshw; ps=y; __utmc=30149280; __utmz=30149280.1546919714.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _ga=GA1.2.499911770.1546919714; _gid=GA1.2.1019472763.1546919793; ck=fnPz; push_noty_num=0; push_doumail_num=0; __utmv=30149280.17623; douban-profile-remind=1; _pk_ses.100001.8cb4=*; ap_v=0,6.0; __utma=30149280.499911770.1546919714.1546940298.1546997720.3; __utmt=1; _pk_id.100001.8cb4=513fab81cc411b78.1546919714.3.1546998613.1546940468.; __utmb=30149280.14.10.1546997720")
+//                .addHeader("cache-control", "no-cache")
+//                .addHeader("Postman-Token", "509eac00-708c-40c7-a42c-0414b895a023")
+//                .build();
+//
+//        Response response = client.newCall(request).execute();
+//        System.err.println("response.body().string() = " + response.body().string());
 
-        Request request = new Request.Builder()
-                .url("https://www.douban.com/doumail/")
-                .get()
-                .addHeader("Connection", "keep-alive")
-                .addHeader("Pragma", "no-cache")
-                .addHeader("Cache-Control", "no-cache")
-                .addHeader("Upgrade-Insecure-Requests", "1")
-                .addHeader("User-Agent", "Mozilla/5.0 (Windows NT 6.1; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36")
-                .addHeader("Accept", "text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8")
-                .addHeader("Referer", "https://www.douban.com/people/176233839/")
-                .addHeader("Accept-Encoding", "gzip, deflate, br")
-                .addHeader("Accept-Language", "en-US,en;q=0.9,zh-CN;q=0.8,zh;q=0.7,ja;q=0.6,zh-TW;q=0.5,ru;q=0.4")
-                .addHeader("Cookie", "ll=\"118282\"; bid=4Mjyx_dTshw; ps=y; __utmc=30149280; __utmz=30149280.1546919714.1.1.utmcsr=(direct)|utmccn=(direct)|utmcmd=(none); _ga=GA1.2.499911770.1546919714; _gid=GA1.2.1019472763.1546919793; ck=fnPz; push_noty_num=0; push_doumail_num=0; __utmv=30149280.17623; douban-profile-remind=1; _pk_ses.100001.8cb4=*; ap_v=0,6.0; __utma=30149280.499911770.1546919714.1546940298.1546997720.3; __utmt=1; _pk_id.100001.8cb4=513fab81cc411b78.1546919714.3.1546998613.1546940468.; __utmb=30149280.14.10.1546997720")
-                .addHeader("cache-control", "no-cache")
-                .addHeader("Postman-Token", "509eac00-708c-40c7-a42c-0414b895a023")
+        OkHttp3CookieHelper cookieHelper = new OkHttp3CookieHelper();
+
+//force set cookie from the client
+        cookieHelper.setCookie(url, "cookie_name", "cookie_value");
+
+//set OkHttp3CookieHelper as cookieJar
+        OkHttpClient client = new OkHttpClient.Builder()
+                .cookieJar(cookieHelper.cookieJar())
                 .build();
 
-        Response response = client.newCall(request).execute();
-        byte[] bytes = response.body().bytes();
-        String info = new String(bytes, "UTF-8");
-        System.err.println("info = " + info);
+        Request request = new Request.Builder()
+                .url(url)
+                .build();
     }
+
 
     @NotNull
     private Map<String, String> setRequestParam() {
