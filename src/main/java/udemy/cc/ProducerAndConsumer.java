@@ -20,6 +20,38 @@ public class ProducerAndConsumer {
 
 }
 
+class Message{
+    private String message;
+    private boolean empty = true;
+
+    public synchronized String read() {
+        while(empty){
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        empty = true;
+        notifyAll();
+        return message;
+    }
+
+
+    public synchronized void write(String msg) {
+        while(!empty){
+            try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        empty = false;
+        this.message = msg;
+        notifyAll();
+    }
+}
+
 class Writer implements Runnable{
     private Message msg;
 
@@ -46,9 +78,8 @@ class Writer implements Runnable{
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-
-            msg.write("Finished");
         }
+        msg.write("Finished");
     }
 }
 
@@ -65,8 +96,7 @@ class Reader implements Runnable{
         Random random = new Random();
         for(String lmessage = msg.read(); !lmessage.equals("Finished"); lmessage = msg.read()){
             System.err.println("lmessage = " + lmessage);
-            try {
-                Thread.sleep(random.nextInt(2000));
+            try { Thread.sleep(random.nextInt(2000));
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -74,33 +104,3 @@ class Reader implements Runnable{
     }
 }
 
-class Message{
-   private String message;
-   private boolean empty = true;
-
-   public synchronized String read() {
-       try {
-           while(empty){
-               wait();
-           }
-           empty = true;
-           notifyAll();
-       } catch (InterruptedException e) {
-           e.printStackTrace();
-       }
-       return message;
-   }
-
-   public synchronized void write(String msg) {
-       try {
-           while(!empty){
-               wait();
-           }
-           empty = false;
-           this.message = msg;
-           notifyAll();
-       } catch (InterruptedException e) {
-           e.printStackTrace();
-       }
-   }
-}

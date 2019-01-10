@@ -1,0 +1,157 @@
+package msc.httpClient.douban;
+
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import java.io.IOException;
+import java.util.Map;
+import java.util.Scanner;
+
+/**
+ * 描述:
+ *
+ * @outhor lizhichao
+ * @create 2018-05-18 16:33
+ */
+public class DouBan {
+
+    @SuppressWarnings("Duplicates")
+    public static void main(String[] args) throws IOException {
+        String url = "https://accounts.douban.com/login";
+        Connection connect = Jsoup.connect(url);
+
+        Connection method = connect.method(Connection.Method.POST).timeout(10000);
+
+        Connection.Response execute = method.execute();
+
+        Map<String, String> cookies = execute.cookies();
+
+        System.out.println(cookies);
+        Document tempDoc = execute.parse();
+        Element imgEle = tempDoc.getElementById("captcha_image");
+        Elements attribute = tempDoc.select("input[name]");
+        String next = null;
+        String captcha = "";
+        if (imgEle != null) {
+            for (Element element : attribute) {
+                if (element.attr("name").toString().equals("captcha-id")) {
+                    captcha = element.attr("value");
+                }
+            }
+            String src = imgEle.attr("src");
+            System.out.println("验证码链接：" + src + "\n请输入验证码");
+            Scanner sc = new Scanner(System.in);
+            next = sc.next();
+            System.out.println(next);
+
+        }
+
+        /*URL url1 = new URL(src);
+        URLConnection urlConnection = url1.openConnection();
+        InputStream is = urlConnection.getInputStream();
+        File file = new File("D://ABCD.jpg");
+        //根据输入流写入文件
+        FileOutputStream out = new FileOutputStream(file);
+        int i = 0;
+        while((i = is.read()) != -1){
+            out.write(i);
+        }
+        out.close();
+        is.close();
+
+
+*/
+        Connection.Response loginResponse;
+        //如果没有验证码
+        if (next == null) {
+            loginResponse = Jsoup
+                    .connect(url)
+                    .data("form_email", "13600157170", "form_password", "chaoge123",
+                            "source", "index_nav", /*"captcha-id", captcha,"captcha-solution",next,*/
+                            "redir", "https://www.douban.com", "source", "None").cookies(cookies)
+                    .method(Connection.Method.POST).execute();
+
+            cookies = loginResponse.cookies();
+//            System.out.println(loginResponse.cookies());
+        } else {
+            loginResponse = Jsoup
+                    .connect(url)
+                    .data("form_email", "13600157170", "form_password", "chaoge123",
+                            "source", "index_nav", "captcha-id", captcha, "captcha-solution", next,
+                            "redir", "https://www.douban.com", "source", "None").cookies(cookies)
+                    .method(Connection.Method.POST).execute();
+
+            cookies = loginResponse.cookies();
+        }
+        for (int i = 1; i <= 3; i++) {
+            huitie(cookies, "https://www.douban.com/group/topic/116608199/", "yuzhen testing====" + i);
+            System.out.println("回帖第" + i + "次");
+            try {
+                Thread.sleep(3000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+
+
+    }
+
+
+    public static void huitie(Map<String, String> cookies, String url, String rv_comment) throws IOException {
+        Connection.Response execute1 = Jsoup.connect(url).method(Connection.Method.GET).cookies(cookies).execute();
+
+        Document parse = execute1.parse();
+        Element imgEle = parse.getElementById("captcha_image");
+        Elements attribute = parse.select("input[name]");
+
+//        System.out.println(captcha);
+        String next = null;
+        String captcha = "";
+        if (imgEle != null) {
+
+
+            for (Element element : attribute) {
+                if (element.attr("name").toString().equals("captcha-id")) {
+                    captcha = element.attr("value");
+                }
+            }
+            String src = imgEle.attr("src");
+            System.out.println("验证码链接：" + src + "\n请输入验证码");
+            Scanner sc = new Scanner(System.in);
+            next = sc.next();
+            System.out.println(next);
+
+        }
+
+
+        Elements select = parse.select("input[name]");
+        String ck = "";
+        for (Element element : select) {
+            if (element.attr("name").equals("ck")) {
+                ck = element.attr("value");
+                System.out.println(ck);
+
+            }
+        }
+        cookies.put("ps", "y");
+        cookies.put("ap", "1");
+        cookies.put("as", url);
+        Connection.Response execute2;
+        if (next != null) {
+            execute2 = Jsoup.connect(url + "/add_comment#last").data(
+                    "ck", ck, "rv_comment", rv_comment, "start", "0", "submit_btn", "发送", "captcha-id", captcha, "captcha-solution", next
+            ).method(Connection.Method.POST).cookies(cookies).execute();
+        } else {
+            execute2 = Jsoup.connect(url + "/add_comment#last").data(
+                    "ck", ck, "rv_comment", rv_comment, "start", "0", "submit_btn", "发送"
+            ).method(Connection.Method.POST).cookies(cookies).execute();
+        }
+
+
+
+        /*System.out.println(execute2.body());*/
+    }
+}
