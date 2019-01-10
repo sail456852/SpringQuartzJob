@@ -16,6 +16,7 @@ import java.util.Date;
  * To change this template use File | Settings | File Templates.
  */
 public class MYTEST {
+
     @Test
     public void testSubString() {
         String f_merchant_id = "123456789";

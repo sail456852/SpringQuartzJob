@@ -39,11 +39,7 @@ class Writer implements Runnable{
 
         Random random = new Random();
         for (int i = 0; i < msgs.length; i++) {
-            try {
-                msg.write(msgs[i]);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            msg.write(msgs[i]);
 
             try {
                 Thread.sleep(random.nextInt(2000));
@@ -51,11 +47,7 @@ class Writer implements Runnable{
                 e.printStackTrace();
             }
 
-            try {
-                msg.write("Finished");
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+            msg.write("Finished");
         }
     }
 }
@@ -71,17 +63,13 @@ class Reader implements Runnable{
     @Override
     public  void run() {
         Random random = new Random();
-        try {
-            for(String lmessage = msg.read(); !lmessage.equals("Finished"); lmessage = msg.read()){
-                System.err.println("lmessage = " + lmessage);
-                try {
-                    Thread.sleep(random.nextInt(2000));
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
+        for(String lmessage = msg.read(); !lmessage.equals("Finished"); lmessage = msg.read()){
+            System.err.println("lmessage = " + lmessage);
+            try {
+                Thread.sleep(random.nextInt(2000));
+            } catch (InterruptedException e) {
+                e.printStackTrace();
             }
-        } catch (InterruptedException e) {
-            e.printStackTrace();
         }
     }
 }
@@ -90,21 +78,29 @@ class Message{
    private String message;
    private boolean empty = true;
 
-   public synchronized String read() throws InterruptedException {
-        while(empty){
-            wait();
-        }
-        empty = true;
-        notifyAll();
-        return message;
+   public synchronized String read() {
+       try {
+           while(empty){
+               wait();
+           }
+           empty = true;
+           notifyAll();
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
+       return message;
    }
 
-   public synchronized void write(String msg) throws InterruptedException {
-        while(!empty){
-            wait();
-        }
-        empty = false;
-        this.message = msg;
-        notifyAll();
+   public synchronized void write(String msg) {
+       try {
+           while(!empty){
+               wait();
+           }
+           empty = false;
+           this.message = msg;
+           notifyAll();
+       } catch (InterruptedException e) {
+           e.printStackTrace();
+       }
    }
 }
