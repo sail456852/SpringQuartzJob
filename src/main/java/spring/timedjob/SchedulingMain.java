@@ -18,9 +18,9 @@ import java.io.IOException;
 @EnableScheduling
 public class SchedulingMain {
 
-    @Scheduled(cron = "0/60 * * * * ?") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
+    @Scheduled(cron = "0/2 * * * * ?") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
     public void timedJob() throws IOException {
         System.err.println("SchedulingMain.timedJob " + System.currentTimeMillis() );
-        DouBan.login();
+//        DouBan.login();
     }
 }

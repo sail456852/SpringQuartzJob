@@ -21,14 +21,14 @@ public class JavaConfig {
      * @param schedulingMain
      * @return
      */
-    @Bean
-    public MethodInvokingJobDetailFactoryBean timeJobTestBean(SchedulingMain schedulingMain){
-        MethodInvokingJobDetailFactoryBean factoryBean = new MethodInvokingJobDetailFactoryBean();
-        factoryBean.setName("myTestJob");
-        factoryBean.setGroup("my");
-        factoryBean.setConcurrent(false);
-        factoryBean.setTargetObject(schedulingMain);
-        factoryBean.setTargetMethod("timedJob");
-        return factoryBean;
-    }
+//    @Bean
+//    public MethodInvokingJobDetailFactoryBean timeJobTestBean(SchedulingMain schedulingMain){
+//        MethodInvokingJobDetailFactoryBean factoryBean = new MethodInvokingJobDetailFactoryBean();
+//        factoryBean.setName("myTestJob");
+//        factoryBean.setGroup("my");
+//        factoryBean.setConcurrent(false);
+//        factoryBean.setTargetObject(schedulingMain);
+//        factoryBean.setTargetMethod("timedJob");
+//        return factoryBean;
+//    }
 }
