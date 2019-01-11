@@ -18,19 +18,19 @@ import java.util.Scanner;
  */
 public class DouBan {
 
-    @SuppressWarnings("Duplicates")
     public static void main(String[] args) throws IOException {
+        login();
+    }
+
+    public static void login() throws IOException {
         String url = "https://accounts.douban.com/login";
         Connection connect = Jsoup.connect(url);
-
         Connection method = connect.method(Connection.Method.POST).timeout(10000);
-
-        Connection.Response execute = method.execute();
-
-        Map<String, String> cookies = execute.cookies();
+        Connection.Response response = method.execute();
+        Map<String, String> cookies = response.cookies();
 
         System.out.println(cookies);
-        Document tempDoc = execute.parse();
+        Document tempDoc = response.parse();
         Element imgEle = tempDoc.getElementById("captcha_image");
         Elements attribute = tempDoc.select("input[name]");
         String next = null;
@@ -49,21 +49,6 @@ public class DouBan {
 
         }
 
-        /*URL url1 = new URL(src);
-        URLConnection urlConnection = url1.openConnection();
-        InputStream is = urlConnection.getInputStream();
-        File file = new File("D://ABCD.jpg");
-        //根据输入流写入文件
-        FileOutputStream out = new FileOutputStream(file);
-        int i = 0;
-        while((i = is.read()) != -1){
-            out.write(i);
-        }
-        out.close();
-        is.close();
-
-
-*/
         Connection.Response loginResponse;
         //如果没有验证码
         if (next == null) {
@@ -86,8 +71,8 @@ public class DouBan {
 
             cookies = loginResponse.cookies();
         }
-        for (int i = 1; i <= 3; i++) {
-            huitie(cookies, "https://www.douban.com/group/topic/116608199/", "yuzhen testing====" + i);
+        for (int i = 1; i <= 2; i++) {
+            huitie(cookies, "https://www.douban.com/group/topic/131119511/", "yuzhen up====" + i);
             System.out.println("回帖第" + i + "次");
             try {
                 Thread.sleep(3000);
@@ -95,8 +80,6 @@ public class DouBan {
                 e.printStackTrace();
             }
         }
-
-
     }
 
 
@@ -107,12 +90,9 @@ public class DouBan {
         Element imgEle = parse.getElementById("captcha_image");
         Elements attribute = parse.select("input[name]");
 
-//        System.out.println(captcha);
         String next = null;
         String captcha = "";
         if (imgEle != null) {
-
-
             for (Element element : attribute) {
                 if (element.attr("name").toString().equals("captcha-id")) {
                     captcha = element.attr("value");
@@ -123,10 +103,7 @@ public class DouBan {
             Scanner sc = new Scanner(System.in);
             next = sc.next();
             System.out.println(next);
-
         }
-
-
         Elements select = parse.select("input[name]");
         String ck = "";
         for (Element element : select) {
@@ -149,9 +126,6 @@ public class DouBan {
                     "ck", ck, "rv_comment", rv_comment, "start", "0", "submit_btn", "发送"
             ).method(Connection.Method.POST).cookies(cookies).execute();
         }
-
-
-
         /*System.out.println(execute2.body());*/
     }
 }

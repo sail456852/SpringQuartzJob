@@ -34,7 +34,7 @@ public class BaiduApiDemo {
         JSONObject jsonObject = JSON.parseObject(parse);
         String access_token = jsonObject.getString("access_token");
         System.out.println(access_token);
-        String s = OCRVCode("C:\\Users\\76930\\Desktop\\captcha.jpg", access_token);
+        String s = OCRVCode("C:\\Users\\Administrator\\captcha.jpg", access_token);
         System.out.println(s);
     }
 
