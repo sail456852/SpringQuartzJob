@@ -46,7 +46,6 @@ public class DouBan {
             Scanner sc = new Scanner(System.in);
             next = sc.next();
             System.out.println(next);
-
         }
 
         Connection.Response loginResponse;
