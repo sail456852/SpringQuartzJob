@@ -156,14 +156,14 @@
     <!--@author: eugene, @date: 2018/12/28 redis ends-->
 
     <!--@author: eugene @date: 2019/1/11 job scheduler start -->
-    <bean name="exampleJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
-        <property name="jobClass" value="spring.timedjob.ExampleJob"/>
-        <property name="jobDataAsMap">
-            <map>
-                <entry key="timeout" value="5"/>
-            </map>
-        </property>
-    </bean>
+    <!--<bean name="exampleJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">-->
+        <!--<property name="jobClass" value="spring.timedjob.ExampleJob"/>-->
+        <!--<property name="jobDataAsMap">-->
+            <!--<map>-->
+                <!--<entry key="timeout" value="5"/>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
     <!--@author: eugene @date: 2019/1/11 job scheduler end -->
 
 </beans>

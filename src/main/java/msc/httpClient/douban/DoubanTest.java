@@ -89,7 +89,6 @@ public class DoubanTest {
                 .addHeader("Postman-Token", "509eac00-708c-40c7-a42c-0414b895a023")
                 .build();
 //        OkHttpClient client = new OkHttpClient();
-//
 //        Request request = new Request.Builder()
 //                .url(url)
 //                .get()
@@ -172,17 +171,6 @@ public class DoubanTest {
         params.put("callback", "jsonp_j0x74alhmjxly0y");
         return params;
     }
-
-//    @Test
-//    public void javaSoup() throws IOException {
-//        Document doc = Jsoup.connect("http://example.com")
-//                .data("query", "Java")
-//                .userAgent("Mozilla")
-//                .cookie("auth", "token")
-//                .timeout(3000)
-//                .post();
-//        System.err.println("doc = " + doc);
-//    }
 
 
     /**
