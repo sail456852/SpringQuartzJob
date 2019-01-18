@@ -1,7 +1,9 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
 import spring.timedjob.SchedulingMain;
 
@@ -13,8 +15,11 @@ import spring.timedjob.SchedulingMain;
  * To change this template use File | Settings | File Templates.
  */
 @Configuration
+@PropertySource("classpath:redis.properties")
 public class JavaConfig {
 
+    @Value("${mykey}")
+    private String testValue;
     /**
      * Why are there two instances of thread pool? which makes two threads running almost
      * simultaneously
@@ -23,6 +28,7 @@ public class JavaConfig {
      */
     @Bean
     public MethodInvokingJobDetailFactoryBean timeJobTestBean(SchedulingMain schedulingMain){
+        System.err.println("JavaConfig.timeJobTestBean " + ", \"testValue\": " + testValue);
         MethodInvokingJobDetailFactoryBean factoryBean = new MethodInvokingJobDetailFactoryBean();
         factoryBean.setName("myTestJob");
         factoryBean.setGroup("my");

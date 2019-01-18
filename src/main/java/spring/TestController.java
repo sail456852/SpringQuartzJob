@@ -1,5 +1,6 @@
 package spring;
 
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -16,9 +17,17 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class TestController {
 
+    @Value("${mykey}")
+    private String testValue;
+
+    /**
+     * @return
+     * http://localhost:11111/test
+     */
     @RequestMapping("/test")
     @ResponseBody
     public String testController(){
+        System.err.println(" TestController testValue = " + testValue);
         System.err.println("TestController.testController");
         return "Test Okay";
     }
