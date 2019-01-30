@@ -4,24 +4,15 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/msc/databasepool/ConnectionInfoPrint.java" line="31" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a860a401-5786-4379-90a6-00f00f1cb092" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/form/AliPayOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/form/ApliPayOrder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/config/Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/MapCustomConverter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/NoticeRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/NoticeResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/ResultItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/TaskRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/TaskResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/utils/HttpRequest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/utils/JacksonHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/util/GsonUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="a860a401-5786-4379-90a6-00f00f1cb092" name="Default Changelist" comment="POJO to JSON String function &amp; Postman parameters format added">
+      <change afterPath="$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/spring/TestControllerTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/JavaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/JavaConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/timedjob/SchedulingMain.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <list id="1c417bd2-ee27-4aa6-aa5b-fbc6d9749929" name="DoNotCommit" comment="DoNotCommit">
       <change afterPath="$PROJECT_DIR$/Java8Tests.iml" afterDir="false" />
@@ -120,21 +111,22 @@
     <session id="-1663000963">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="25" />
+          <entry key="project.closed" value="31" />
           <entry key="project.open.time.0" value="5" />
-          <entry key="project.open.time.1" value="11" />
+          <entry key="project.open.time.1" value="15" />
           <entry key="project.open.time.10" value="2" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.13" value="1" />
           <entry key="project.open.time.18" value="1" />
-          <entry key="project.open.time.2" value="3" />
+          <entry key="project.open.time.2" value="4" />
           <entry key="project.open.time.40" value="1" />
           <entry key="project.open.time.41" value="1" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="30" />
+          <entry key="project.open.time.8" value="1" />
+          <entry key="project.open.time.9" value="2" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -147,7 +139,7 @@
           <entry key="http" value="5" />
           <entry key="iml" value="3" />
           <entry key="ini" value="1" />
-          <entry key="java" value="391" />
+          <entry key="java" value="419" />
           <entry key="js" value="3" />
           <entry key="json" value="2" />
           <entry key="jsp" value="1" />
@@ -155,10 +147,10 @@
           <entry key="sh" value="1" />
           <entry key="snippet" value="1" />
           <entry key="spel" value="2" />
-          <entry key="sql" value="27" />
+          <entry key="sql" value="31" />
           <entry key="t_pinpad_by_merchant_28" value="1" />
           <entry key="txt" value="3" />
-          <entry key="xml" value="51" />
+          <entry key="xml" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -170,34 +162,34 @@
           <entry key="HTML" value="4" />
           <entry key="HTTP Request" value="1" />
           <entry key="IDEA_MODULE" value="3" />
-          <entry key="JAVA" value="391" />
+          <entry key="JAVA" value="419" />
           <entry key="JSON" value="2" />
           <entry key="JSP" value="1" />
           <entry key="JavaScript" value="3" />
           <entry key="PLAIN_TEXT" value="6" />
           <entry key="Properties" value="31" />
           <entry key="SQL" value="3" />
-          <entry key="Scratch" value="29" />
+          <entry key="Scratch" value="33" />
           <entry key="SpEL" value="2" />
-          <entry key="XML" value="51" />
+          <entry key="XML" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="class" value="24" />
-          <entry key="dummy" value="32" />
+          <entry key="dummy" value="55" />
           <entry key="gitignore" value="71" />
           <entry key="html" value="231" />
           <entry key="http" value="289" />
-          <entry key="java" value="49954" />
+          <entry key="java" value="56380" />
           <entry key="js" value="240" />
           <entry key="json" value="153" />
           <entry key="properties" value="1805" />
           <entry key="sh" value="6" />
           <entry key="spel" value="1" />
-          <entry key="sql" value="4089" />
-          <entry key="txt" value="848" />
-          <entry key="xml" value="4513" />
+          <entry key="sql" value="4508" />
+          <entry key="txt" value="963" />
+          <entry key="xml" value="4550" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
@@ -206,15 +198,15 @@
           <entry key="CLASS" value="24" />
           <entry key="Git file" value="71" />
           <entry key="HTML" value="231" />
-          <entry key="JAVA" value="49954" />
+          <entry key="JAVA" value="56380" />
           <entry key="JSON" value="153" />
           <entry key="JavaScript" value="240" />
-          <entry key="PLAIN_TEXT" value="880" />
+          <entry key="PLAIN_TEXT" value="1018" />
           <entry key="Properties" value="1805" />
           <entry key="SQL" value="2" />
-          <entry key="Scratch" value="4376" />
+          <entry key="Scratch" value="4795" />
           <entry key="SpEL" value="1" />
-          <entry key="XML" value="4513" />
+          <entry key="XML" value="4550" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.core.usages.trigger">
@@ -227,52 +219,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/test.sh">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" selection-start-line="18" selection-end-line="18" />
+            <state relative-caret-position="187">
+              <caret line="22" selection-start-line="22" selection-end-line="22" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="341">
-              <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/msc/form/AliPayOrder.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="562">
-              <caret line="170" selection-start-line="170" selection-end-line="170" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/msc/util/GsonUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="260" column="25" selection-start-line="260" selection-start-column="25" selection-end-line="260" selection-end-column="25" />
+            <state relative-caret-position="232">
+              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
             </state>
           </provider>
         </entry>
@@ -287,6 +246,7 @@
         <option value="JavaScript File" />
         <option value="Arquillian JUnit Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -316,6 +276,7 @@
       <find>kuaidi100_callback</find>
       <find>CALLBACK_URL_VALUE</find>
       <find>localhost</find>
+      <find>00089219</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -339,12 +300,8 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/msc/databasepool/BaseDaoSlave.java" />
-        <option value="$PROJECT_DIR$/src/main/java/msc/databasepool/DBConnectionPool.java" />
-        <option value="$PROJECT_DIR$/src/main/resources/myc3p0.properties" />
         <option value="$PROJECT_DIR$/src/main/java/msc/databasepool/BaseDaoMaster.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/databasepool/work/SynchronizeVoucherUsedCount.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b89ec4c1-fe2e-43e3-8406-6ff485a488e3/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/msc/databasepool/ConnectionInfoPrint.java" />
         <option value="$APPLICATION_CONFIG_DIR$/consoles/db/97056c44-f57e-45a0-826e-a6ae6157f542/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/HttpsUtil.java" />
@@ -372,24 +329,28 @@
         <option value="$PROJECT_DIR$/src/main/java/udemy/cc/ProducerAndConsumer.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/douban/DoubanTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/douban/BaiduApiDemo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/spring/timedjob/SchedulingMain.java" />
         <option value="$PROJECT_DIR$/src/main/java/spring/timedjob/ExampleJob.java" />
         <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/douban/DouBan.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/TaskRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/NoticeRequest.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/pojo/Result.java" />
-        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fa89854d-9518-451e-8c4a-525a6eef54af/console.sql" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/config/Const.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/utils/HttpRequest.java" />
-        <option value="$PROJECT_DIR$/src/main/java/spring/JavaConfig.java" />
         <option value="$PROJECT_DIR$/src/main/java/spring/TestController.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/form/ApliPayOrder.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/msc/form/AliPayOrder.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spring/TestControllerTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/util/GsonUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/msc/form/AliPayOrder.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring/TestControllerTest.java" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/fa89854d-9518-451e-8c4a-525a6eef54af/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$APPLICATION_CONFIG_DIR$/consoles/db/b89ec4c1-fe2e-43e3-8406-6ff485a488e3/console.sql" />
+        <option value="$PROJECT_DIR$/src/main/java/spring/timedjob/SchedulingMain.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spring/JavaConfig.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java" />
       </list>
     </option>
   </component>
@@ -479,6 +440,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -526,14 +488,29 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="tij" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="timedjob" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
               <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Java8Tests" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="Java8Tests" type="b2602c69:ProjectViewProjectNode" />
@@ -587,7 +564,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -598,16 +574,17 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548053964319" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548840915913" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
-    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="create.test.in.the.same.root" value="true" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="extract.method.default.visibility" value="private" />
     <property name="last.edited.regexp" value="&#10;" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/src/main/java/tij/enumeration" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/Concurrency-in-Java-Deadlocks,-wait,-notify-and-notifyAll-methods-Source-code/Messages.iml" />
+    <property name="last_opened_file_path" value="D:/springtest/spring-test.gradle" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Artifacts" />
@@ -619,6 +596,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="spring" />
       <recent name="msc.httpClient" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
@@ -635,11 +613,11 @@
       <recent name="msc.collection" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Administrator\IdeaProjects\Java8Tests\src\test\java\spring\official" />
       <recent name="C:\Users\Administrator\IdeaProjects\Java8Tests" />
       <recent name="C:\Users\Administrator\IdeaProjects\Java8Tests\src\main\java\msc\httpClient\kuaidi100" />
       <recent name="C:\Users\Administrator\IdeaProjects\Java8Tests\src\main\java\msc\httpClient\douban" />
       <recent name="C:\Users\Administrator\IdeaProjects\Java8Tests\src\main\java\udemy\cc\example" />
-      <recent name="C:\Users\Administrator\IdeaProjects\Java8Tests\src\main\java\udemy\cc" />
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="msc.form" />
@@ -683,33 +661,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Application.ParamUtil">
-    <configuration name="HttpRequest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="msc.httpClient.kuaidi100.utils.HttpRequest" />
-      <module name="Java8Tests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="msc.httpClient.kuaidi100.utils.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="NoticeRequest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="msc.httpClient.kuaidi100.pojo.NoticeRequest" />
-      <module name="Java8Tests" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="msc.httpClient.kuaidi100.pojo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Maven.jetty">
     <configuration name="ParamUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="msc.util.ParamUtil" />
       <module name="Java8Tests" />
@@ -723,28 +675,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PropertiesTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="msc.databasepool.PropertiesTest" />
+    <configuration name="TestControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java8Tests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="msc.databasepool.*" />
+          <option name="PATTERN" value="spring.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="spring" />
+      <option name="MAIN_CLASS_NAME" value="spring.TestControllerTest" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TaskResponse" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="msc.httpClient.kuaidi100.pojo.TaskResponse" />
+    <configuration name="TestControllerTest.getAccount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Java8Tests" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="msc.httpClient.kuaidi100.pojo.*" />
+          <option name="PATTERN" value="spring.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="spring" />
+      <option name="MAIN_CLASS_NAME" value="spring.TestControllerTest" />
+      <option name="METHOD_NAME" value="getAccount" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestControllerTest.helloWorld" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java8Tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spring" />
+      <option name="MAIN_CLASS_NAME" value="spring.TestControllerTest" />
+      <option name="METHOD_NAME" value="helloWorld" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestControllerTest.testMockCallController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Java8Tests" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spring.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spring" />
+      <option name="MAIN_CLASS_NAME" value="spring.TestControllerTest" />
+      <option name="METHOD_NAME" value="testMockCallController" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -776,19 +764,19 @@
     </configuration>
     <list>
       <item itemvalue="Maven.jetty" />
-      <item itemvalue="Application.TaskResponse" />
-      <item itemvalue="Application.NoticeRequest" />
-      <item itemvalue="Application.HttpRequest" />
-      <item itemvalue="Application.PropertiesTest" />
       <item itemvalue="Application.ParamUtil" />
+      <item itemvalue="JUnit.TestControllerTest" />
+      <item itemvalue="JUnit.TestControllerTest.helloWorld" />
+      <item itemvalue="JUnit.TestControllerTest.testMockCallController" />
+      <item itemvalue="JUnit.TestControllerTest.getAccount" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.TestControllerTest.getAccount" />
+        <item itemvalue="JUnit.TestControllerTest.testMockCallController" />
+        <item itemvalue="JUnit.TestControllerTest.helloWorld" />
+        <item itemvalue="JUnit.TestControllerTest" />
         <item itemvalue="Application.ParamUtil" />
-        <item itemvalue="Application.PropertiesTest" />
-        <item itemvalue="Application.HttpRequest" />
-        <item itemvalue="Application.TaskResponse" />
-        <item itemvalue="Application.NoticeRequest" />
       </list>
     </recent_temporary>
   </component>
@@ -842,7 +830,14 @@
       <workItem from="1547636504898" duration="8953000" />
       <workItem from="1547780056209" duration="4276000" />
       <workItem from="1548035712935" duration="618000" />
-      <workItem from="1548050896665" duration="1431000" />
+      <workItem from="1548050896665" duration="2093000" />
+      <workItem from="1548054778033" duration="274000" />
+      <workItem from="1548138832782" duration="285000" />
+      <workItem from="1548139127043" duration="5043000" />
+      <workItem from="1548151504867" duration="1318000" />
+      <workItem from="1548224018238" duration="477000" />
+      <workItem from="1548224528479" duration="13982000" />
+      <workItem from="1548811957030" duration="8680000" />
     </task>
     <task id="LOCAL-00001" summary="Spring introduced! and it works!">
       <created>1545379185326</created>
@@ -1012,44 +1007,51 @@
       <option name="project" value="LOCAL" />
       <updated>1547810915119</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="POJO to JSON String function &amp; Postman parameters format added">
+      <created>1548054058505</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1548054058505</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="DoubanTest_okHttp - 2019.01.10 at 09h 41m 10s.xml">
-      <configuration name="DoubanTest.okHttp" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_testMockCallController - 2019.01.28 at 14h 30m 24s.xml">
+      <configuration name="TestControllerTest.testMockCallController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_okHttp - 2019.01.10 at 09h 51m 38s.xml">
-      <configuration name="DoubanTest.okHttp" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_testMockCallController - 2019.01.28 at 14h 30m 37s.xml">
+      <configuration name="TestControllerTest.testMockCallController" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_okHttp - 2019.01.10 at 09h 52m 14s.xml">
-      <configuration name="DoubanTest.okHttp" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.28 at 19h 34m 55s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_javaSoupDouban - 2019.01.10 at 09h 53m 29s.xml">
-      <configuration name="DoubanTest.javaSoupDouban" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.28 at 19h 34m 57s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_javaSoupDouban - 2019.01.10 at 09h 53m 55s.xml">
-      <configuration name="DoubanTest.javaSoupDouban" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.28 at 19h 35m 09s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_javaSoupDouban - 2019.01.10 at 09h 56m 30s.xml">
-      <configuration name="DoubanTest.javaSoupDouban" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.28 at 19h 35m 43s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_doubanClient - 2019.01.10 at 09h 56m 34s.xml">
-      <configuration name="DoubanTest.doubanClient" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.28 at 19h 36m 25s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_doubanClient - 2019.01.10 at 09h 56m 46s.xml">
-      <configuration name="DoubanTest.doubanClient" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.28 at 19h 38m 02s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_doubanClient - 2019.01.10 at 14h 59m 28s.xml">
-      <configuration name="DoubanTest.doubanClient" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.28 at 19h 42m 30s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DoubanTest_doubanClient - 2019.01.10 at 15h 00m 57s.xml">
-      <configuration name="DoubanTest.doubanClient" configurationId="JUnit" />
+    <history-entry file="TestControllerTest_getAccount - 2019.01.30 at 09h 32m 52s.xml">
+      <configuration name="TestControllerTest.getAccount" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221844000" />
+    <option name="totallyTimeSpent" value="252565000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1064,7 +1066,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.618123" visible="true" weight="0.1913646" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.618123" visible="true" weight="0.20309168" />
       <window_info id="Structure" order="1" sideWeight="0.38187703" side_tool="true" weight="0.23240939" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1076,26 +1078,27 @@
       <window_info x="740" y="379" width="440" height="282" id="IntelliCalc" order="9" type="FLOATING" />
       <window_info id="Web" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.3286334" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.61604583" weight="0.45012787" />
-      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.8704691" weight="0.36278588" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49856734" weight="0.32736573" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6119403" weight="0.4195279" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.869403" visible="true" weight="0.36266094" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.329718" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.32934132" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49946696" weight="0.3308026" />
-      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.38395417" side_tool="true" visible="true" weight="0.30686694" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989339" weight="0.3304721" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.13059701" side_tool="true" visible="true" weight="0.36266094" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
       <window_info anchor="bottom" id="Version Control" order="11" sideWeight="0.4989339" weight="0.164859" />
       <window_info anchor="bottom" id="JRebel Console" order="12" side_tool="true" />
       <window_info anchor="bottom" id="JRebel Executor" order="13" />
-      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.48560768" weight="0.28633407" />
+      <window_info anchor="bottom" id="Messages" order="14" sideWeight="0.48454157" weight="0.28540772" />
       <window_info anchor="bottom" id="Spring" order="15" />
       <window_info anchor="bottom" id="Problems" order="16" sideWeight="0.4978678" weight="0.329718" />
       <window_info anchor="bottom" id="Java Enterprise" order="17" />
-      <window_info anchor="bottom" id="Database Console" order="18" sideWeight="0.8176972" weight="0.46153846" />
+      <window_info anchor="bottom" id="Database Console" order="18" sideWeight="0.8160981" weight="0.33261803" />
       <window_info anchor="bottom" id="Inspection Results" order="19" sideWeight="0.4989339" weight="0.329718" />
       <window_info anchor="bottom" id="IvyIDEA" order="20" />
+      <window_info anchor="bottom" id="SVN Repositories" order="21" sideWeight="0.49946696" weight="0.32939914" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" visible="true" weight="0.16897655" />
@@ -1103,15 +1106,15 @@
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Theme Preview" order="5" />
       <window_info anchor="right" id="Maven Projects" order="6" weight="0.12313433" />
-      <window_info anchor="right" id="Database" order="7" sideWeight="0.49836066" weight="0.23560767" />
+      <window_info anchor="right" id="Database" order="7" sideWeight="0.496633" visible="true" weight="0.10181237" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Translate" order="9" weight="0.19711539" />
       <window_info anchor="right" id="JSF" order="10" weight="0.32995737" />
       <window_info anchor="right" id="CDI" order="11" />
       <window_info anchor="right" id="Bean Validation" order="12" />
-      <window_info anchor="right" id="JSON Viewer" order="13" weight="0.32995737" />
+      <window_info anchor="right" id="JSON Viewer" order="13" weight="0.021855012" />
       <window_info anchor="right" id="Coverage" order="14" side_tool="true" visible="true" weight="0.0" />
-      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="15" sideWeight="0.50163937" side_tool="true" visible="true" weight="0.23560767" />
+      <window_info anchor="right" x="0" y="0" width="434" height="896" id="Documentation" order="15" sideWeight="0.503367" side_tool="true" visible="true" weight="0.10181237" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1142,7 +1145,8 @@
     <MESSAGE value="douban replay added" />
     <MESSAGE value="hello" />
     <MESSAGE value="Quartz executed twice found" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quartz executed twice found" />
+    <MESSAGE value="POJO to JSON String function &amp; Postman parameters format added" />
+    <option name="LAST_COMMIT_MESSAGE" value="POJO to JSON String function &amp; Postman parameters format added" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="debuggerHistoryManager">
@@ -1160,91 +1164,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="das://680bf32d-1c04-4e0a-867a-8512e1a471d3/schema/lepos/table/t_pinpad_by_merchant_28" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/680bf32d-1c04-4e0a-867a-8512e1a471d3/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="71">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/databasepool/work/BaseDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/httpClient/CookieUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="113" column="14" selection-start-line="113" selection-start-column="14" selection-end-line="113" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/databasepool/work/UpdateBindPos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="977">
-          <caret line="71" column="73" selection-start-line="71" selection-start-column="73" selection-end-line="71" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/mysql/mysql-connector-java/5.1.46/mysql-connector-java-5.1.46-sources.jar!/com/mysql/jdbc/PreparedStatement.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="1857" selection-start-line="1857" selection-end-line="1857" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/MYTEST.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/databasepool/work/UpdateSentPos.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="398">
-          <caret line="77" column="8" selection-start-line="77" selection-start-column="8" selection-end-line="77" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Concurrency-in-Java-Deadlocks,-wait,-notify-and-notifyAll-methods-Source-code/.idea/workspace.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$USER_HOME$/Downloads/Concurrency-in-Java-Deadlocks,-wait,-notify-and-notifyAll-methods-Source-code/Messages.iml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/udemy/cc/Main.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/udemy/cc/example/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/udemy/cc/example/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/udemy/cc/ProducerAndConsumer.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/excel/ExcelUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="96">
-          <caret line="342" column="31" selection-start-line="342" selection-start-column="31" selection-end-line="342" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-context/4.3.8.RELEASE/spring-context-4.3.8.RELEASE-sources.jar!/org/springframework/scheduling/annotation/EnableScheduling.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="453">
@@ -1286,24 +1205,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/ExampleJob.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="395">
-          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1632">
           <caret line="162" column="47" selection-start-line="162" selection-start-column="47" selection-end-line="162" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="50" column="100" selection-start-line="50" selection-start-column="100" selection-end-line="50" selection-end-column="100" />
         </state>
       </provider>
     </entry>
@@ -1325,13 +1230,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="204">
           <caret line="20" selection-start-line="20" selection-end-line="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/SchedulingMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
         </state>
       </provider>
     </entry>
@@ -1398,13 +1296,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa89854d-9518-451e-8c4a-525a6eef54af/console.sql">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="358" column="10" selection-start-line="358" selection-start-column="10" selection-end-line="358" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/msc/httpClient/kuaidi100/utils/HttpRequest.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="389">
@@ -1419,45 +1310,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/databasepool/PropertiesTest.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="26" column="4" selection-start-line="26" selection-start-column="4" selection-end-line="26" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/resources/redis.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
           <caret line="10" column="12" selection-start-line="10" selection-start-column="12" selection-end-line="10" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/TestController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="321">
-          <caret line="23" column="13" selection-start-line="23" selection-start-column="13" selection-end-line="23" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="26" column="13" selection-start-line="26" selection-start-column="13" selection-end-line="26" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/test.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" selection-start-line="18" selection-end-line="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/form/ApliPayOrder.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="167" column="27" selection-start-line="167" selection-start-column="27" selection-end-line="167" selection-end-column="27" />
         </state>
       </provider>
     </entry>
@@ -1468,6 +1324,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/msc/form/ApliPayOrder.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/springlistener/EvenPublishController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/msc/form/AliPayOrder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="19" selection-start-line="6" selection-start-column="19" selection-end-line="6" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="442">
@@ -1475,30 +1346,138 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/util/GsonUtils.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/TestControllerTest.java" />
+    <entry file="file://$PROJECT_DIR$/test.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="55" column="8" selection-start-line="55" selection-start-column="8" selection-end-line="55" selection-end-column="8" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state>
+          <caret line="18" selection-start-line="18" selection-end-line="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/msc/form/AliPayOrder.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/msc/util/GsonUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="562">
-          <caret line="170" selection-start-line="170" selection-end-line="170" />
+        <state relative-caret-position="694">
+          <caret line="76" column="35" selection-start-line="76" selection-start-column="35" selection-end-line="76" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="50" column="11" selection-start-line="50" selection-start-column="11" selection-end-line="50" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_191/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1190">
+          <caret line="93" column="11" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="11" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="341">
-          <caret line="91" column="50" selection-start-line="91" selection-start-column="50" selection-end-line="91" selection-end-column="50" />
+        <state relative-caret-position="205">
+          <caret line="132" column="31" selection-start-line="132" selection-start-column="31" selection-end-line="132" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/msc/collection/MyLinkedList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/msc/collection/MapConvertFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="95" column="37" selection-start-line="95" selection-start-column="37" selection-end-line="95" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/msc/collection/GuavaTester.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="20" column="46" selection-start-line="20" selection-start-column="46" selection-end-line="20" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/msc/databasepool/PropertiesTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="16" column="29" selection-start-line="16" selection-start-column="29" selection-end-line="16" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/TestController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="17" column="25" selection-start-line="17" selection-start-column="25" selection-end-line="17" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/junit/junit/4.12/junit-4.12-sources.jar!/org/junit/internal/builders/AnnotatedBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="85" selection-start-line="85" selection-end-line="85" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring/official/WebAppResourceTests.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring/official/PersonController.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring/official/PersonDao.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring/official/XmlConfigTests.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring/official/AsyncControllerJavaConfigTests.java" />
+    <entry file="file://$PROJECT_DIR$/src/test/java/spring/TestControllerTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="413">
+          <caret line="47" selection-start-line="47" selection-end-line="47" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/ExampleJob.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="26" column="41" selection-start-line="26" selection-start-column="41" selection-end-line="26" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="378">
+          <caret line="50" column="100" selection-start-line="50" selection-start-column="100" selection-end-line="50" selection-end-column="100" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/fa89854d-9518-451e-8c4a-525a6eef54af/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="594" selection-start-line="594" selection-end-line="594" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/b89ec4c1-fe2e-43e3-8406-6ff485a488e3/console.sql">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="232">
+          <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
         </state>
       </provider>
     </entry>

@@ -47,8 +47,8 @@
 
 	<!--<listener>-->
 		<!--<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>-->
-    <!--@author: eugene @date: 2019/1/11 -->
-    <!-- this Listener will lead to quartz execute twice because of initialized twice component scan-->
+    <!--&lt;!&ndash;@author: eugene @date: 2019/1/11 &ndash;&gt;-->
+     <!--&lt;!&ndash;this Listener will lead to quartz execute twice because of initialized twice component scan&ndash;&gt;-->
 	<!--</listener>-->
 
 	<!-- 防止spring内存溢出监听器 -->
