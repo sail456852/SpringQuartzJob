@@ -4,15 +4,8 @@
     <bookmark url="file://$PROJECT_DIR$/src/main/java/msc/databasepool/ConnectionInfoPrint.java" line="31" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a860a401-5786-4379-90a6-00f00f1cb092" name="Default Changelist" comment="POJO to JSON String function &amp; Postman parameters format added">
-      <change afterPath="$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/spring/TestControllerTest.java" afterDir="false" />
+    <list default="true" id="a860a401-5786-4379-90a6-00f00f1cb092" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/msc/util/ParamUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/JavaConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/JavaConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/spring/timedjob/SchedulingMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
     </list>
     <list id="1c417bd2-ee27-4aa6-aa5b-fbc6d9749929" name="DoNotCommit" comment="DoNotCommit">
       <change afterPath="$PROJECT_DIR$/Java8Tests.iml" afterDir="false" />
@@ -188,7 +181,7 @@
           <entry key="sh" value="6" />
           <entry key="spel" value="1" />
           <entry key="sql" value="4508" />
-          <entry key="txt" value="963" />
+          <entry key="txt" value="1040" />
           <entry key="xml" value="4550" />
         </counts>
       </usages-collector>
@@ -201,7 +194,7 @@
           <entry key="JAVA" value="56380" />
           <entry key="JSON" value="153" />
           <entry key="JavaScript" value="240" />
-          <entry key="PLAIN_TEXT" value="1018" />
+          <entry key="PLAIN_TEXT" value="1095" />
           <entry key="Properties" value="1805" />
           <entry key="SQL" value="2" />
           <entry key="Scratch" value="4795" />
@@ -218,20 +211,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
+            <state relative-caret-position="221">
+              <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="232">
-              <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+            <state relative-caret-position="391">
+              <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
             </state>
           </provider>
         </entry>
@@ -574,7 +567,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="add_unversioned_files" value="true" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548840915913" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548841144603" />
     <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="HTTP Request" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
@@ -837,7 +830,7 @@
       <workItem from="1548151504867" duration="1318000" />
       <workItem from="1548224018238" duration="477000" />
       <workItem from="1548224528479" duration="13982000" />
-      <workItem from="1548811957030" duration="8680000" />
+      <workItem from="1548811957030" duration="8955000" />
     </task>
     <task id="LOCAL-00001" summary="Spring introduced! and it works!">
       <created>1545379185326</created>
@@ -1014,7 +1007,14 @@
       <option name="project" value="LOCAL" />
       <updated>1548054058505</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="new Job start method introduced: the trigger!">
+      <created>1548840990028</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1548840990028</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <option name="trackContextForNewChangelist" value="true" />
     <servers />
   </component>
@@ -1051,7 +1051,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="252565000" />
+    <option name="totallyTimeSpent" value="252840000" />
   </component>
   <component name="TodoView" selected-index="4">
     <todo-panel id="selected-file">
@@ -1066,7 +1066,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.618123" visible="true" weight="0.20309168" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.618123" visible="true" weight="0.20309168" />
       <window_info id="Structure" order="1" sideWeight="0.38187703" side_tool="true" weight="0.23240939" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -1080,7 +1080,7 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49856734" weight="0.32736573" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.6119403" weight="0.4195279" />
-      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.869403" visible="true" weight="0.36266094" />
+      <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.869403" visible="true" weight="0.36266094" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49946696" weight="0.329718" />
@@ -1146,7 +1146,8 @@
     <MESSAGE value="hello" />
     <MESSAGE value="Quartz executed twice found" />
     <MESSAGE value="POJO to JSON String function &amp; Postman parameters format added" />
-    <option name="LAST_COMMIT_MESSAGE" value="POJO to JSON String function &amp; Postman parameters format added" />
+    <MESSAGE value="new Job start method introduced: the trigger!" />
+    <option name="LAST_COMMIT_MESSAGE" value="new Job start method introduced: the trigger!" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="debuggerHistoryManager">
@@ -1467,17 +1468,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
+        <state relative-caret-position="391">
+          <caret line="56" lean-forward="true" selection-start-line="56" selection-end-line="56" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/JavaConfig.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="232">
-          <caret line="57" column="6" selection-start-line="57" selection-start-column="6" selection-end-line="57" selection-end-column="6" />
+        <state relative-caret-position="221">
+          <caret line="28" column="39" lean-forward="true" selection-start-line="28" selection-start-column="39" selection-end-line="28" selection-end-column="39" />
         </state>
       </provider>
     </entry>

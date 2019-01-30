@@ -25,8 +25,9 @@ public class JavaConfig {
     @Value("${mykey}")
     private String testValue;
     /**
+     * Job  Bean
      * Why are there two instances of thread pool? which makes two threads running almost
-     * simultaneously
+     * simultaneously Found because of listener
      * @param testJobDetail
      * @return
      */
@@ -43,6 +44,11 @@ public class JavaConfig {
     }
 
 
+    /**
+     * Trigger Bean
+     * @param testJobBean
+     * @return
+     */
     @Bean("testTriggerBean")
     public CronTriggerFactoryBean timeTriggerTestBean(@Qualifier("testJobBean")
                                                               MethodInvokingJobDetailFactoryBean testJobBean) {
@@ -56,8 +62,12 @@ public class JavaConfig {
 
 
     /**
+     * METHOD 1:
+     * Scheduler Factory Bean
      * Parameters is vargs!, added as many as you like.
      * SchedulerFactory -> Trigger -> Job -> JobDetail
+     * METHOD 2:
+     * or you just use Job -> JobDetail (with Annotation)
      * @param testTrigger
      * @return
      */
@@ -69,6 +79,5 @@ public class JavaConfig {
         factoryBean.setTriggers(testTrigger);
         return factoryBean;
     }
-
 
 }
