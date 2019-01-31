@@ -34,7 +34,6 @@ public class TestJobDetail {
 ////        DouBan.callComment(new HashMap<>(), true); // use cookies file
 //    }
 
-
     /**
      * called by trigger in Java config
      *
