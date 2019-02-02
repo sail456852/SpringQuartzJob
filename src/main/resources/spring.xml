@@ -153,6 +153,13 @@
         <property name="testOnBorrow" value="true"/>
     </bean>
 
+    <!-- This bean is used in conjunction with WebApplicationContext test, which will load
+         servlet container context
+    -->
+    <!--<bean id="testService" class="org.mockito.Mockito" factory-method="mock">-->
+        <!--<constructor-arg value="spring.service.TestService"/>-->
+    <!--</bean>-->
+
     <!--@author: eugene, @date: 2018/12/28 redis ends-->
 
     <!--@author: eugene @date: 2019/1/11 job scheduler start -->
