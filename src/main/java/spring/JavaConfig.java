@@ -6,10 +6,17 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
 import org.springframework.scheduling.quartz.MethodInvokingJobDetailFactoryBean;
 import org.springframework.scheduling.quartz.SchedulerFactoryBean;
+import org.thymeleaf.spring5.SpringTemplateEngine;
+import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
+import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import spring.timedjob.TestJobDetail;
+
+import java.util.Properties;
 
 /**
  * Created by IntelliJ IDEA.<br/>
@@ -55,7 +62,7 @@ public class JavaConfig {
         CronTriggerFactoryBean trigger = new CronTriggerFactoryBean();
         System.err.println("JavaConfig.timeTriggerTestBean");
         trigger.setJobDetail(testJobBean.getObject());
-        trigger.setCronExpression("0/1 * * * * ?");
+        trigger.setCronExpression("0/5 * * * * ?"); // TODO(1) change here to meet your need
         trigger.setName("test-trigger");
         return trigger;
     }
@@ -78,6 +85,52 @@ public class JavaConfig {
         factoryBean.setStartupDelay(15);
         factoryBean.setTriggers(testTrigger);
         return factoryBean;
+    }
+
+    @Bean
+    public JavaMailSender getJavaMailSender() {
+        JavaMailSenderImpl mailSender = new JavaMailSenderImpl();
+        mailSender.setHost("smtp.163.com");
+//        mailSender.setPort(465); // or 994 //SSL
+        mailSender.setPort(25); // NON SSL
+
+        mailSender.setUsername("sail456852@163.com");
+        mailSender.setPassword("Test1991");
+
+        Properties props = mailSender.getJavaMailProperties();
+        props.put("mail.transport.protocol", "smtp");
+        props.put("mail.smtp.auth", "true");
+        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.debug", "true");
+
+        return mailSender;
+    }
+
+
+    @Bean
+    public SpringTemplateEngine templateEngine() {
+        SpringTemplateEngine templateEngine = new SpringTemplateEngine();
+        templateEngine.setTemplateResolver(thymeleafTemplateResolver());
+        return templateEngine;
+    }
+
+    @Bean
+    public SpringResourceTemplateResolver thymeleafTemplateResolver() {
+        SpringResourceTemplateResolver templateResolver
+                = new SpringResourceTemplateResolver();
+//        templateResolver.setPrefix("/WEB-INF/views/");
+        templateResolver.setPrefix("classpath:templates/");
+        templateResolver.setSuffix(".html");
+        templateResolver.setTemplateMode("HTML5");
+        templateResolver.setCacheable(false);
+        return templateResolver;
+    }
+
+    @Bean
+    public ThymeleafViewResolver thymeleafViewResolver() {
+        ThymeleafViewResolver viewResolver = new ThymeleafViewResolver();
+        viewResolver.setTemplateEngine(templateEngine());
+        return viewResolver;
     }
 
 }

@@ -11,6 +11,8 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 import org.springframework.web.context.WebApplicationContext;
+import spring.dto.Pay;
+import spring.utils.EmailUtils;
 
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -33,6 +35,9 @@ public class ExampleTests {
     @Autowired
     private WebApplicationContext wac;
 
+    @Autowired
+    private EmailUtils emailUtils;
+
     private MockMvc mockMvc;
 
     @Before
@@ -45,5 +50,11 @@ public class ExampleTests {
         this.mockMvc.perform(get("/test")
                 .accept(MediaType.parseMediaType("application/json;charset=UTF-8")))
                 .andExpect(status().isOk());
+    }
+
+    @Test
+    public void sendTemplateMail() {
+        String msgBodyStr = "Java Test from Test Class";
+        emailUtils.sendTemplateMail("sail456852@163.com", "sail456852@163.com", "java test", "pay-notshow", msgBodyStr);
     }
 }

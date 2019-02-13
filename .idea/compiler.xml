@@ -6,11 +6,11 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Java8Tests" />
+        <module name="SpringQuartzJob" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Java8Tests" target="1.8" />
+      <module name="SpringQuartzJob" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
