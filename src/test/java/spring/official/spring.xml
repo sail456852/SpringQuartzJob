@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:task="http://www.springframework.org/schema/task" xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+			http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+			http://www.springframework.org/schema/context
+			http://www.springframework.org/schema/context/spring-context-4.1.xsd
+			http://www.springframework.org/schema/task
+        	http://www.springframework.org/schema/task/spring-task-4.1.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+
+    <context:annotation-config/>
+
+    <context:component-scan base-package="spring">
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+        <context:exclude-filter type="annotation" expression="org.springframework.web.bind.annotation.RestController"/>
+        <context:exclude-filter type="annotation"
+                                expression="org.springframework.web.bind.annotation.RestControllerAdvice"/>
+    </context:component-scan>
+
+    <task:annotation-driven/>
+
+    <aop:aspectj-autoproxy/>
+
+
+    <!--//@author: eugene @date: 2018/12/26 shiro ends-->
+
+    <!--@author: eugene, @date: 2018/12/28 redis start-->
+
+    <bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+        <property name="connectionFactory" ref="connectionFactory"/>
+    </bean>
+
+
+    <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
+        <property name="hostName" value="${redis.host}"/>
+        <property name="port" value="6379"/>
+        <property name="password" value="${redis.pass}"/>
+        <property name="poolConfig" ref="poolConfig"/>
+    </bean>
+
+    <bean id="poolConfig" class="redis.clients.jedis.JedisPoolConfig">
+        <property name="maxIdle" value="20"/>
+        <property name="maxTotal" value="2000"/>
+        <property name="maxWaitMillis" value="2000"/>
+        <property name="testOnBorrow" value="true"/>
+    </bean>
+
+    <!-- This bean is used in conjunction with WebApplicationContext test, which will load
+         servlet container context
+    -->
+    <!--<bean id="testService" class="org.mockito.Mockito" factory-method="mock">-->
+        <!--<constructor-arg value="spring.service.TestService"/>-->
+    <!--</bean>-->
+
+    <!--@author: eugene, @date: 2018/12/28 redis ends-->
+
+    <!--@author: eugene @date: 2019/1/11 job scheduler start -->
+    <!--<bean name="exampleJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">-->
+        <!--<property name="jobClass" value="spring.timedjob.ExampleJob"/>-->
+        <!--<property name="jobDataAsMap">-->
+            <!--<map>-->
+                <!--<entry key="timeout" value="5"/>-->
+            <!--</map>-->
+        <!--</property>-->
+    <!--</bean>-->
+    <!--@author: eugene @date: 2019/1/11 job scheduler end -->
+
+</beans>

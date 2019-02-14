@@ -14,7 +14,6 @@ import java.util.HashMap;
 
 public class TestJobDetailTest {
 
-
     @Test
     public void queryBooksStatus() {
 //        TestJobDetail.queryBooksStatus( "3467827");

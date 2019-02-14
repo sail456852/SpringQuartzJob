@@ -95,7 +95,7 @@ public class JavaConfig {
         mailSender.setPort(25); // NON SSL
 
         mailSender.setUsername("sail456852@163.com");
-        mailSender.setPassword("Test1991");
+        mailSender.setPassword("Test1991"); // not password but validation code
 
         Properties props = mailSender.getJavaMailProperties();
         props.put("mail.transport.protocol", "smtp");
@@ -119,7 +119,7 @@ public class JavaConfig {
         SpringResourceTemplateResolver templateResolver
                 = new SpringResourceTemplateResolver();
 //        templateResolver.setPrefix("/WEB-INF/views/");
-        templateResolver.setPrefix("classpath:templates/");
+        templateResolver.setPrefix("classpath:templates/"); // under resources folder
         templateResolver.setSuffix(".html");
         templateResolver.setTemplateMode("HTML5");
         templateResolver.setCacheable(false);
