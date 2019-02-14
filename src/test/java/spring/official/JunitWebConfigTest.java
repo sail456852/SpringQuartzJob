@@ -1,6 +1,6 @@
 package spring.official;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.BeforeEach;
 import org.springframework.http.MediaType;
 import org.springframework.test.context.junit.jupiter.web.SpringJUnitWebConfig;
@@ -12,10 +12,11 @@ import static org.springframework.test.web.servlet.request.MockMvcRequestBuilder
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.*;
 
 /**
- * FIXME(1) Why is this null pointer ? not loaded !
- *
+ *  Why is this null pointer ? not loaded !
+ *   Test Class should be from jupiter package & @BeforeEach should
+ *  also come from the same package
  */
-@SpringJUnitWebConfig(locations = "classpath*:")
+@SpringJUnitWebConfig(locations = "classpath:spring.xml")
 public class JunitWebConfigTest {
 
     private MockMvc mockMvc;
