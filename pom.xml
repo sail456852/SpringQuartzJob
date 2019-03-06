@@ -374,6 +374,7 @@
 
     <profiles>
         <profile>
+            <!--can't be read by test-->
             <id>localhost</id>
             <activation>
                 <activeByDefault>true</activeByDefault>

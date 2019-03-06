@@ -40,7 +40,7 @@ public class JavaConfig {
      */
     @Bean("testJobBean")
     public MethodInvokingJobDetailFactoryBean timeJobTestBean(TestJobDetail testJobDetail){
-        System.err.println("JavaConfig.timeJobTestBean " + ", \"testValue\": " + testValue);
+//        System.err.println("JavaConfig.timeJobTestBean " + ", \"testValue\": " + testValue);
         MethodInvokingJobDetailFactoryBean factoryBean = new MethodInvokingJobDetailFactoryBean();
         factoryBean.setName("myTestJob");
         factoryBean.setGroup("my");
@@ -60,7 +60,7 @@ public class JavaConfig {
     public CronTriggerFactoryBean timeTriggerTestBean(@Qualifier("testJobBean")
                                                               MethodInvokingJobDetailFactoryBean testJobBean) {
         CronTriggerFactoryBean trigger = new CronTriggerFactoryBean();
-        System.err.println("JavaConfig.timeTriggerTestBean");
+//        System.err.println("JavaConfig.timeTriggerTestBean");
         trigger.setJobDetail(testJobBean.getObject());
         trigger.setCronExpression("0/5 * * * * ?"); // TODO(1) change here to meet your need
         trigger.setName("test-trigger");
@@ -76,16 +76,17 @@ public class JavaConfig {
      * METHOD 2:
      * or you just use Job -> JobDetail (with Annotation)
      * @param testTrigger
+     * DISABLE THIS TRIGGER METHOD, use simple annoation
      * @return
      */
-    @Bean(name="schedulerFactory")
-    public SchedulerFactoryBean schedulerFactory(@Qualifier("testTriggerBean") Trigger testTrigger ) {
-        SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
-        factoryBean.setOverwriteExistingJobs(true);
-        factoryBean.setStartupDelay(15);
-        factoryBean.setTriggers(testTrigger);
-        return factoryBean;
-    }
+//    @Bean(name="schedulerFactory")
+//    public SchedulerFactoryBean schedulerFactory(@Qualifier("testTriggerBean") Trigger testTrigger ) {
+//        SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
+//        factoryBean.setOverwriteExistingJobs(true);
+//        factoryBean.setStartupDelay(15);
+//        factoryBean.setTriggers(testTrigger);
+//        return factoryBean;
+//    }
 
     @Bean
     public JavaMailSender getJavaMailSender() {

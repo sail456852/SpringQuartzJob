@@ -9,8 +9,12 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.scheduling.annotation.EnableScheduling;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
+import spring.douban.DouBan;
 import spring.dto.Pay;
 import spring.utils.EmailUtils;
 
@@ -35,22 +39,38 @@ public class TestJobDetail {
     @Autowired
     private EmailUtils emailUtils;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     private static Map<String, String> sentRecords = new HashMap<String, String>();
 
     private static int count = 0;
 
-//    /**
-//     * works fine
-//     * @throws IOException
-//     * @throws ClassNotFoundException
-//     */
-//    @Scheduled(cron = "0/1 * * * * ?") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
-//    public void timedJob() throws IOException, ClassNotFoundException {
-//        Date date = new Date(); //        System.err.println("SchedulingMain.timedJob " + date);
-//        logger.info("timedJob() \"job start at\": " + date);
-//        // just trying to give comment without the interfere
-////        DouBan.callComment(new HashMap<>(), true); // use cookies file
-//    }
+    /**
+     * works fine
+     *
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    @Scheduled(cron = "0/2 * * * * ?") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
+    public void timedJob2() throws IOException, ClassNotFoundException {
+        Date date = new Date(); //        System.err.println("SchedulingMain.timedJob " + date);
+        logger.info("timedJob() \"job start at\": " + date);
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        // just trying to give comment without the interfere
+//        DouBan.callComment(new HashMap<>(), true); // use cookies file
+        Object d1 = valueOperations.get("d1");
+        if (d1 == null) {
+            try {
+                Thread.sleep(3000);
+                System.err.println("TestJobDetail.timedJob2 is null");
+                return;
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+        System.err.println("d1 = " + d1);
+    }
 
     /**
      * called by trigger in Java config
@@ -111,7 +131,6 @@ public class TestJobDetail {
         }
         return false;
     }
-
 
 
 }
