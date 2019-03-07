@@ -9,6 +9,7 @@ import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.IOException;
@@ -22,6 +23,7 @@ import java.util.*;
  * @outhor lizhichao
  * @create 2018-05-18 16:33
  */
+@PropertySource(value = "classpath:redis.properties")
 public class DouBanUtils {
 
     static String doubanLogonCookies = "doubanLogonCookies";
@@ -46,21 +48,15 @@ public class DouBanUtils {
 
     }
 
-
-
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-
-        List<String> urls = null;
-        callComment(new HashMap<>(), false, urls);
+//        String password = "i1234567";
+//        String username = "sail456852@hotmail.com";
+//        login(username, password);
+        List<String> urls = new ArrayList<>();
+        urls.add("https://www.douban.com/group/topic/127050074/");
     }
 
-    @Test
-    public void loginTest() throws IOException, ClassNotFoundException {
-        List<String> urls = null;
-        new DouBanUtils().login(urls);
-    }
-
-    public static void login(List<String> urls) throws IOException, ClassNotFoundException {
+    public static void login(String username, String password) throws IOException, ClassNotFoundException {
         String url = "https://accounts.douban.com/login";
         Connection connect = Jsoup.connect(url);
         Connection method = connect.method(Connection.Method.POST).timeout(10000);
@@ -91,8 +87,8 @@ public class DouBanUtils {
         }
 
         Map<String, String> dataMap = new HashMap<String, String>() {{
-            put("form_email", "sail456852@hotmail.com");
-            put("form_password", "i1234567");
+            put("form_email", username);
+            put("form_password", password);
             put("source", "index_nav");
             put("redir", "https://www.douban.com");
             put("source", "none");
@@ -124,73 +120,35 @@ public class DouBanUtils {
 
         logonCookie = loginResponse.cookies();
         MapConvertFile.outputFile(logonCookie, doubanLogonCookies);
+
+        List<String> urls = new ArrayList<>();
+        urls.add("https://www.douban.com/group/topic/127050074/");
         callComment(logonCookie, false, urls);
     }
 
-    @Test
-    public void toStringList() {
-        String[] arr = {"form_email", "sail456852@hotmail.com", "form_password", "i1234567",
-                "source", "index_nav", "redir", "https://www.douban.com", "source", "None"};
-        List<String> dataList = new ArrayList<>(Arrays.asList(arr));
-//        dataList.addAll(new ArrayList<String>(){{add("captcha-id"); add("testcaptchaid");}});
-        dataList.add("captcha-id");
-        dataList.add("testcaptchaid");
-        System.err.println("dataList = " + dataList);
-    }
 
-    @Test
-    public void readFromCookies() throws IOException, ClassNotFoundException {
-        InputStream resourceAsStream = this.getClass().getClassLoader()
-                .getResourceAsStream(doubanLogonCookies);
-        ObjectInputStream s = new ObjectInputStream(resourceAsStream);
-        HashMap<String, String> dlCookies = (HashMap<String, String>) s.readObject();
-        System.err.println("dlCookies = " + dlCookies);
-    }
 
-    @Test
-    public void writeToCookies() throws IOException, ClassNotFoundException {
-        InputStream resourceAsStream = this.getClass().getClassLoader()
-                .getResourceAsStream("");
-        ObjectInputStream s = new ObjectInputStream(resourceAsStream);
-        HashMap<String, String> dlCookies = (HashMap<String, String>) s.readObject();
-        System.err.println("dlCookies = " + dlCookies);
-    }
-
-    @Test
-    public void callCommentTest() throws IOException, ClassNotFoundException {
-        HashMap<String, String> map = new HashMap<String, String>();
-        map.put("testKey", "keyValue");
-        MapConvertFile.outputFile(map, "testFileYuzhen");
-    }
 
 
     @SuppressWarnings("Duplicates")
     public static void callComment(Map<String, String> logonCookie, boolean calledByJob, List<String> urls) throws IOException, ClassNotFoundException {
         DouBanUtils.calledByJob = calledByJob;
-        logger.info("Call by Comment log");
-//        HashMap<String, String> map = new HashMap<String, String>();
-//        map.put("testKey", "keyValue");
-//        logger.info("test file yuzhen is executing");
-//        MapConvertFile.outputFile(map, "testFileYuzhen");
-        // read from class path
-        logger.info("read from classpath DouBanUtils.class");
-//        HashMap<String, String> dlCookies = getCookiesFromClassPath();
           HashMap<String, String> dlCookies = MapConvertFile.inputFile(doubanLogonCookies);
         System.err.println("logonCookie = " + logonCookie);
         System.err.println("dlCookies = " + dlCookies);
-        logger.info("callComment() \"dlCookies\": " + dlCookies);
         if (!calledByJob) {
-            logger.info("file cookies used!");
+
             for (String url : urls) {
                 try {
                     Thread.sleep(3000);
-//                    huitie(dlCookies, url, "the area best");
+                    huitie(dlCookies, url, "the area best");
+                    Thread.sleep(60000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
         } else {
-            logger.info("file cookies used! called by job");
+            logger.info("called by job");
             int count = 0;
             for (String url : urls) {
                 count++;
@@ -200,7 +158,9 @@ public class DouBanUtils {
                     if (count > 2) {
                         Thread.sleep(30000 + i);  // 30s each
                     }
-//                    huitie(dlCookies, url, "up");
+                    huitie(dlCookies, url, "up");
+                    System.err.println("DouBanUtils.callComment sleeping 1 min!");
+                    Thread.sleep(60000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

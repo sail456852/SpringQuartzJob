@@ -62,6 +62,7 @@ public class TestJobDetail {
         // just trying to give comment without the interfere
         List<String> keys = getTieziKeysRedis();
         List<String> urls = getTieziUrlsRedis(keys);
+        System.err.println("urls = " + urls);
         DouBanUtils.callComment(new HashMap<>(), true, urls); // use cookies file
     }
 
@@ -69,7 +70,7 @@ public class TestJobDetail {
         ArrayList<String> list = new ArrayList<>();
         for (String key : keys) {
             ValueOperations valueOperations = redisTemplate.opsForValue();
-            Object value = valueOperations.get("key");
+            Object value = valueOperations.get(key);
             if (value != null)
                 list.add(value.toString());
         }

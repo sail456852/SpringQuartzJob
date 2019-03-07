@@ -70,7 +70,7 @@ public class MapConvertFile {
      * @return
      * @throws IOException
      * @throws ClassNotFoundException
-     * project root, or webapps folder root on the server,
+     * read from project root, or webapps folder root on the server,
      */
     public static HashMap<String, String> inputFile(String fileName) throws IOException, ClassNotFoundException {
         DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(fileName)));
