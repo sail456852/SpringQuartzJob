@@ -8,6 +8,8 @@ import org.jsoup.select.Elements;
 import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.redis.core.RedisTemplate;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -20,44 +22,45 @@ import java.util.*;
  * @outhor lizhichao
  * @create 2018-05-18 16:33
  */
-public class DouBan {
+public class DouBanUtils {
 
-    private static List<String> urls;
     static String doubanLogonCookies = "doubanLogonCookies";
     private static Logger logger ;
     private static Random random = new Random(100);
-    ;
+
     private static boolean calledByJob = false;
 
+    @Autowired
+    private RedisTemplate redisTemplate;
+
     static {
-        logger = LoggerFactory.getLogger(DouBan.class);
-        urls = Arrays.asList(
-                "https://www.douban.com/group/topic/131119511/",
-                "https://www.douban.com/group/topic/130698339/",
-                "https://www.douban.com/group/topic/131156212/",
-                "https://www.douban.com/group/topic/131153591/",
-                "https://www.douban.com/group/topic/131153118/",
-                "https://www.douban.com/group/topic/131119957/"
-        );
-    }
-
-
-    @Test
-    public void readFromRedis() {
+        logger = LoggerFactory.getLogger(DouBanUtils.class);
+//        urls = Arrays.asList(
+//                "https://www.douban.com/group/topic/131119511/",
+//                "https://www.douban.com/group/topic/130698339/",
+//                "https://www.douban.com/group/topic/131156212/",
+//                "https://www.douban.com/group/topic/131153591/",
+//                "https://www.douban.com/group/topic/131153118/",
+//                "https://www.douban.com/group/topic/131119957/"
+//        );
 
     }
+
 
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
-        callComment(new HashMap<>(), false);
+
+        List<String> urls = null;
+        callComment(new HashMap<>(), false, urls);
     }
 
     @Test
     public void loginTest() throws IOException, ClassNotFoundException {
-        new DouBan().login();
+        List<String> urls = null;
+        new DouBanUtils().login(urls);
     }
 
-    public static void login() throws IOException, ClassNotFoundException {
+    public static void login(List<String> urls) throws IOException, ClassNotFoundException {
         String url = "https://accounts.douban.com/login";
         Connection connect = Jsoup.connect(url);
         Connection method = connect.method(Connection.Method.POST).timeout(10000);
@@ -96,14 +99,14 @@ public class DouBan {
         }};
 
         if (captchaCode == null) {
-            System.err.println("DouBan.login no captcha yeah!");
+            System.err.println("DouBanUtils.login no captcha yeah!");
             if (calledByJob) {
-                logger.info("DouBan.login no captcha yeah!");
+                logger.info("DouBanUtils.login no captcha yeah!");
             }
         } else {
-            System.err.println("DouBan.login calling comment function captcha is not empty");
+            System.err.println("DouBanUtils.login calling comment function captcha is not empty");
             if (calledByJob) {
-                logger.info("DouBan.login calling comment function captcha is not empty");
+                logger.info("DouBanUtils.login calling comment function captcha is not empty");
             }
             dataMap.put("captcha-id", captchaId);
             dataMap.put("captcha-solution", captchaCode);
@@ -121,7 +124,7 @@ public class DouBan {
 
         logonCookie = loginResponse.cookies();
         MapConvertFile.outputFile(logonCookie, doubanLogonCookies);
-        callComment(logonCookie, false);
+        callComment(logonCookie, false, urls);
     }
 
     @Test
@@ -162,15 +165,15 @@ public class DouBan {
 
 
     @SuppressWarnings("Duplicates")
-    public static void callComment(Map<String, String> logonCookie, boolean calledByJob) throws IOException, ClassNotFoundException {
-        DouBan.calledByJob = calledByJob;
+    public static void callComment(Map<String, String> logonCookie, boolean calledByJob, List<String> urls) throws IOException, ClassNotFoundException {
+        DouBanUtils.calledByJob = calledByJob;
         logger.info("Call by Comment log");
 //        HashMap<String, String> map = new HashMap<String, String>();
 //        map.put("testKey", "keyValue");
 //        logger.info("test file yuzhen is executing");
 //        MapConvertFile.outputFile(map, "testFileYuzhen");
         // read from class path
-        logger.info("read from classpath DouBan.class");
+        logger.info("read from classpath DouBanUtils.class");
 //        HashMap<String, String> dlCookies = getCookiesFromClassPath();
           HashMap<String, String> dlCookies = MapConvertFile.inputFile(doubanLogonCookies);
         System.err.println("logonCookie = " + logonCookie);
@@ -178,10 +181,10 @@ public class DouBan {
         logger.info("callComment() \"dlCookies\": " + dlCookies);
         if (!calledByJob) {
             logger.info("file cookies used!");
-            for (String ur : urls) {
+            for (String url : urls) {
                 try {
                     Thread.sleep(3000);
-                    huitie(dlCookies, ur, "the area best");
+//                    huitie(dlCookies, url, "the area best");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -189,7 +192,7 @@ public class DouBan {
         } else {
             logger.info("file cookies used! called by job");
             int count = 0;
-            for (String ur : urls) {
+            for (String url : urls) {
                 count++;
                 int i = random.nextInt(100);
                 try {
@@ -197,7 +200,7 @@ public class DouBan {
                     if (count > 2) {
                         Thread.sleep(30000 + i);  // 30s each
                     }
-                    huitie(dlCookies, ur, "up");
+//                    huitie(dlCookies, url, "up");
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
@@ -206,7 +209,7 @@ public class DouBan {
     }
 
     private static HashMap<String, String> getCookiesFromClassPath() throws IOException, ClassNotFoundException {
-        InputStream resourceAsStream = DouBan.class.getClassLoader()
+        InputStream resourceAsStream = DouBanUtils.class.getClassLoader()
                 .getResourceAsStream(doubanLogonCookies);
         ObjectInputStream s = new ObjectInputStream(resourceAsStream);
         return (HashMap<String, String>) s.readObject();
@@ -265,12 +268,5 @@ public class DouBan {
         System.err.println("comment = " + comment + "  finished ");
     }
 
-    @Test
-    public void url() {
-        for (String url : urls) {
-            String comment = url.replaceAll("comment", "");
-            System.err.println("comment = " + comment);
-        }
-    }
 }
 

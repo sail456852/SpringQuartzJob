@@ -9,19 +9,17 @@ import org.jsoup.select.Elements;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import spring.douban.DouBan;
-import spring.dto.Pay;
+import spring.douban.DouBanUtils;
 import spring.utils.EmailUtils;
 
 import java.io.IOException;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.<br/>
@@ -29,9 +27,13 @@ import java.util.Map;
  * Date: 2018/12/21<br/>
  * Time: 16:49<br/>
  * To change this template use File | Settings | File Templates.
+ * Annotation
+ @PropertySource(value = "classpath:redis.properties")
+ can get value from property file within seconds
  */
 @Component
 @EnableScheduling
+@PropertySource(value = "classpath:redis.properties")
 public class TestJobDetail {
 
     Logger logger = LoggerFactory.getLogger(TestJobDetail.class);
@@ -46,30 +48,64 @@ public class TestJobDetail {
 
     private static int count = 0;
 
+
     /**
      * works fine
      *
      * @throws IOException
      * @throws ClassNotFoundException
      */
-    @Scheduled(cron = "0/2 * * * * ?") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
+    @Scheduled(cron = "${cronExpression}") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
     public void timedJob2() throws IOException, ClassNotFoundException {
         Date date = new Date(); //        System.err.println("SchedulingMain.timedJob " + date);
         logger.info("timedJob() \"job start at\": " + date);
-        ValueOperations valueOperations = redisTemplate.opsForValue();
         // just trying to give comment without the interfere
-//        DouBan.callComment(new HashMap<>(), true); // use cookies file
-        Object d1 = valueOperations.get("d1");
-        if (d1 == null) {
-            try {
-                Thread.sleep(3000);
-                System.err.println("TestJobDetail.timedJob2 is null");
-                return;
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
+        List<String> keys = getTieziKeysRedis();
+        List<String> urls = getTieziUrlsRedis(keys);
+        DouBanUtils.callComment(new HashMap<>(), true, urls); // use cookies file
+    }
+
+    private List<String> getTieziUrlsRedis(List<String> keys) {
+        ArrayList<String> list = new ArrayList<>();
+        for (String key : keys) {
+            ValueOperations valueOperations = redisTemplate.opsForValue();
+            Object value = valueOperations.get("key");
+            if (value != null)
+                list.add(value.toString());
         }
-        System.err.println("d1 = " + d1);
+        return list;
+    }
+
+    private List<String> getTieziKeysRedis() {
+        Set<String> redisKeys = redisTemplate.keys("d*");
+        // Store the keys in a List
+        List<String> keysList = new ArrayList<>();
+        Iterator<String> it = redisKeys.iterator();
+        while (it.hasNext()) {
+            String data = it.next();
+            if (!StringUtils.isEmpty(data) && data.length() <= 3)
+                keysList.add(data);
+        }
+        for (String s : keysList) {
+            System.err.println("s = " + s);
+        }
+        return keysList;
+    }
+
+    private void printRangeKeys(ValueOperations valueOperations) {
+        for (int i = 1; i <= 5; i++) {
+            Object di = valueOperations.get("d" + i);
+            if (di == null) {
+                try {
+                    Thread.sleep(1000);
+                    System.err.println("TestJobDetail.timedJob2 is null");
+                    return;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.err.println("di = " + di);
+        }
     }
 
     /**

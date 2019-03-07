@@ -65,6 +65,13 @@ public class MapConvertFile {
         s.close();
     }
 
+    /**
+     * @param fileName
+     * @return
+     * @throws IOException
+     * @throws ClassNotFoundException
+     * project root, or webapps folder root on the server,
+     */
     public static HashMap<String, String> inputFile(String fileName) throws IOException, ClassNotFoundException {
         DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(fileName)));
         ObjectInputStream s = new ObjectInputStream(dis);

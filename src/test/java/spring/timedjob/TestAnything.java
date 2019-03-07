@@ -3,12 +3,17 @@ package spring.timedjob;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.dao.DataAccessException;
+import org.springframework.data.redis.connection.RedisConnection;
+import org.springframework.data.redis.core.*;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.util.StringUtils;
+import redis.clients.jedis.ScanParams;
+import redis.clients.jedis.ScanResult;
 
-import java.util.HashMap;
+import java.io.IOException;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.<br/>
@@ -39,6 +44,23 @@ public class TestAnything {
         valueOperations.set("yuzhen", "HelloWorldIWannaBeFree");
         String yuzhen = valueOperations.get("yuzhen").toString();
         System.err.println("yuzhen = " + yuzhen);
+    }
+
+    @org.junit.Test
+    public void testRedisScan() {
+        Set<String> redisKeys = redisTemplate.keys("d*");
+        // Store the keys in a List
+        List<String> keysList = new ArrayList<>();
+        Iterator<String> it = redisKeys.iterator();
+        while (it.hasNext()) {
+            String data = it.next();
+            if(!StringUtils.isEmpty(data) && data.length() <= 3)
+            keysList.add(data);
+        }
+
+        for (String s : keysList) {
+            System.err.println("s = " + s);
+        }
     }
 
 }
