@@ -9,8 +9,10 @@ import org.junit.Test;
 import java.io.*;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Created by Okita.<br/>
@@ -26,10 +28,8 @@ public class MapConvertFile {
     public void map2file()
             throws IOException, ClassNotFoundException {
         Map<String, String> paramMap = getParamMap();
-//        outputFileJackson(paramMap, fileName);
         outputFile(paramMap, fileName);
-//        HashMap<String, String> mapFromFile = inputFileJackson(fileName);
-        HashMap<String, String> mapFromFile = inputFile(fileName);
+        HashMap<String, String> mapFromFile = file2HashMap(fileName);
         System.err.println("mapFromFile = " + mapFromFile);
         Assert.assertEquals(paramMap.hashCode(), mapFromFile.hashCode());
         Assert.assertEquals(paramMap.toString(), mapFromFile.toString());
@@ -39,9 +39,8 @@ public class MapConvertFile {
     public static void outputFile(Map<String, String> map, String fileName) throws IOException {
         ObjectOutputStream s = new ObjectOutputStream(new DataOutputStream
                 (new BufferedOutputStream(new FileOutputStream(fileName))));
-        // write to classpath
         try {
-            URL resource = Thread.currentThread().getContextClassLoader().getResource("doubanLogonCookies");
+            URL resource = Thread.currentThread().getContextClassLoader().getResource("spring/timedjob/doubanLogonCookies");
             String path = resource.toURI().getPath();
             System.err.println("path = " + path);
         } catch (URISyntaxException e) {
@@ -72,11 +71,11 @@ public class MapConvertFile {
      * @throws ClassNotFoundException
      * read from project root, or webapps folder root on the server,
      */
-    public static HashMap<String, String> inputFile(String fileName) throws IOException, ClassNotFoundException {
+    public static HashMap<String, String> file2HashMap(String fileName) throws IOException, ClassNotFoundException {
         DataInputStream dis = new DataInputStream(new BufferedInputStream(new FileInputStream(fileName)));
         ObjectInputStream s = new ObjectInputStream(dis);
-        HashMap<String, String> fileObj2 = (HashMap<String, String>) s.readObject();
-        return fileObj2;
+        HashMap<String, String> hashMap = (HashMap<String, String>) s.readObject();
+        return hashMap;
     }
 
     public static HashMap<String, String> inputFileJackson(String fileName) throws IOException, ClassNotFoundException {
@@ -102,5 +101,19 @@ public class MapConvertFile {
         params.put("from_push", "undefined");
         params.put("callback", "jsonp_j0x74alhmjxly0y");
         return params;
+    }
+
+    /**
+     *
+     * @param str must be valid json like format e.g. { key=val, key=val}
+     * @return
+     */
+    public static Map<String, String> string2HashMap(String str){
+        str = str.substring(1, str.length() - 1);
+        Map<String, String> reconstructedUtilMap = Arrays.stream(str.split(","))
+                .map(s -> s.split("=", 2))
+                .collect(Collectors.toMap(s -> s[0], s -> s[1]));
+
+        return reconstructedUtilMap;
     }
 }

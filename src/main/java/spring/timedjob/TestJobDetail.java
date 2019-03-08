@@ -11,11 +11,10 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import spring.douban.DouBanUtils;
+import spring.douban.DouBanService;
 import spring.utils.EmailUtils;
 
 import java.io.IOException;
@@ -42,7 +41,7 @@ public class TestJobDetail {
     private EmailUtils emailUtils;
 
     @Autowired
-    private RedisTemplate redisTemplate;
+    private DouBanService douBanService;
 
     private static Map<String, String> sentRecords = new HashMap<String, String>();
 
@@ -57,57 +56,16 @@ public class TestJobDetail {
      */
     @Scheduled(cron = "${cronExpression}") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
     public void timedJob2() throws IOException, ClassNotFoundException {
-        Date date = new Date(); //        System.err.println("SchedulingMain.timedJob " + date);
+        Date date = new Date();
         logger.info("timedJob() \"job start at\": " + date);
-        // just trying to give comment without the interfere
-        List<String> keys = getTieziKeysRedis();
-        List<String> urls = getTieziUrlsRedis(keys);
+
+        List<String> keys = douBanService.getTieziKeysRedis();
+        List<String> urls = douBanService.getTieziUrlsRedis(keys);
         System.err.println("urls = " + urls);
-        DouBanUtils.callComment(new HashMap<>(), true, urls); // use cookies file
+        douBanService.callComment(true, urls); // use cookies file
     }
 
-    private List<String> getTieziUrlsRedis(List<String> keys) {
-        ArrayList<String> list = new ArrayList<>();
-        for (String key : keys) {
-            ValueOperations valueOperations = redisTemplate.opsForValue();
-            Object value = valueOperations.get(key);
-            if (value != null)
-                list.add(value.toString());
-        }
-        return list;
-    }
 
-    private List<String> getTieziKeysRedis() {
-        Set<String> redisKeys = redisTemplate.keys("d*");
-        // Store the keys in a List
-        List<String> keysList = new ArrayList<>();
-        Iterator<String> it = redisKeys.iterator();
-        while (it.hasNext()) {
-            String data = it.next();
-            if (!StringUtils.isEmpty(data) && data.length() <= 3)
-                keysList.add(data);
-        }
-        for (String s : keysList) {
-            System.err.println("s = " + s);
-        }
-        return keysList;
-    }
-
-    private void printRangeKeys(ValueOperations valueOperations) {
-        for (int i = 1; i <= 5; i++) {
-            Object di = valueOperations.get("d" + i);
-            if (di == null) {
-                try {
-                    Thread.sleep(1000);
-                    System.err.println("TestJobDetail.timedJob2 is null");
-                    return;
-                } catch (InterruptedException e) {
-                    e.printStackTrace();
-                }
-            }
-            System.err.println("di = " + di);
-        }
-    }
 
     /**
      * called by trigger in Java config

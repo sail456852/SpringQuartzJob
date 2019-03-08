@@ -382,7 +382,7 @@
             <properties>
                 <redis.host>127.0.0.1</redis.host>
                 <redis.port>6379</redis.port>
-                <redis.pass>aaa</redis.pass>
+                <redis.pass>1234</redis.pass>
             </properties>
 
         </profile>

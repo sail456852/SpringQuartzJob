@@ -22,12 +22,13 @@
                                 expression="org.springframework.web.bind.annotation.RestControllerAdvice"/>
     </context:component-scan>
 
+    <!--ALL properties are in this file-->
+    <context:property-placeholder location="classpath:redis.properties"/>
+
     <task:annotation-driven/>
 
     <aop:aspectj-autoproxy/>
 
-
-    <!--//@author: eugene @date: 2018/12/26 shiro ends-->
 
     <!--@author: eugene, @date: 2018/12/28 redis start-->
     <bean
@@ -45,9 +46,9 @@
     </bean>
 
     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
-        <property name="hostName" value="127.0.0.1"/>
-        <property name="port" value="6379"/>
-        <property name="password" value="1234"/>
+        <property name="hostName" value="${redis.host}"/>
+        <property name="port" value="${redis.port}"/>
+        <property name="password" value="${redis.pass}"/>
         <property name="poolConfig" ref="poolConfig"/>
     </bean>
 

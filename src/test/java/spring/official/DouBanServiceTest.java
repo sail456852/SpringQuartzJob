@@ -18,18 +18,18 @@ import java.util.List;
  * Time: 19:11<br/>
  * To change this template use File | Settings | File Templates.
  */
-public class DouBanUtilsTest {
+public class DouBanServiceTest {
 
     static String doubanLogonCookies = "doubanLogonCookies";
 
-    @Test
+//    @Test
     public void callCommentTest() throws IOException, ClassNotFoundException {
         HashMap<String, String> map = new HashMap<String, String>();
         map.put("testKey", "keyValue");
         MapConvertFile.outputFile(map, "testFileYuzhen");
     }
 
-    @Test
+//    @Test
     public void toStringList() {
         String[] arr = {"form_email", "sail456852@hotmail.com", "form_password", "i1234567",
                 "source", "index_nav", "redir", "https://www.douban.com", "source", "None"};
@@ -40,7 +40,7 @@ public class DouBanUtilsTest {
         System.err.println("dataList = " + dataList);
     }
 
-    @Test
+//    @Test
     public void readFromCookies() throws IOException, ClassNotFoundException {
         InputStream resourceAsStream = this.getClass().getClassLoader()
                 .getResourceAsStream(doubanLogonCookies);
@@ -49,7 +49,7 @@ public class DouBanUtilsTest {
         System.err.println("dlCookies = " + dlCookies);
     }
 
-    @Test
+//    @Test
     public void writeToCookies() throws IOException, ClassNotFoundException {
         InputStream resourceAsStream = this.getClass().getClassLoader()
                 .getResourceAsStream("");

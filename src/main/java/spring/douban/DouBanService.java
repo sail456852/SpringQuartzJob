@@ -1,20 +1,19 @@
 package spring.douban;
 
+import org.apache.commons.lang3.StringUtils;
 import org.jsoup.Connection;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-import org.junit.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.stereotype.Service;
 
 import java.io.IOException;
-import java.io.InputStream;
-import java.io.ObjectInputStream;
 import java.util.*;
 
 /**
@@ -23,29 +22,19 @@ import java.util.*;
  * @outhor lizhichao
  * @create 2018-05-18 16:33
  */
-@PropertySource(value = "classpath:redis.properties")
-public class DouBanUtils {
+//@PropertySource(value = "classpath:redis.properties")
+@Service
+public class DouBanService {
 
-    static String doubanLogonCookies = "doubanLogonCookies";
     private static Logger logger ;
     private static Random random = new Random(100);
-
     private static boolean calledByJob = false;
 
     @Autowired
     private RedisTemplate redisTemplate;
 
     static {
-        logger = LoggerFactory.getLogger(DouBanUtils.class);
-//        urls = Arrays.asList(
-//                "https://www.douban.com/group/topic/131119511/",
-//                "https://www.douban.com/group/topic/130698339/",
-//                "https://www.douban.com/group/topic/131156212/",
-//                "https://www.douban.com/group/topic/131153591/",
-//                "https://www.douban.com/group/topic/131153118/",
-//                "https://www.douban.com/group/topic/131119957/"
-//        );
-
+        logger = LoggerFactory.getLogger(DouBanService.class);
     }
 
     public static void main(String[] args) throws IOException, ClassNotFoundException {
@@ -56,7 +45,14 @@ public class DouBanUtils {
         urls.add("https://www.douban.com/group/topic/127050074/");
     }
 
-    public static void login(String username, String password) throws IOException, ClassNotFoundException {
+    /**
+     * This only saves login cookie to redis
+     * @param username
+     * @param password
+     * @throws IOException
+     * @throws ClassNotFoundException
+     */
+    public void login(String username, String password) throws IOException, ClassNotFoundException {
         String url = "https://accounts.douban.com/login";
         Connection connect = Jsoup.connect(url);
         Connection method = connect.method(Connection.Method.POST).timeout(10000);
@@ -106,42 +102,37 @@ public class DouBanUtils {
             }
             dataMap.put("captcha-id", captchaId);
             dataMap.put("captcha-solution", captchaCode);
-//            loginResponse = Jsoup
-//                    .connect(url)
-//                    .data("form_email", "sail456852@hotmail.com", "form_password", "i1234567",
-//                            "source", "index_nav", "captcha-id", captchaId, "captcha-solution", captchaCode,
-//                            "redir", "https://www.douban.com", "source", "None").cookies(cookies)
-//                    .method(Connection.Method.POST).execute();
         }
+
         loginResponse = Jsoup
                 .connect(url)
                 .data(dataMap).cookies(cookies)
                 .method(Connection.Method.POST).execute();
 
         logonCookie = loginResponse.cookies();
-        MapConvertFile.outputFile(logonCookie, doubanLogonCookies);
-
-        List<String> urls = new ArrayList<>();
-        urls.add("https://www.douban.com/group/topic/127050074/");
-        callComment(logonCookie, false, urls);
+        // save to redis for later user
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        valueOperations.set("doubanCookie", logonCookie);
     }
 
 
+    public void callComment(boolean calledByJob, List<String> urls) throws IOException, ClassNotFoundException {
+        DouBanService.calledByJob = calledByJob;
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        Object doubanCookie = valueOperations.get("doubanCookie");
+        if(doubanCookie == null){
+            System.err.println("redis no cookie! return!");
+            return;
+        }
 
-
-
-    @SuppressWarnings("Duplicates")
-    public static void callComment(Map<String, String> logonCookie, boolean calledByJob, List<String> urls) throws IOException, ClassNotFoundException {
-        DouBanUtils.calledByJob = calledByJob;
-          HashMap<String, String> dlCookies = MapConvertFile.inputFile(doubanLogonCookies);
-        System.err.println("logonCookie = " + logonCookie);
-        System.err.println("dlCookies = " + dlCookies);
+        Map<String, String> doubanCookieMap = MapConvertFile.string2HashMap(doubanCookie.toString());
+        System.err.println("doubanCookieMap = " + doubanCookieMap);
         if (!calledByJob) {
 
             for (String url : urls) {
                 try {
                     Thread.sleep(3000);
-                    huitie(dlCookies, url, "the area best");
+                    huitie(doubanCookieMap, url, "the area best");
                     Thread.sleep(60000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -158,7 +149,7 @@ public class DouBanUtils {
                     if (count > 2) {
                         Thread.sleep(30000 + i);  // 30s each
                     }
-                    huitie(dlCookies, url, "up");
+                    huitie(doubanCookieMap, url, "up");
                     System.err.println("DouBanUtils.callComment sleeping 1 min!");
                     Thread.sleep(60000);
                 } catch (InterruptedException e) {
@@ -166,13 +157,6 @@ public class DouBanUtils {
                 }
             }
         }
-    }
-
-    private static HashMap<String, String> getCookiesFromClassPath() throws IOException, ClassNotFoundException {
-        InputStream resourceAsStream = DouBanUtils.class.getClassLoader()
-                .getResourceAsStream(doubanLogonCookies);
-        ObjectInputStream s = new ObjectInputStream(resourceAsStream);
-        return (HashMap<String, String>) s.readObject();
     }
 
     public static void huitie(Map<String, String> cookies, String url, String rv_comment) throws IOException {
@@ -226,6 +210,50 @@ public class DouBanUtils {
             logger.info("huitie() \"comment\": " + comment);
         }
         System.err.println("comment = " + comment + "  finished ");
+    }
+
+
+    public List<String> getTieziKeysRedis() {
+        Set<String> redisKeys = redisTemplate.keys("d*");
+        // Store the keys in a List
+        List<String> keysList = new ArrayList<>();
+        Iterator<String> it = redisKeys.iterator();
+        while (it.hasNext()) {
+            String data = it.next();
+            if (!StringUtils.isEmpty(data) && data.length() <= 3)
+                keysList.add(data);
+        }
+        for (String s : keysList) {
+            System.err.println("s = " + s);
+        }
+        return keysList;
+    }
+
+    public List<String> getTieziUrlsRedis(List<String> keys) {
+        ArrayList<String> list = new ArrayList<>();
+        for (String key : keys) {
+            ValueOperations valueOperations = redisTemplate.opsForValue();
+            Object value = valueOperations.get(key);
+            if (value != null)
+                list.add(value.toString());
+        }
+        return list;
+    }
+
+    private void printRangeKeys(ValueOperations valueOperations) {
+        for (int i = 1; i <= 5; i++) {
+            Object di = valueOperations.get("d" + i);
+            if (di == null) {
+                try {
+                    Thread.sleep(1000);
+                    System.err.println("TestJobDetail.timedJob2 is null");
+                    return;
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+            }
+            System.err.println("di = " + di);
+        }
     }
 
 }

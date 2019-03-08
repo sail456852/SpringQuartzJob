@@ -1,19 +1,21 @@
 package spring.timedjob;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
-import org.springframework.data.redis.connection.RedisConnection;
-import org.springframework.data.redis.core.*;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.util.StringUtils;
-import redis.clients.jedis.ScanParams;
-import redis.clients.jedis.ScanResult;
+import spring.douban.DouBanService;
 
 import java.io.IOException;
 import java.util.*;
+
+import static spring.douban.MapConvertFile.file2HashMap;
+import static spring.douban.MapConvertFile.string2HashMap;
 
 /**
  * Created by IntelliJ IDEA.<br/>
@@ -25,6 +27,7 @@ import java.util.*;
 
 @RunWith(SpringRunner.class)
 @ContextConfiguration("classpath:spring.xml")
+@WebAppConfiguration
 public class TestAnything {
 
     @Test
@@ -38,13 +41,22 @@ public class TestAnything {
     @Autowired
     private RedisTemplate redisTemplate;
 
-    @org.junit.Test
-    public void testRedis() {
-        ValueOperations valueOperations = redisTemplate.opsForValue();
-        valueOperations.set("yuzhen", "HelloWorldIWannaBeFree");
-        String yuzhen = valueOperations.get("yuzhen").toString();
-        System.err.println("yuzhen = " + yuzhen);
-    }
+    @Autowired
+    private DouBanService douBanService;
+
+//    private ValueOperations valueOperations;
+//
+//    @Before
+//    public void setup() {
+//        valueOperations = redisTemplate.opsForValue();
+//    }
+
+//    @org.junit.Test
+//    public void testRedis() {
+//        valueOperations.set("yuzhen", "HelloWorldIWannaBeFree");
+//        String yuzhen = valueOperations.get("yuzhen").toString();
+//        System.err.println("yuzhen = " + yuzhen);
+//    }
 
     @org.junit.Test
     public void testRedisScan() {
@@ -61,6 +73,26 @@ public class TestAnything {
         for (String s : keysList) {
             System.err.println("s = " + s);
         }
+    }
+
+    @org.junit.Test
+    public void file2HashMapTest() throws IOException, ClassNotFoundException {
+        HashMap<String, String> doubanLogonCookie = file2HashMap("doubanLogonCookies");
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        String mapString = doubanLogonCookie.toString();
+        mapString = mapString.substring(1, mapString.length() - 1);
+        System.err.println("mapString = " + mapString);
+        valueOperations.set("doubanCookie", mapString );
+        Map<String, String> recreatedHashMap = string2HashMap(mapString);
+        System.out.println("recreatedHashMap = " + recreatedHashMap);
+    }
+    
+    @Test
+    public void doubanTest() throws IOException, ClassNotFoundException {
+        List<String> keys = douBanService.getTieziKeysRedis();
+        List<String> urls = douBanService.getTieziUrlsRedis(keys);
+        System.err.println("urls = " + urls);
+        douBanService.callComment(true, urls); // use cookies file
     }
 
 }
