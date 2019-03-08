@@ -66,7 +66,6 @@ public class TestJobDetail {
     }
 
 
-
     /**
      * called by trigger in Java config
      *

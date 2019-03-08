@@ -37,12 +37,13 @@ public class DouBanService {
         logger = LoggerFactory.getLogger(DouBanService.class);
     }
 
-    public static void main(String[] args) throws IOException, ClassNotFoundException {
+    public static void main(String[] args) {
 //        String password = "i1234567";
 //        String username = "sail456852@hotmail.com";
 //        login(username, password);
         List<String> urls = new ArrayList<>();
         urls.add("https://www.douban.com/group/topic/127050074/");
+        System.err.println("DouBanService.main Hello World main is running!");
     }
 
     /**
