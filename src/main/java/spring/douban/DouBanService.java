@@ -38,9 +38,6 @@ public class DouBanService {
     }
 
     public static void main(String[] args) {
-//        String password = "i1234567";
-//        String username = "sail456852@hotmail.com";
-//        login(username, password);
         List<String> urls = new ArrayList<>();
         urls.add("https://www.douban.com/group/topic/127050074/");
         System.err.println("DouBanService.main Hello World main is running!");
@@ -70,6 +67,7 @@ public class DouBanService {
 
         String captchaId = "";
         String captchaCode = null;
+
         if (imgEle != null) {
             for (Element element : attribute) {
                 if (element.attr("name").toString().equals("captcha-id")) {
@@ -129,7 +127,6 @@ public class DouBanService {
         Map<String, String> doubanCookieMap = MapConvertFile.string2HashMap(doubanCookie.toString());
         System.err.println("doubanCookieMap = " + doubanCookieMap);
         if (!calledByJob) {
-
             for (String url : urls) {
                 try {
                     Thread.sleep(3000);

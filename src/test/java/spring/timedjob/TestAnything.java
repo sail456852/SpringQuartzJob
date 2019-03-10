@@ -1,6 +1,6 @@
 package spring.timedjob;
 
-import org.junit.Test;
+import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
@@ -8,11 +8,12 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
-import org.springframework.util.StringUtils;
 import spring.douban.DouBanService;
 
 import java.io.IOException;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static spring.douban.MapConvertFile.file2HashMap;
 import static spring.douban.MapConvertFile.string2HashMap;
@@ -30,69 +31,64 @@ import static spring.douban.MapConvertFile.string2HashMap;
 @WebAppConfiguration
 public class TestAnything {
 
-    @Test
+    //    @Test
     public void queryBooksStatus() {
 //        TestJobDetail.queryBooksStatus( "3467827");
         HashMap<String, Object> testObject = new HashMap<>();
         testObject.put("msgBody", "Java Test From Map Object");
-        TestJobDetail.queryBooksStatus( "2275852", testObject);
+        TestJobDetail.queryBooksStatus("2275852", testObject);
     }
 
     @Autowired
     private RedisTemplate redisTemplate;
 
     @Autowired
+    private TestJobDetail testJobDetail;
+
+    @Autowired
     private DouBanService douBanService;
 
-//    private ValueOperations valueOperations;
-//
-//    @Before
-//    public void setup() {
-//        valueOperations = redisTemplate.opsForValue();
-//    }
+    private ValueOperations valueOperations;
 
-//    @org.junit.Test
-//    public void testRedis() {
-//        valueOperations.set("yuzhen", "HelloWorldIWannaBeFree");
-//        String yuzhen = valueOperations.get("yuzhen").toString();
-//        System.err.println("yuzhen = " + yuzhen);
-//    }
-
-    @org.junit.Test
-    public void testRedisScan() {
-        Set<String> redisKeys = redisTemplate.keys("d*");
-        // Store the keys in a List
-        List<String> keysList = new ArrayList<>();
-        Iterator<String> it = redisKeys.iterator();
-        while (it.hasNext()) {
-            String data = it.next();
-            if(!StringUtils.isEmpty(data) && data.length() <= 3)
-            keysList.add(data);
-        }
-
-        for (String s : keysList) {
-            System.err.println("s = " + s);
-        }
+    @Before
+    public void setup() {
+        valueOperations = redisTemplate.opsForValue();
     }
 
-    @org.junit.Test
+    //    @org.junit.Test
     public void file2HashMapTest() throws IOException, ClassNotFoundException {
         HashMap<String, String> doubanLogonCookie = file2HashMap("doubanLogonCookies");
         ValueOperations valueOperations = redisTemplate.opsForValue();
         String mapString = doubanLogonCookie.toString();
         mapString = mapString.substring(1, mapString.length() - 1);
         System.err.println("mapString = " + mapString);
-        valueOperations.set("doubanCookie", mapString );
+        valueOperations.set("doubanCookie", mapString);
         Map<String, String> recreatedHashMap = string2HashMap(mapString);
         System.out.println("recreatedHashMap = " + recreatedHashMap);
     }
-    
-    @Test
-    public void doubanTest() throws IOException, ClassNotFoundException {
+
+    @org.junit.Test
+    public void cachedCookieDoubanCommentTest() throws IOException, ClassNotFoundException {
+//        testJobDetail.timedJob2();
         List<String> keys = douBanService.getTieziKeysRedis();
+        System.err.println("keys = " + keys);
         List<String> urls = douBanService.getTieziUrlsRedis(keys);
         System.err.println("urls = " + urls);
-        douBanService.callComment(true, urls); // use cookies file
     }
 
+
+    @org.junit.Test
+    public void testDoubanLogin() throws IOException, ClassNotFoundException {
+        String password = "i1234567";
+        String username = "sail456852@hotmail.com";
+        douBanService.login(username, password);
+    }
+
+
+    @org.junit.Test
+    public void testRedisSetGet() {
+        valueOperations.set("yuzhen", "HelloWorldIWannaBeFree");
+        String yuzhen = valueOperations.get("yuzhen").toString();
+        System.err.println("yuzhen = " + yuzhen);
+    }
 }

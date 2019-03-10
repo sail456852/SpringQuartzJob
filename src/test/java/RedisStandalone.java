@@ -9,6 +9,9 @@ import java.time.Duration;
  * Date: 2019/3/8<br/>
  * Time: 16:38<br/>
  * To change this template use File | Settings | File Templates.
+ * this requires classpath to be specified, both compile time ( javac source.java )
+ * and runtime
+ * package name removed to make javac works
  */
 public class RedisStandalone {
     public static void main(String[] args) {
