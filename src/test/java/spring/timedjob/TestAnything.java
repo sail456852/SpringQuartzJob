@@ -71,14 +71,6 @@ public class TestAnything {
         System.out.println("recreatedHashMap = " + recreatedHashMap);
     }
 
-    @org.junit.Test
-    public void cachedCookieDoubanCommentTest() throws IOException, ClassNotFoundException {
-//        testJobDetail.timedJob2();
-        List<String> keys = douBanService.getTieziKeysRedis();
-        System.err.println("keys = " + keys);
-        List<String> urls = douBanService.getTieziUrlsRedis(keys);
-        System.err.println("urls = " + urls);
-    }
 
 
     @Value(value = "${doubanusername}")
@@ -86,6 +78,8 @@ public class TestAnything {
 
     @Value(value = "${password}")
     private String password;
+
+
 
     @org.junit.Test
     public void testDoubanLogin() throws IOException, ClassNotFoundException {
@@ -96,6 +90,11 @@ public class TestAnything {
         System.err.println("doubanUsername = " + doubanUsername);
         System.err.println("password = " + password);
         douBanService.login(doubanUsername, password);
+    }
+
+    @org.junit.Test
+    public void testDoubanComment() throws IOException, ClassNotFoundException {
+        testJobDetail.timedJob2();
     }
 
 
