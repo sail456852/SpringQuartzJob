@@ -3,11 +3,14 @@ package spring.timedjob;
 import org.junit.Before;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.util.StringUtils;
 import spring.douban.DouBanService;
 
 import java.io.IOException;
@@ -29,6 +32,7 @@ import static spring.douban.MapConvertFile.string2HashMap;
 @RunWith(SpringRunner.class)
 @ContextConfiguration("classpath:spring.xml")
 @WebAppConfiguration
+@PropertySource(value = "classpath:redis.properties")
 public class TestAnything {
 
     //    @Test
@@ -77,11 +81,21 @@ public class TestAnything {
     }
 
 
+    @Value(value = "${doubanusername}")
+    private String doubanUsername;
+
+    @Value(value = "${password}")
+    private String password;
+
     @org.junit.Test
     public void testDoubanLogin() throws IOException, ClassNotFoundException {
-        String password = "i1234567";
-        String username = "sail456852@hotmail.com";
-        douBanService.login(username, password);
+        if (StringUtils.isEmpty(douBanService) || StringUtils.isEmpty(password)) {
+            password = "i1234567";
+            doubanUsername = "sail456852@hotmail.com";
+        }
+        System.err.println("doubanUsername = " + doubanUsername);
+        System.err.println("password = " + password);
+        douBanService.login(doubanUsername, password);
     }
 
 
