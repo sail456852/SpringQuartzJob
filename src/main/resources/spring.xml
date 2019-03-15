@@ -42,7 +42,7 @@
     <bean id="redisTemplate"
           class="org.springframework.data.redis.core.RedisTemplate"
           p:connection-factory-ref="connectionFactory">
-        <property name="defaultSerializer" ref="stringRedisSerializer"/>
+        <property name="keySerializer" ref="stringRedisSerializer"/>
     </bean>
 
     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">

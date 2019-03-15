@@ -72,13 +72,11 @@ public class TestAnything {
     }
 
 
-
     @Value(value = "${doubanusername}")
     private String doubanUsername;
 
     @Value(value = "${password}")
     private String password;
-
 
 
     @org.junit.Test
@@ -87,6 +85,8 @@ public class TestAnything {
             password = "i1234567";
             doubanUsername = "sail456852@hotmail.com";
         }
+//        password = "i1234567";
+//        doubanUsername = "wyzsailor@hotmail.com";
         System.err.println("doubanUsername = " + doubanUsername);
         System.err.println("password = " + password);
         douBanService.login(doubanUsername, password);
@@ -96,7 +96,6 @@ public class TestAnything {
     public void testDoubanComment() throws IOException, ClassNotFoundException {
         testJobDetail.timedJob2();
     }
-
 
     @org.junit.Test
     public void testRedisSetGet() {

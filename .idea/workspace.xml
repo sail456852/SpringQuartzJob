@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="108d25b7-464d-46c8-beac-7735a2576c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/spring.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/spring.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" afterDir="false" />
     </list>
     <list id="4aab45d0-ee96-4849-998b-e0e0fcdec435" name="Do not change list" comment="" />
@@ -41,14 +42,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="96" selection-start-line="96" selection-end-line="96" />
+            <state relative-caret-position="267">
+              <caret line="88" selection-start-line="88" selection-end-line="88" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1493#1494#0" expanded="true" />
-                <element signature="e#1554#1555#0" expanded="true" />
-                <element signature="e#2852#2871#0" expanded="true" />
-                <element signature="e#2921#2934#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -57,8 +54,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="425">
-              <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+            <state relative-caret-position="202">
+              <caret line="114" column="4" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -67,9 +64,21 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="92">
+              <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+              <folding>
+                <element signature="e#2384#2399#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
+            <state relative-caret-position="714">
               <caret line="62" selection-start-line="62" selection-end-line="62" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -141,7 +150,6 @@
         <option value="$PROJECT_DIR$/testConfig.properties" />
         <option value="$PROJECT_DIR$/test.sh" />
         <option value="$PROJECT_DIR$/404.html" />
-        <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/spring/douban/DouBanUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java" />
@@ -152,6 +160,7 @@
         <option value="$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java" />
         <option value="$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/redis.properties" />
+        <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
         <option value="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" />
       </list>
     </option>
@@ -204,8 +213,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -339,7 +348,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552186088701" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552662610459" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="extract.method.default.visibility" value="private" />
@@ -387,7 +396,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestAnything">
+  <component name="RunManager" selected="JUnit.TestAnything.testDoubanLogin">
     <configuration name="RedisStandalone" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="RedisStandalone" />
       <module name="SpringQuartzJob" />
@@ -426,22 +435,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAnything.doubanTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringQuartzJob" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spring.timedjob.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spring.timedjob" />
-      <option name="MAIN_CLASS_NAME" value="spring.timedjob.TestAnything" />
-      <option name="METHOD_NAME" value="doubanTest" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="TestAnything.testDoubanLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpringQuartzJob" />
       <extension name="coverage">
@@ -453,6 +446,22 @@
       <option name="PACKAGE_NAME" value="spring.timedjob" />
       <option name="MAIN_CLASS_NAME" value="spring.timedjob.TestAnything" />
       <option name="METHOD_NAME" value="testDoubanLogin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TestAnything.testRedisSetGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="SpringQuartzJob" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spring.timedjob.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="spring.timedjob" />
+      <option name="MAIN_CLASS_NAME" value="spring.timedjob.TestAnything" />
+      <option name="METHOD_NAME" value="testRedisSetGet" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -485,19 +494,19 @@
     </configuration>
     <list>
       <item itemvalue="Application.RedisStandalone" />
-      <item itemvalue="JUnit.TestAnything.doubanTest" />
-      <item itemvalue="Maven.maven" />
       <item itemvalue="JUnit.TestAnything.cachedCookieDoubanCommentTest" />
       <item itemvalue="JUnit.TestAnything.testDoubanLogin" />
       <item itemvalue="JUnit.TestAnything" />
+      <item itemvalue="JUnit.TestAnything.testRedisSetGet" />
+      <item itemvalue="Maven.maven" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAnything" />
         <item itemvalue="JUnit.TestAnything.testDoubanLogin" />
+        <item itemvalue="JUnit.TestAnything.testRedisSetGet" />
+        <item itemvalue="JUnit.TestAnything" />
         <item itemvalue="JUnit.TestAnything.cachedCookieDoubanCommentTest" />
         <item itemvalue="Application.RedisStandalone" />
-        <item itemvalue="JUnit.TestAnything.doubanTest" />
       </list>
     </recent_temporary>
   </component>
@@ -519,7 +528,9 @@
       <workItem from="1551956581523" duration="1725000" />
       <workItem from="1551958388500" duration="16281000" />
       <workItem from="1552028719383" duration="6134000" />
-      <workItem from="1552177203726" duration="8314000" />
+      <workItem from="1552177203726" duration="11950000" />
+      <workItem from="1552577796730" duration="579000" />
+      <workItem from="1552658737200" duration="3349000" />
     </task>
     <task id="LOCAL-00001" summary="it works.">
       <created>1550053842573</created>
@@ -591,43 +602,50 @@
       <option name="project" value="LOCAL" />
       <updated>1552184201377</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="mvn test introduced">
+      <created>1552186111838</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1552186111838</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAnything_cachedCookieDoubanCommentTest - 2019.03.10 at 09h 44m 01s.xml">
-      <configuration name="TestAnything.cachedCookieDoubanCommentTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_cachedCookieDoubanCommentTest - 2019.03.10 at 09h 51m 39s.xml">
-      <configuration name="TestAnything.cachedCookieDoubanCommentTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_cachedCookieDoubanCommentTest - 2019.03.10 at 09h 52m 42s.xml">
-      <configuration name="TestAnything.cachedCookieDoubanCommentTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_cachedCookieDoubanCommentTest - 2019.03.10 at 09h 52m 55s.xml">
-      <configuration name="TestAnything.cachedCookieDoubanCommentTest" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_testDoubanLogin - 2019.03.10 at 10h 07m 32s.xml">
-      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_testDoubanLogin - 2019.03.10 at 10h 07m 50s.xml">
-      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_testDoubanLogin - 2019.03.10 at 10h 08m 44s.xml">
-      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_testDoubanLogin - 2019.03.10 at 10h 10m 42s.xml">
-      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything - 2019.03.10 at 10h 11m 02s.xml">
+    <history-entry file="TestAnything - 2019.03.10 at 10h 48m 18s.xml">
       <configuration name="TestAnything" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAnything - 2019.03.10 at 10h 11m 43s.xml">
-      <configuration name="TestAnything" configurationId="JUnit" />
+    <history-entry file="TestAnything_testRedisSetGet - 2019.03.10 at 17h 33m 22s.xml">
+      <configuration name="TestAnything.testRedisSetGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testRedisSetGet - 2019.03.10 at 17h 35m 04s.xml">
+      <configuration name="TestAnything.testRedisSetGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testDoubanLogin - 2019.03.15 at 22h 30m 30s.xml">
+      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testDoubanLogin - 2019.03.15 at 22h 46m 21s.xml">
+      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testRedisSetGet - 2019.03.15 at 22h 46m 58s.xml">
+      <configuration name="TestAnything.testRedisSetGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testRedisSetGet - 2019.03.15 at 23h 06m 05s.xml">
+      <configuration name="TestAnything.testRedisSetGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testRedisSetGet - 2019.03.15 at 23h 06m 35s.xml">
+      <configuration name="TestAnything.testRedisSetGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testRedisSetGet - 2019.03.15 at 23h 07m 40s.xml">
+      <configuration name="TestAnything.testRedisSetGet" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testDoubanLogin - 2019.03.15 at 23h 09m 55s.xml">
+      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="87599000" />
+    <option name="totallyTimeSpent" value="95163000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -641,8 +659,7 @@
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
     <layout>
-      <window_info id="Learn" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18482906" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18910256" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -652,18 +669,17 @@
       <window_info id="Capture Tool" order="7" />
       <window_info id="IntelliCalc" order="8" type="FLOATING" />
       <window_info id="Web" order="9" side_tool="true" />
-      <window_info anchor="bottom" id="Duplicate detector" sideWeight="0.74786323" weight="0.32894737" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
+      <window_info id="Learn" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70352566" weight="0.32894737" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70352566" visible="true" weight="0.32894737" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.39914164" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49519232" visible="true" weight="0.4024123" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49519232" weight="0.4024123" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -673,7 +689,8 @@
       <window_info anchor="bottom" id="Messages" order="16" sideWeight="0.4946581" weight="0.32894737" />
       <window_info anchor="bottom" id="Datetimeconverter" order="17" />
       <window_info anchor="bottom" id="IvyIDEA" order="18" />
-      <window_info anchor="right" id="Maven" />
+      <window_info anchor="bottom" id="Duplicate detector" order="19" sideWeight="0.74786323" weight="0.32894737" />
+      <window_info anchor="bottom" id="Docker" order="20" show_stripe_button="false" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.13272922" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -688,6 +705,7 @@
       <window_info anchor="right" id="Translate" order="11" />
       <window_info anchor="right" id="CDI" order="12" />
       <window_info anchor="right" id="Bean Validation" order="13" />
+      <window_info anchor="right" id="Maven" order="14" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -847,13 +865,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1224">
-          <caret line="72" column="51" lean-forward="true" selection-start-line="72" selection-start-column="51" selection-end-line="72" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="545">
@@ -920,16 +931,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="62" selection-start-line="62" selection-end-line="62" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/HelloWorld.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -944,10 +945,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/timedjob/TestJobDetail.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="714">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/resources/spring.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="32" column="56" selection-start-line="32" selection-start-column="56" selection-end-line="32" selection-end-column="56" />
+          <folding>
+            <element signature="e#2384#2399#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="110" column="29" selection-start-line="110" selection-start-column="29" selection-end-line="110" selection-end-column="29" />
+        <state relative-caret-position="202">
+          <caret line="114" column="4" selection-start-line="114" selection-start-column="4" selection-end-line="114" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -956,14 +977,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="96" selection-start-line="96" selection-end-line="96" />
+        <state relative-caret-position="267">
+          <caret line="88" selection-start-line="88" selection-end-line="88" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1493#1494#0" expanded="true" />
-            <element signature="e#1554#1555#0" expanded="true" />
-            <element signature="e#2852#2871#0" expanded="true" />
-            <element signature="e#2921#2934#0" expanded="true" />
           </folding>
         </state>
       </provider>
