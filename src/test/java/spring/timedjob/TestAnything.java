@@ -1,6 +1,7 @@
 package spring.timedjob;
 
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -13,12 +14,15 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.util.StringUtils;
 import spring.douban.DouBanService;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import static spring.douban.MapConvertFile.file2HashMap;
+import static spring.douban.MapConvertFile.getParamMap;
 import static spring.douban.MapConvertFile.string2HashMap;
 
 /**
@@ -102,5 +106,21 @@ public class TestAnything {
         valueOperations.set("yuzhen", "HelloWorldIWannaBeFree");
         String yuzhen = valueOperations.get("yuzhen").toString();
         System.err.println("yuzhen = " + yuzhen);
+    }
+
+    @org.junit.Test
+    public void testLinkedHashMapToString() throws FileNotFoundException {
+        Map<String, String> paramMap = getParamMap();
+        LinkedHashMap<String, String> linkedHashMap = new LinkedHashMap<>();
+        linkedHashMap.putAll(paramMap);
+        System.err.println("linkedHashMap = " + linkedHashMap);
+        String linkedHashMapStr = linkedHashMap.toString();
+        valueOperations.set("doubanCookie", linkedHashMapStr);
+
+        // get from douban value tested okay @author: eugene @date: 2019/3/19
+        String doubanCookie = valueOperations.get("doubanCookie").toString();
+        System.err.println("doubanCookie = " + doubanCookie);
+        System.err.println("TestAnything.testLinkedHashMapToString trying to convert this into a map"); Map<String, String> map = string2HashMap(doubanCookie);
+        System.err.println("map = " + map);
     }
 }
