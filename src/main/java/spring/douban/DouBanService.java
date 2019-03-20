@@ -111,7 +111,11 @@ public class DouBanService {
         logonCookie = loginResponse.cookies();
         // save to redis for later user
         ValueOperations valueOperations = redisTemplate.opsForValue();
-        valueOperations.set("doubanCookie", logonCookie);
+        LinkedHashMap linkedHashMap = new LinkedHashMap();
+        linkedHashMap.putAll(logonCookie);
+        String mapStr = linkedHashMap.toString();
+        System.err.println("mapStr = " + mapStr);
+        valueOperations.set("doubanCookie", mapStr);
     }
 
 
