@@ -98,7 +98,10 @@ public class TestAnything {
 
     @org.junit.Test
     public void testDoubanComment() throws IOException, ClassNotFoundException {
-        testJobDetail.timedJob2();
+        List<String> keys = douBanService.getTieziKeysRedis();
+        List<String> urls = douBanService.getTieziUrlsRedis(keys);
+        System.err.println("urls = " + urls);
+        douBanService.callComment(false, urls); // use cookies file
     }
 
     @org.junit.Test
@@ -120,7 +123,8 @@ public class TestAnything {
         // get from douban value tested okay @author: eugene @date: 2019/3/19
         String doubanCookie = valueOperations.get("doubanCookie").toString();
         System.err.println("doubanCookie = " + doubanCookie);
-        System.err.println("TestAnything.testLinkedHashMapToString trying to convert this into a map"); Map<String, String> map = string2HashMap(doubanCookie);
+        System.err.println("TestAnything.testLinkedHashMapToString trying to convert this into a map");
+        Map<String, String> map = string2HashMap(doubanCookie);
         System.err.println("map = " + map);
     }
 }
