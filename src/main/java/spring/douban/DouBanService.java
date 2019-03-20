@@ -135,7 +135,7 @@ public class DouBanService {
                 try {
                     Thread.sleep(3000);
                     huitie(doubanCookieMap, url, "the area best");
-                    Thread.sleep(60000);
+                    Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }

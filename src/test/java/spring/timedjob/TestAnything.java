@@ -64,7 +64,7 @@ public class TestAnything {
     }
 
     //    @org.junit.Test
-    public void file2HashMapTest() throws IOException, ClassNotFoundException {
+    public void testFile2HashMap() throws IOException, ClassNotFoundException {
         HashMap<String, String> doubanLogonCookie = file2HashMap("doubanLogonCookies");
         ValueOperations valueOperations = redisTemplate.opsForValue();
         String mapString = doubanLogonCookie.toString();
