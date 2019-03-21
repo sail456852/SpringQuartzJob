@@ -89,8 +89,8 @@ public class TestAnything {
             password = "i1234567";
             doubanUsername = "sail456852@hotmail.com";
         }
-//        password = "i1234567";
-//        doubanUsername = "wyzsailor@hotmail.com";
+        password = "i1234567";
+        doubanUsername = "wyzsailor@hotmail.com";
         System.err.println("doubanUsername = " + doubanUsername);
         System.err.println("password = " + password);
         douBanService.login(doubanUsername, password);

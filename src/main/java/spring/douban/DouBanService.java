@@ -258,5 +258,25 @@ public class DouBanService {
         }
     }
 
+
+    /**
+     * 下载这个网页
+     *
+     * @param url
+     * @return
+     */
+    public Connection.Response downloadThisLink(String url, Connection.Method httpMethod) {
+        try {
+            Connection connect = Jsoup.connect(url);
+            Connection method = connect.method(httpMethod).timeout(10000);
+            Connection.Response response = method.execute();
+            return response;
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 }
 
