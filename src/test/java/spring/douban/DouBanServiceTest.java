@@ -15,12 +15,7 @@ import org.springframework.test.context.web.WebAppConfiguration;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
+import java.util.*;
 
 /**
  * Created by IntelliJ IDEA.<br/>
@@ -29,8 +24,11 @@ import static org.junit.jupiter.api.Assertions.*;
  * Time: 17:32<br/>
  * To change this template use File | Settings | File Templates.
  * JOIN link demo
- * <a href="https://www.douban.com/group/xingzuo/?action=join&amp;redir=http%3A//www.douban.com/group/topic/130126269/&amp;ck=GYMr" class="bn-join">加入小组</a>
+ * <
+ * href="https://www.douban.com/group/xingzuo/?action=join&amp;redir=http%3A//www.douban.com/group/topic/130126269/&amp;ck=GYMr" class="bn-join">加入小组</a>
  *
+ * 未加入的时候
+ *  <div class="member-status">
  * 加入成功后， 302跳转https://www.douban.com/group/topic/130126269/ 包含
  * <div class="member-info1">我是小组的成员</div>
  */
@@ -49,10 +47,23 @@ public class DouBanServiceTest {
     public void downloadThisLink() throws IOException {
         Connection.Method httpMethod = Connection.Method.POST;
         String url = "https://www.douban.com/group/topic/130126269/";
-        Connection.Response html = douBanService.downloadThisLink(url, httpMethod);
+        String doubanCookie = douBanService.getRedis("doubanCookie");
+        Map<String, String> cookies = MapConvertFile.string2HashMap(doubanCookie);
+        Connection.Response html = douBanService.downloadThisLink(url, httpMethod, cookies);
         Document doc = html.parse();
+        Element body = doc.body();
+        System.err.println("body = " + body);
         Elements memberStatus = doc.getElementsByClass("member-status");
-        System.err.println("memberStatus = " + memberStatus.toString());
+        Elements memberInfo = doc.getElementsByClass("member-info1");
+        if(memberStatus == null && memberInfo == null) {
+            System.err.println("DouBanServiceTest.downloadThisLink both elements null, weird");
+            return;
+        }
+        if(memberInfo != null){
+            System.err.println("LOGIN memberInfo = " + memberInfo.toString());
+        }else{
+            System.err.println("NOT LOGIN memberStatus = " + memberStatus);
+        }
     }
 
 

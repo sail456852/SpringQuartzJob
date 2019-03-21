@@ -26,7 +26,7 @@ import java.util.*;
 @Service
 public class DouBanService {
 
-    private static Logger logger ;
+    private static Logger logger;
     private static Random random = new Random(100);
     private static boolean calledByJob = false;
 
@@ -43,8 +43,30 @@ public class DouBanService {
         System.err.println("DouBanService.main Hello World main is running!");
     }
 
+
+    /**
+     * check if current account joined topic page
+     *
+     * @param url topic page url
+     * @param cookies
+     * @return
+     */
+    public boolean checkJoinedGroup(String url, Map<String, String> cookies) throws IOException {
+        Connection.Response html = downloadThisLink(url, Connection.Method.POST, cookies);
+        Document doc = html.parse();
+        Elements memberStatus = doc.getElementsByClass("member-status");
+        if (memberStatus == null) {
+            return true;
+        }
+        System.err.println("haven't joined memberStatus = " + memberStatus.toString());
+        String a = memberStatus.attr("a");
+        System.err.println("a = " + a);
+        return false;
+    }
+
     /**
      * This only saves login cookie to redis
+     *
      * @param username
      * @param password
      * @throws IOException
@@ -123,7 +145,7 @@ public class DouBanService {
         DouBanService.calledByJob = calledByJob;
         ValueOperations valueOperations = redisTemplate.opsForValue();
         Object doubanCookie = valueOperations.get("doubanCookie");
-        if(doubanCookie == null){
+        if (doubanCookie == null) {
             System.err.println("redis no cookie! return!");
             return;
         }
@@ -242,6 +264,17 @@ public class DouBanService {
         return list;
     }
 
+    public String getRedis(String key) {
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        Object value = valueOperations.get(key);
+        return value == null ? null : value.toString();
+    }
+
+    public void setRedis(String key, String value, long timeOut) {
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        valueOperations.set(key, value, timeOut);
+    }
+
     private void printRangeKeys(ValueOperations valueOperations) {
         for (int i = 1; i <= 5; i++) {
             Object di = valueOperations.get("d" + i);
@@ -263,13 +296,18 @@ public class DouBanService {
      * 下载这个网页
      *
      * @param url
+     * @param cookies
      * @return
      */
-    public Connection.Response downloadThisLink(String url, Connection.Method httpMethod) {
+    public Connection.Response downloadThisLink(String url, Connection.Method httpMethod, Map<String, String> cookies) {
         try {
             Connection connect = Jsoup.connect(url);
             Connection method = connect.method(httpMethod).timeout(10000);
-            Connection.Response response = method.execute();
+            Connection.Response response;
+            if (null == cookies)
+                response = method.execute();
+            else
+                response = Jsoup.connect(url).method(httpMethod).cookies(cookies).execute();
             return response;
 
         } catch (IOException e) {
