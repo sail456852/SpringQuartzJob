@@ -85,12 +85,10 @@ public class TestAnything {
 
     @org.junit.Test
     public void testDoubanLogin() throws IOException, ClassNotFoundException {
-        if (StringUtils.isEmpty(douBanService) || StringUtils.isEmpty(password)) {
+        if (StringUtils.isEmpty(doubanUsername) || StringUtils.isEmpty(password)) {
             password = "i1234567";
             doubanUsername = "sail456852@hotmail.com";
         }
-        password = "i1234567";
-        doubanUsername = "wyzsailor@hotmail.com";
         System.err.println("doubanUsername = " + doubanUsername);
         System.err.println("password = " + password);
         douBanService.login(doubanUsername, password);
