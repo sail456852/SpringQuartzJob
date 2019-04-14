@@ -132,12 +132,17 @@ public class DouBanService {
 
         logonCookie = loginResponse.cookies();
         // save to redis for later user
-        ValueOperations valueOperations = redisTemplate.opsForValue();
-        LinkedHashMap linkedHashMap = new LinkedHashMap();
-        linkedHashMap.putAll(logonCookie);
-        String mapStr = linkedHashMap.toString();
-        System.err.println("mapStr = " + mapStr);
-        valueOperations.set("doubanCookie", mapStr);
+        if(logonCookie == null || logonCookie.size() == 0 ){
+            logger.info("login cookie size is 0, won't set redis logonCookie");
+            return;
+        }else{
+            ValueOperations valueOperations = redisTemplate.opsForValue();
+            LinkedHashMap linkedHashMap = new LinkedHashMap();
+            linkedHashMap.putAll(logonCookie);
+            String mapStr = linkedHashMap.toString();
+            System.err.println("mapStr = " + mapStr);
+            valueOperations.set("doubanCookie", mapStr);
+        }
     }
 
 
@@ -150,7 +155,15 @@ public class DouBanService {
             return;
         }
 
-        Map<String, String> doubanCookieMap = MapConvertFile.string2HashMap(doubanCookie.toString());
+        Map<String, String> doubanCookieMap = null;
+        String cookieString = doubanCookie.toString();
+        if(cookieString.contains(";")){
+            doubanCookieMap = MapConvertFile.string2HashMapColon(cookieString);
+        }else{
+            doubanCookieMap = MapConvertFile.string2HashMap(cookieString);
+        }
+
+
         System.err.println("doubanCookieMap = " + doubanCookieMap);
         if (!calledByJob) {
             for (String url : urls) {

@@ -3,6 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="108d25b7-464d-46c8-beac-7735a2576c77" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" afterDir="false" />
     </list>
     <list id="4aab45d0-ee96-4849-998b-e0e0fcdec435" name="Do not change list" comment="" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -27,16 +30,15 @@
     <select />
   </component>
   <component name="DefaultGradleProjectSettings">
-    <option name="testRunner" value="GRADLE" />
-    <option name="delegatedBuild" value="true" />
+    <option name="isMigrated" value="true" />
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="214">
-              <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
+            <state relative-caret-position="-833">
+              <caret line="159" column="38" selection-start-line="159" selection-start-column="38" selection-end-line="159" selection-end-column="38" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -47,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="51" selection-start-line="51" selection-end-line="51" />
+            <state relative-caret-position="268">
+              <caret line="103" column="32" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -59,8 +61,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1377">
-              <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+            <state relative-caret-position="84">
+              <caret line="115" selection-start-line="115" selection-end-line="115" />
             </state>
           </provider>
         </entry>
@@ -103,6 +105,7 @@
       <find>redis</find>
       <find>statu</find>
       <find>status</find>
+      <find>doubanusername</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -132,7 +135,6 @@
         <option value="$PROJECT_DIR$/test.sh" />
         <option value="$PROJECT_DIR$/404.html" />
         <option value="$PROJECT_DIR$/src/main/java/spring/douban/DouBanUtils.java" />
-        <option value="$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java" />
         <option value="$PROJECT_DIR$/src/main/java/spring/douban/JavaCompileDemo.java" />
         <option value="$PROJECT_DIR$/src/test/java/HelloWorld.java" />
         <option value="$PROJECT_DIR$/src/test/java/RedisStandalone.java" />
@@ -141,9 +143,10 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/resources/redis.properties" />
         <option value="$PROJECT_DIR$/src/main/resources/spring.xml" />
-        <option value="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" />
-        <option value="$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java" />
         <option value="$PROJECT_DIR$/src/test/java/spring/douban/DouBanServiceTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java" />
+        <option value="$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java" />
       </list>
     </option>
   </component>
@@ -185,7 +188,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -228,11 +230,42 @@
               <item name="spring" type="462c0819:PsiDirectoryNode" />
               <item name="douban" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SpringQuartzJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringQuartzJob" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpringQuartzJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringQuartzJob" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpringQuartzJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringQuartzJob" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SpringQuartzJob" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SpringQuartzJob" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="spring" type="462c0819:PsiDirectoryNode" />
+              <item name="timedjob" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
       </pane>
       <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -287,7 +320,20 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.DouBanServiceTest.downloadThisLink">
+  <component name="RunManager" selected="JUnit.TestAnything.testDoubanLogin">
+    <configuration name="DouBanService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="spring.douban.DouBanService" />
+      <module name="SpringQuartzJob" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="spring.douban.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DouBanServiceTest.downloadThisLink" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpringQuartzJob" />
       <extension name="coverage">
@@ -304,7 +350,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAnything" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TestAnything.testDoubanComment" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="SpringQuartzJob" />
       <extension name="coverage">
         <pattern>
@@ -314,7 +360,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="spring.timedjob" />
       <option name="MAIN_CLASS_NAME" value="spring.timedjob.TestAnything" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="testDoubanComment" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -351,22 +398,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TestAnything.testRedisSetGet" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="SpringQuartzJob" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="spring.timedjob.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="spring.timedjob" />
-      <option name="MAIN_CLASS_NAME" value="spring.timedjob.TestAnything" />
-      <option name="METHOD_NAME" value="testRedisSetGet" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="maven" type="MavenRunConfiguration" factoryName="Maven">
       <MavenSettings>
         <option name="myGeneralSettings" />
@@ -393,20 +424,20 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Application.DouBanService" />
       <item itemvalue="JUnit.TestAnything.testDoubanLogin" />
-      <item itemvalue="JUnit.TestAnything" />
-      <item itemvalue="JUnit.TestAnything.testRedisSetGet" />
       <item itemvalue="JUnit.TestAnything.testLinkedHashMapToString" />
       <item itemvalue="JUnit.DouBanServiceTest.downloadThisLink" />
       <item itemvalue="Maven.maven" />
+      <item itemvalue="JUnit.TestAnything.testDoubanComment" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.DouBanServiceTest.downloadThisLink" />
         <item itemvalue="JUnit.TestAnything.testDoubanLogin" />
+        <item itemvalue="JUnit.TestAnything.testDoubanComment" />
+        <item itemvalue="Application.DouBanService" />
+        <item itemvalue="JUnit.DouBanServiceTest.downloadThisLink" />
         <item itemvalue="JUnit.TestAnything.testLinkedHashMapToString" />
-        <item itemvalue="JUnit.TestAnything.testRedisSetGet" />
-        <item itemvalue="JUnit.TestAnything" />
       </list>
     </recent_temporary>
   </component>
@@ -435,6 +466,9 @@
       <workItem from="1553008122187" duration="334000" />
       <workItem from="1553174685256" duration="4542000" />
       <workItem from="1555226151895" duration="348000" />
+      <workItem from="1555226545174" duration="2896000" />
+      <workItem from="1555232154788" duration="2064000" />
+      <workItem from="1555252160770" duration="2765000" />
     </task>
     <task id="LOCAL-00001" summary="it works.">
       <created>1550053842573</created>
@@ -520,43 +554,50 @@
       <option name="project" value="LOCAL" />
       <updated>1553178388423</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="username set">
+      <created>1555226676243</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1555226676243</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="TestAnything_testLinkedHashMapToString - 2019.03.19 at 16h 07m 51s.xml">
-      <configuration name="TestAnything.testLinkedHashMapToString" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_testLinkedHashMapToString - 2019.03.19 at 16h 08m 49s.xml">
-      <configuration name="TestAnything.testLinkedHashMapToString" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_testLinkedHashMapToString - 2019.03.19 at 16h 09m 48s.xml">
-      <configuration name="TestAnything.testLinkedHashMapToString" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="TestAnything_testDoubanLogin - 2019.03.19 at 23h 13m 24s.xml">
+    <history-entry file="TestAnything_testDoubanLogin - 2019.04.14 at 22h 33m 04s.xml">
       <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DouBanServiceTest_downloadThisLink - 2019.03.21 at 21h 26m 17s.xml">
-      <configuration name="DouBanServiceTest.downloadThisLink" configurationId="JUnit" />
+    <history-entry file="TestAnything_testDoubanComment - 2019.04.14 at 22h 43m 44s.xml">
+      <configuration name="TestAnything.testDoubanComment" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="TestAnything_testDoubanLogin - 2019.03.21 at 21h 43m 30s.xml">
+    <history-entry file="TestAnything_testDoubanComment - 2019.04.14 at 22h 45m 46s.xml">
+      <configuration name="TestAnything.testDoubanComment" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testDoubanLogin - 2019.04.14 at 22h 47m 28s.xml">
       <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DouBanServiceTest_downloadThisLink - 2019.03.21 at 22h 15m 29s.xml">
-      <configuration name="DouBanServiceTest.downloadThisLink" configurationId="JUnit" />
+    <history-entry file="TestAnything_testDoubanLogin - 2019.04.14 at 22h 48m 43s.xml">
+      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DouBanServiceTest_downloadThisLink - 2019.03.21 at 22h 19m 11s.xml">
-      <configuration name="DouBanServiceTest.downloadThisLink" configurationId="JUnit" />
+    <history-entry file="TestAnything_testDoubanComment - 2019.04.14 at 22h 52m 35s.xml">
+      <configuration name="TestAnything.testDoubanComment" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DouBanServiceTest_downloadThisLink - 2019.03.21 at 22h 19m 50s.xml">
-      <configuration name="DouBanServiceTest.downloadThisLink" configurationId="JUnit" />
+    <history-entry file="TestAnything_testDoubanComment - 2019.04.14 at 22h 54m 15s.xml">
+      <configuration name="TestAnything.testDoubanComment" configurationId="JUnit" />
     </history-entry>
-    <history-entry file="DouBanServiceTest_downloadThisLink - 2019.03.21 at 22h 20m 08s.xml">
-      <configuration name="DouBanServiceTest.downloadThisLink" configurationId="JUnit" />
+    <history-entry file="TestAnything_testDoubanComment - 2019.04.14 at 23h 00m 43s.xml">
+      <configuration name="TestAnything.testDoubanComment" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testDoubanComment - 2019.04.14 at 23h 03m 14s.xml">
+      <configuration name="TestAnything.testDoubanComment" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="TestAnything_testDoubanLogin - 2019.04.14 at 23h 05m 24s.xml">
+      <configuration name="TestAnything.testDoubanLogin" configurationId="JUnit" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="102156000" />
+    <option name="totallyTimeSpent" value="109881000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -569,8 +610,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="1920" height="1053" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21420941" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.21420941" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="JRebel" order="3" side_tool="true" />
@@ -583,14 +625,14 @@
       <window_info id="Learn" order="10" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49946696" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.70352566" weight="0.32785088" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" sideWeight="0.70352566" visible="true" weight="0.32785088" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49946696" weight="0.3991228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="FindBugs-IDEA" order="7" weight="0.3290461" />
       <window_info anchor="bottom" id="Spring" order="8" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49519232" weight="0.40350878" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.49519232" weight="0.40283844" />
       <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" />
       <window_info anchor="bottom" id="Database Changes" order="12" />
@@ -602,7 +644,6 @@
       <window_info anchor="bottom" id="IvyIDEA" order="18" />
       <window_info anchor="bottom" id="Duplicate detector" order="19" sideWeight="0.74786323" weight="0.32894737" />
       <window_info anchor="bottom" id="Docker" order="20" show_stripe_button="false" />
-      <window_info anchor="right" id="RestServices" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.13272922" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -619,6 +660,7 @@
       <window_info anchor="right" id="Bean Validation" order="13" />
       <window_info anchor="right" id="Maven" order="14" visible="true" weight="0.10897436" />
       <window_info anchor="right" id="Mongo Explorer" order="15" />
+      <window_info anchor="right" id="RestServices" order="16" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +676,8 @@
     <MESSAGE value="cookie to redis" />
     <MESSAGE value="mvn test introduced" />
     <MESSAGE value=" revised test" />
-    <option name="LAST_COMMIT_MESSAGE" value=" revised test" />
+    <MESSAGE value="username set" />
+    <option name="LAST_COMMIT_MESSAGE" value="username set" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -650,6 +693,12 @@
           <line>61</line>
           <properties />
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java</url>
+          <line>80</line>
+          <properties />
+          <option name="timeStamp" value="9" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -890,30 +939,30 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="214">
-          <caret line="91" lean-forward="true" selection-start-line="91" selection-end-line="91" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="84">
+          <caret line="115" selection-start-line="115" selection-end-line="115" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="51" selection-start-line="51" selection-end-line="51" />
+        <state relative-caret-position="268">
+          <caret line="103" column="32" selection-start-line="103" selection-start-column="32" selection-end-line="103" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/MapConvertFile.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1377">
-          <caret line="93" column="10" selection-start-line="93" selection-start-column="10" selection-end-line="93" selection-end-column="10" />
+        <state relative-caret-position="-833">
+          <caret line="159" column="38" selection-start-line="159" selection-start-column="38" selection-end-line="159" selection-end-column="38" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

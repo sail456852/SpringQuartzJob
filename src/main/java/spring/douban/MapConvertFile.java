@@ -116,4 +116,18 @@ public class MapConvertFile {
 
         return reconstructedUtilMap;
     }
+
+    /**
+     *
+     * @param str must be valid json like format e.g. { key=val, key=val}
+     * @return
+     */
+    public static Map<String, String> string2HashMapColon(String str){
+        str = str.substring(1, str.length() - 1);
+        Map<String, String> reconstructedUtilMap = Arrays.stream(str.split(";"))
+                .map(s -> s.split("=", 2))
+                .collect(Collectors.toMap(s -> s[0], s -> s[1]));
+
+        return reconstructedUtilMap;
+    }
 }
