@@ -9,8 +9,5 @@
         <module name="SpringQuartzJob" />
       </profile>
     </annotationProcessing>
-    <bytecodeTargetLevel>
-      <module name="SpringQuartzJob" target="1.8" />
-    </bytecodeTargetLevel>
   </component>
 </project>

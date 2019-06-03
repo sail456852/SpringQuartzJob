@@ -74,6 +74,7 @@ public class DouBanService {
      */
     public void login(String username, String password) throws IOException, ClassNotFoundException {
         String url = "https://accounts.douban.com/login";
+        String urlLogin = "https://accounts.douban.com/j/mobile/login/basic"; // unsupported
         Connection connect = Jsoup.connect(url);
         Connection method = connect.method(Connection.Method.POST).timeout(10000);
         Connection.Response response = method.execute();
@@ -104,11 +105,11 @@ public class DouBanService {
         }
 
         Map<String, String> dataMap = new HashMap<String, String>() {{
-            put("form_email", username);
-            put("form_password", password);
-            put("source", "index_nav");
-            put("redir", "https://www.douban.com");
-            put("source", "none");
+            put("name", username);
+            put("password", password);
+            put("ck", "");
+            put("ticket", "");
+            put("remember", "true");
         }};
 
         if (captchaCode == null) {
@@ -126,10 +127,12 @@ public class DouBanService {
         }
 
         loginResponse = Jsoup
-                .connect(url)
+                .connect(urlLogin).ignoreContentType(true)
                 .data(dataMap).cookies(cookies)
                 .method(Connection.Method.POST).execute();
 
+        // Set-Cookie: dbcl2="64125560:CgzGQ0FFqqM"; path=/;
+        // domain=.douban.com; expires=Tue, 02-Jul-2019 15:22:28 GMT; httponly
         logonCookie = loginResponse.cookies();
         // save to redis for later user
         if(logonCookie == null || logonCookie.size() == 0 ){

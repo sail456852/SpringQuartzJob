@@ -66,7 +66,7 @@ public class TestAnything {
     //    @org.junit.Test
     public void testFile2HashMap() throws IOException, ClassNotFoundException {
         HashMap<String, String> doubanLogonCookie = file2HashMap("doubanLogonCookies");
-        ValueOperations valueOperations = redisTemplate.opsForValue();
+        ValueOperations valueOeerations = redisTemplate.opsForValue();
         String mapString = doubanLogonCookie.toString();
         mapString = mapString.substring(1, mapString.length() - 1);
         System.err.println("mapString = " + mapString);
@@ -89,8 +89,8 @@ public class TestAnything {
             password = "i1234567";
             doubanUsername = "sail456852@hotmail.com";
         }
-//        password = "Sail@456852";
-//        doubanUsername = "wyzsailor@hotmail.com";
+        password = "Sail@456852";
+        doubanUsername = "wyzsailor@hotmail.com";
         System.err.println("doubanUsername = " + doubanUsername);
         System.err.println("password = " + password);
         douBanService.login(doubanUsername, password);
