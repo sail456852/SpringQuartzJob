@@ -172,7 +172,7 @@ public class DouBanService {
             for (String url : urls) {
                 try {
                     Thread.sleep(3000);
-                    huitie(doubanCookieMap, url, "the area best");
+                    huitie(doubanCookieMap, url, "6点后可看房。联系VX");
                     Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -217,10 +217,11 @@ public class DouBanService {
                 }
             }
             String src = imgEle.attr("src");
-            System.out.println("验证码链接：" + src + "\n请输入验证码");
+            System.out.println("验证码链接：" + src + "\n Please input captcha: ");
             Scanner sc = new Scanner(System.in);
             captchaCode = sc.next();
             System.out.println(captchaCode);
+            if("exit".equals(captchaCode)) return;
         }
         Elements select = doc.select("input[name]");
         String ck = "";
