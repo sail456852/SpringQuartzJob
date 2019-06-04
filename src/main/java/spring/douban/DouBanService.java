@@ -169,6 +169,7 @@ public class DouBanService {
 
         System.err.println("doubanCookieMap = " + doubanCookieMap);
         if (!calledByJob) {
+            logger.info("called by test");
             for (String url : urls) {
                 try {
                     Thread.sleep(3000);
@@ -221,7 +222,10 @@ public class DouBanService {
             Scanner sc = new Scanner(System.in);
             captchaCode = sc.next();
             System.out.println(captchaCode);
-            if("exit".equals(captchaCode)) return;
+            if(StringUtils.equals("exit", captchaCode)) {
+                logger.info("huitie() exit == captchaCode quitting hui tie ");
+                return;
+            }
         }
         Elements select = doc.select("input[name]");
         String ck = "";

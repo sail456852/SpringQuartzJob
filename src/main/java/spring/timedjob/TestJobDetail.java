@@ -60,13 +60,11 @@ public class TestJobDetail {
     public void timedJob2() throws IOException, ClassNotFoundException {
         Date date = new Date();
         logger.info("timedJob() \"job start at\": " + date);
-
         List<String> keys = douBanService.getTieziKeysRedis();
         List<String> urls = douBanService.getTieziUrlsRedis(keys);
         System.err.println("urls = " + urls);
         douBanService.callComment(true, urls); // use cookies file
     }
-
 
     /**
      * called by trigger in Java config

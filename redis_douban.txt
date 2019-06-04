@@ -1,0 +1,7 @@
+      set d1  https://www.douban.com/group/topic/142238014/
+      set d2  https://www.douban.com/group/topic/142242988/
+      set d3  https://www.douban.com/group/topic/142243321/
+      set d4  https://www.douban.com/group/topic/142243715/
+      set d5  https://www.douban.com/group/topic/142243804/
+      set d6  https://www.douban.com/group/topic/142243895/
+      set d7  https://www.douban.com/group/topic/142244059/
