@@ -13,13 +13,12 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.util.StringUtils;
 import spring.douban.DouBanService;
+import spring.utils.IntUtils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
+import java.util.stream.IntStream;
 
 import static spring.douban.MapConvertFile.file2HashMap;
 import static spring.douban.MapConvertFile.getParamMap;
@@ -126,5 +125,11 @@ public class TestAnything {
         System.err.println("TestAnything.testLinkedHashMapToString trying to convert this into a map");
         Map<String, String> map = string2HashMap(doubanCookie);
         System.err.println("map = " + map);
+    }
+
+    @Test
+    public void testRandomComments() {
+        String s = spring.utils.StringUtils.randomCommentString();
+        System.err.println("s = " + s);
     }
 }

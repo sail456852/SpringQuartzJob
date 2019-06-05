@@ -165,15 +165,14 @@ public class DouBanService {
         }else{
             doubanCookieMap = MapConvertFile.string2HashMap(cookieString);
         }
-
-
         System.err.println("doubanCookieMap = " + doubanCookieMap);
+        String commentString = spring.utils.StringUtils.randomCommentString();
         if (!calledByJob) {
             logger.info("called by test");
             for (String url : urls) {
                 try {
                     Thread.sleep(3000);
-                    huitie(doubanCookieMap, url, "6点后可看房。联系VX");
+                    huitie(doubanCookieMap, url, commentString);
                     Thread.sleep(3000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
@@ -190,7 +189,7 @@ public class DouBanService {
                     if (count > 2) {
                         Thread.sleep(30000 + i);  // 30s each
                     }
-                    huitie(doubanCookieMap, url, "up");
+                    huitie(doubanCookieMap, url, commentString);
                     System.err.println("DouBanUtils.callComment sleeping 1 min!");
                     Thread.sleep(60000);
                 } catch (InterruptedException e) {
@@ -330,7 +329,6 @@ public class DouBanService {
             else
                 response = Jsoup.connect(url).method(httpMethod).cookies(cookies).execute();
             return response;
-
         } catch (IOException e) {
             e.printStackTrace();
             return null;
