@@ -1,5 +1,6 @@
 package spring.timedjob;
 
+import org.jsoup.Connection;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,12 +14,10 @@ import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 import org.springframework.util.StringUtils;
 import spring.douban.DouBanService;
-import spring.utils.IntUtils;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
-import java.util.stream.IntStream;
 
 import static spring.douban.MapConvertFile.file2HashMap;
 import static spring.douban.MapConvertFile.getParamMap;
@@ -109,6 +108,12 @@ public class TestAnything {
         String yuzhen = valueOperations.get("yuzhen").toString();
         System.err.println("yuzhen = " + yuzhen);
     }
+    
+    @Test
+    public void testGetRedis() {
+        String doubanCookie = douBanService.getRedis("doubanCookie");
+        System.err.println("doubanCookie = " + doubanCookie);
+    }
 
     @org.junit.Test
     public void testLinkedHashMapToString() throws FileNotFoundException {
@@ -131,5 +136,27 @@ public class TestAnything {
     public void testRandomComments() {
         String s = spring.utils.StringUtils.randomCommentString();
         System.err.println("s = " + s);
+    }
+    
+    @Test
+    public void testDownloadLinkPage() {
+        Connection.Response response = douBanService.downloadThisLinkWithCookies(url, Connection.Method.GET);
+        System.err.println("response.body() = " + response.body());
+    }
+
+    String url = "https://www.douban.com/group/topic/139684330/";
+
+    @Test
+    public void testJoinGroup() throws IOException {
+        boolean checkJoinedGroup = douBanService.checkJoinedGroup(url, Connection.Method.GET);
+        if(checkJoinedGroup) {
+            System.err.println("TestAnything.testJoinGroup already joined before check ");
+        }else{
+            boolean b = douBanService.joinGroup(url);
+            if(b)
+                System.err.println("TestAnything.testJoinGroup newly joined"); 
+            else
+                System.err.println("TestAnything.testJoinGroup newly joined failed");
+        }
     }
 }

@@ -37,6 +37,8 @@ public class DouBanService {
         logger = LoggerFactory.getLogger(DouBanService.class);
     }
 
+    private List<String> joinedUrls = new ArrayList<>();
+
     public static void main(String[] args) {
         List<String> urls = new ArrayList<>();
         urls.add("https://www.douban.com/group/topic/127050074/");
@@ -47,21 +49,22 @@ public class DouBanService {
     /**
      * check if current account joined topic page
      *
-     * @param url topic page url
-     * @param cookies
+     * @param url    topic page url
+     * @param method
      * @return
      */
-    public boolean checkJoinedGroup(String url, Map<String, String> cookies) throws IOException {
-        Connection.Response html = downloadThisLink(url, Connection.Method.POST, cookies);
+    public boolean checkJoinedGroup(String url, Connection.Method method) throws IOException {
+        Connection.Response html = downloadThisLinkWithCookies(url, method);
+        int code = html.statusCode();
+        System.err.println("code = " + code);
         Document doc = html.parse();
-        Elements memberStatus = doc.getElementsByClass("member-status");
-        if (memberStatus == null) {
-            return true;
+        System.err.println("doc = " + doc.toString());
+        Elements join_group_comfirm = doc.getElementsByClass("join_group_comfirm");
+        System.out.println("join_group_comfirm = " + join_group_comfirm.toString());
+        if (join_group_comfirm == null || join_group_comfirm.size() == 0) {
+            return true; // confirm is null then joined
         }
-        System.err.println("haven't joined memberStatus = " + memberStatus.toString());
-        String a = memberStatus.attr("a");
-        System.err.println("a = " + a);
-        return false;
+        return false; // not joined
     }
 
     /**
@@ -135,10 +138,10 @@ public class DouBanService {
         // domain=.douban.com; expires=Tue, 02-Jul-2019 15:22:28 GMT; httponly
         logonCookie = loginResponse.cookies();
         // save to redis for later user
-        if(logonCookie == null || logonCookie.size() == 0 ){
+        if (logonCookie == null || logonCookie.size() == 0) {
             logger.info("login cookie size is 0, won't set redis logonCookie");
             return;
-        }else{
+        } else {
             ValueOperations valueOperations = redisTemplate.opsForValue();
             LinkedHashMap linkedHashMap = new LinkedHashMap();
             linkedHashMap.putAll(logonCookie);
@@ -160,11 +163,7 @@ public class DouBanService {
 
         Map<String, String> doubanCookieMap = null;
         String cookieString = doubanCookie.toString();
-        if(cookieString.contains(";")){
-            doubanCookieMap = MapConvertFile.string2HashMapColon(cookieString);
-        }else{
-            doubanCookieMap = MapConvertFile.string2HashMap(cookieString);
-        }
+        doubanCookieMap = redisCookie2Map(cookieString);
         System.err.println("doubanCookieMap = " + doubanCookieMap);
         String commentString = spring.utils.StringUtils.randomCommentString();
         if (!calledByJob) {
@@ -189,7 +188,22 @@ public class DouBanService {
                     if (count > 2) {
                         Thread.sleep(30000 + i);  // 30s each
                     }
-                    huitie(doubanCookieMap, url, commentString);
+                    if (joinedUrls.contains(url)) {
+                        // comment
+                        huitie(doubanCookieMap, url, commentString);
+                    } else {
+                        boolean checkAlreadyJoined = checkJoinedGroup(url, Connection.Method.GET);
+                        if (checkAlreadyJoined) {
+                            huitie(doubanCookieMap, url, commentString);
+                            joinedUrls.add(url);
+                        } else {
+                            System.err.println("DouBanService.callComment not already joined, try to join ");
+                            boolean b = joinGroup(url);
+                            if (b)
+                                joinedUrls.add(url);
+                            logger.info("callComment() \"joinedGroup\": skipping not joined " + checkAlreadyJoined);
+                        }
+                    }
                     System.err.println("DouBanUtils.callComment sleeping 1 min!");
                     Thread.sleep(60000);
                 } catch (InterruptedException e) {
@@ -197,6 +211,20 @@ public class DouBanService {
                 }
             }
         }
+    }
+
+    private Map<String, String> redisCookie2Map(String redisStringName) {
+        Map<String, String> doubanCookieMap;
+        String cookieString = getRedis(redisStringName);
+        if (StringUtils.isEmpty(cookieString)) {
+            throw new RuntimeException("Cookie not Found in redis!");
+        }
+        if (cookieString.contains(";")) {
+            doubanCookieMap = MapConvertFile.string2HashMapColon(cookieString);
+        } else {
+            doubanCookieMap = MapConvertFile.string2HashMap(cookieString);
+        }
+        return doubanCookieMap;
     }
 
     public static void huitie(Map<String, String> cookies, String url, String rv_comment) throws IOException {
@@ -221,7 +249,7 @@ public class DouBanService {
             Scanner sc = new Scanner(System.in);
             captchaCode = sc.next();
             System.out.println(captchaCode);
-            if(StringUtils.equals("exit", captchaCode)) {
+            if (StringUtils.equals("exit", captchaCode)) {
                 logger.info("huitie() exit == captchaCode quitting hui tie ");
                 return;
             }
@@ -327,11 +355,49 @@ public class DouBanService {
             if (null == cookies)
                 response = method.execute();
             else
-                response = Jsoup.connect(url).method(httpMethod).cookies(cookies).execute();
+                response = method.cookies(cookies).execute();
+            System.err.println("response.statusCode() = " + response.statusCode());
             return response;
         } catch (IOException e) {
             e.printStackTrace();
             return null;
+        }
+    }
+
+
+    public Connection.Response downloadThisLinkWithCookies(String url, Connection.Method method) {
+        Map<String, String> redisCookie2Map = redisCookie2Map("doubanCookie");
+        Connection.Response response = downloadThisLink(url, method, redisCookie2Map);
+        return response;
+    }
+
+    public boolean joinGroup(String topicUrl) throws IOException {
+        // check if has not joined or not.
+        Connection.Response topicPage = downloadThisLinkWithCookies(topicUrl, Connection.Method.GET);
+        Document doc = null;
+        try {
+            doc = topicPage.parse();
+        } catch (Exception e) {
+            System.err.println("e.getMessage() = " + e.getMessage());
+            e.printStackTrace();
+            return false;
+        }
+        Elements join_group_comfirm = doc.getElementsByClass("join_group_comfirm");
+        if (join_group_comfirm != null) {
+            Elements a = join_group_comfirm.select("a");
+            String href = join_group_comfirm.attr("href"); // method tag's attribute content
+            System.err.println("href = " + href);
+            // call the join url to join
+            Connection.Response response = downloadThisLinkWithCookies(href, Connection.Method.GET);// call with method method
+            int code = response.statusCode();
+            System.err.println("code = " + code);
+            if (code == 304 || code == 200)
+                return true;
+            else
+                return false;
+        } else {
+            System.err.println("DouBanService.joinGroup join_group_confirm not found, maybe already joined");
+            return true;
         }
     }
 
