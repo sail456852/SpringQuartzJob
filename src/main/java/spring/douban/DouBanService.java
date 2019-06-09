@@ -154,16 +154,8 @@ public class DouBanService {
 
     public void callComment(boolean calledByJob, List<String> urls) throws IOException, ClassNotFoundException {
         DouBanService.calledByJob = calledByJob;
-        ValueOperations valueOperations = redisTemplate.opsForValue();
-        Object doubanCookie = valueOperations.get("doubanCookie");
-        if (doubanCookie == null) {
-            System.err.println("redis no cookie! return!");
-            return;
-        }
-
-        Map<String, String> doubanCookieMap = null;
-        String cookieString = doubanCookie.toString();
-        doubanCookieMap = redisCookie2Map(cookieString);
+        String cookieString = "doubanCookie";
+        Map<String, String> doubanCookieMap = redisCookie2Map(cookieString);
         System.err.println("doubanCookieMap = " + doubanCookieMap);
         String commentString = spring.utils.StringUtils.randomCommentString();
         if (!calledByJob) {
@@ -213,7 +205,7 @@ public class DouBanService {
         }
     }
 
-    private Map<String, String> redisCookie2Map(String redisStringName) {
+    public Map<String, String> redisCookie2Map(String redisStringName) {
         Map<String, String> doubanCookieMap;
         String cookieString = getRedis(redisStringName);
         if (StringUtils.isEmpty(cookieString)) {

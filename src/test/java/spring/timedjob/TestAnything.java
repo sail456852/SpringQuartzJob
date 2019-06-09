@@ -159,4 +159,10 @@ public class TestAnything {
                 System.err.println("TestAnything.testJoinGroup newly joined failed");
         }
     }
+
+    @Test
+    public void testRedisCookie2Map() {
+        Map<String, String> doubanCookie = douBanService.redisCookie2Map("doubanCookie");
+        System.err.println("doubanCookie = " + doubanCookie);
+    }
 }

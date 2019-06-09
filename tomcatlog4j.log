@@ -81,3 +81,4 @@ java.lang.RuntimeException: Cookie not Found in redis!
 	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624)
 	at java.lang.Thread.run(Thread.java:748)
 =[18:01:48,176 WARN  TemplateMode]: [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
+=[18:54:10,493 WARN  TemplateMode]: [THYMELEAF][main] Template Mode 'HTML5' is deprecated. Using Template Mode 'HTML' instead.
