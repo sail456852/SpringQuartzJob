@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="2763555f-6323-4293-9180-d1c60ad76e99" name="Default Changelist" comment="hello">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/spring/timedjob/TestAnything.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tomcatlog4j.log" beforeDir="false" afterPath="$PROJECT_DIR$/tomcatlog4j.log" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -28,8 +25,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="375">
-              <caret line="166" column="35" selection-start-line="166" selection-start-column="35" selection-end-line="166" selection-end-column="35" />
+            <state relative-caret-position="300">
+              <caret line="192" column="32" selection-start-line="192" selection-start-column="32" selection-end-line="192" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -391,7 +388,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.TestAnything.testRedisCookie2Map">
+  <component name="RunManager" selected="Application.DouBanService">
     <configuration name="DouBanService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="spring.douban.DouBanService" />
       <module name="SpringQuartzJob" />
@@ -504,8 +501,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.TestAnything.testRedisCookie2Map" />
         <item itemvalue="Application.DouBanService" />
+        <item itemvalue="JUnit.TestAnything.testRedisCookie2Map" />
         <item itemvalue="JUnit.TestAnything.testJoinGroup" />
         <item itemvalue="JUnit.TestAnything.testDownloadLinkPage" />
         <item itemvalue="JUnit.TestAnything.testGetRedis" />
@@ -531,7 +528,7 @@
       <workItem from="1559697182020" duration="11687000" />
       <workItem from="1559716963566" duration="10000" />
       <workItem from="1559865044015" duration="16897000" />
-      <workItem from="1560075921881" duration="1886000" />
+      <workItem from="1560075921881" duration="3480000" />
     </task>
     <task id="LOCAL-00001" summary="hello">
       <created>1559612231593</created>
@@ -576,10 +573,11 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="53992000" />
+    <option name="totallyTimeSpent" value="55586000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-9" y="-9" width="1938" height="1060" extended-state="6" />
+    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.89649415" weight="0.18562232" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
@@ -829,8 +827,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/spring/douban/DouBanService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="375">
-          <caret line="166" column="35" selection-start-line="166" selection-start-column="35" selection-end-line="166" selection-end-column="35" />
+        <state relative-caret-position="300">
+          <caret line="192" column="32" selection-start-line="192" selection-start-column="32" selection-end-line="192" selection-end-column="32" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

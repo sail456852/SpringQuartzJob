@@ -187,13 +187,15 @@ public class DouBanService {
                         boolean checkAlreadyJoined = checkJoinedGroup(url, Connection.Method.GET);
                         if (checkAlreadyJoined) {
                             huitie(doubanCookieMap, url, commentString);
-                            joinedUrls.add(url);
                         } else {
-                            System.err.println("DouBanService.callComment not already joined, try to join ");
                             boolean b = joinGroup(url);
-                            if (b)
+                            if (b){
                                 joinedUrls.add(url);
-                            logger.info("callComment() \"joinedGroup\": skipping not joined " + checkAlreadyJoined);
+                                logger.info("callComment() newly joined succeed " + b);
+                                huitie(doubanCookieMap, url, commentString);
+                            }
+                            else
+                                logger.info("callComment() newly join failed, skipping this time" + b);
                         }
                     }
                     System.err.println("DouBanUtils.callComment sleeping 1 min!");
