@@ -55,8 +55,9 @@ public class TestJobDetail {
      *
      * @throws IOException
      * @throws ClassNotFoundException
+     * Comment this annotation to disable METHOD 2
      */
-    @Scheduled(cron = "${cronExpression}") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
+//    @Scheduled(cron = "${cronExpression}") //@author: yuzhen @date: 2018/12/25  uncomment this if you wanna run
     public void timedJob2() throws IOException, ClassNotFoundException {
         Date date = new Date();
         logger.info("timedJob() \"job start at\": " + date);

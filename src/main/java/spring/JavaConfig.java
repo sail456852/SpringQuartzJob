@@ -69,17 +69,17 @@ public class JavaConfig {
 
 
     /**
-     * METHOD 1:
+     * METHOD 1: Trigger Config method, more complex (disabled by default)
      * Scheduler Factory Bean
      * Parameters is vargs!, added as many as you like.
      * SchedulerFactory -> Trigger -> Job -> JobDetail
-     * METHOD 2:
+     * METHOD 2: Annotation Method Mostly used Simple
      * or you just use Job -> JobDetail (with Annotation)
      * @param testTrigger
      * DISABLE THIS TRIGGER METHOD, use simple annoation
      * @return
      */
-//    @Bean(name="schedulerFactory")
+//    @Bean(name="schedulerFactory") // uncomment this bean to use method 1
 //    public SchedulerFactoryBean schedulerFactory(@Qualifier("testTriggerBean") Trigger testTrigger ) {
 //        SchedulerFactoryBean factoryBean = new SchedulerFactoryBean();
 //        factoryBean.setOverwriteExistingJobs(true);
@@ -122,7 +122,7 @@ public class JavaConfig {
 //        templateResolver.setPrefix("/WEB-INF/views/");
         templateResolver.setPrefix("classpath:templates/"); // under resources folder
         templateResolver.setSuffix(".html");
-        templateResolver.setTemplateMode("HTML5");
+        templateResolver.setTemplateMode("HTML");
         templateResolver.setCacheable(false);
         return templateResolver;
     }
