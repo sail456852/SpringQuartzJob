@@ -44,8 +44,8 @@ public class DouBanServiceTest {
     private DouBanService douBanService;
 
 
-    @Autowired
-    private RedisRepository redisRepository;
+//    @Autowired
+//    private RedisRepository redisRepository;
 
     static String doubanLogonCookies = "doubanLogonCookies";
 
