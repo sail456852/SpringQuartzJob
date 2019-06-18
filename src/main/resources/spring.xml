@@ -22,6 +22,7 @@
                                 expression="org.springframework.web.bind.annotation.RestControllerAdvice"/>
     </context:component-scan>
 
+<!--    important to return collection to browser-->
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>

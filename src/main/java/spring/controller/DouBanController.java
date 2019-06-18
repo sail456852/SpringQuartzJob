@@ -24,13 +24,13 @@ public class DouBanController {
         strings.add("Hello");
         strings.add("World");
 
-//        return "Hello";
         return strings;
     }
 
 
     /**
      * http://localhost:8080/getMap
+     * requires Spring.xml converter & pom.xml Jackson dependency
      * @return
      */
     @ResponseBody

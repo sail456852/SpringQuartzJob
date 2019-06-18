@@ -129,6 +129,7 @@ public class DouBanServiceTest {
         comment2.setUrl("http://example2.com");
         comments.add(comment);
         comments.add(comment2);
+//        System.err.println("redisRepository = " + redisRepository);
 //        douBanService.saveCommentListToRedis(comments);
 //        douBanService.findAllComments();
     }
