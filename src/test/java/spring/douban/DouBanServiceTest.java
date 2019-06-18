@@ -11,6 +11,8 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import spring.dao.RedisRepository;
+import spring.dto.Comment;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -26,9 +28,9 @@ import java.util.*;
  * JOIN link demo
  * <
  * href="https://www.douban.com/group/xingzuo/?action=join&amp;redir=http%3A//www.douban.com/group/topic/130126269/&amp;ck=GYMr" class="bn-join">加入小组</a>
- *
+ * <p>
  * 未加入的时候
- *  <div class="member-status">
+ * <div class="member-status">
  * 加入成功后， 302跳转https://www.douban.com/group/topic/130126269/ 包含
  * <div class="member-info1">我是小组的成员</div>
  */
@@ -40,6 +42,10 @@ public class DouBanServiceTest {
 
     @Autowired
     private DouBanService douBanService;
+
+
+    @Autowired
+    private RedisRepository redisRepository;
 
     static String doubanLogonCookies = "doubanLogonCookies";
 
@@ -55,13 +61,13 @@ public class DouBanServiceTest {
         System.err.println("body = " + body);
         Elements memberStatus = doc.getElementsByClass("member-status");
         Elements memberInfo = doc.getElementsByClass("member-info1");
-        if(memberStatus == null && memberInfo == null) {
+        if (memberStatus == null && memberInfo == null) {
             System.err.println("DouBanServiceTest.downloadThisLink both elements null, weird");
             return;
         }
-        if(memberInfo != null){
+        if (memberInfo != null) {
             System.err.println("LOGIN memberInfo = " + memberInfo.toString());
-        }else{
+        } else {
             System.err.println("NOT LOGIN memberStatus = " + memberStatus);
         }
     }
@@ -103,4 +109,27 @@ public class DouBanServiceTest {
         System.err.println("dlCookies = " + dlCookies);
     }
 
+    @Test
+    public void addTopicUrl() {
+        douBanService.addTopicUrl("fake");
+    }
+
+
+    /**
+     *  won't wired on spring only
+     */
+    @Test
+    public void saveCommentListToRedis() {
+        ArrayList<Comment> comments = new ArrayList<>();
+        Comment comment = new Comment();
+        comment.setContent("Comment Content example");
+        comment.setUrl("http://example.com");
+        Comment comment2 = new Comment();
+        comment2.setContent("Comment Content 2 example");
+        comment2.setUrl("http://example2.com");
+        comments.add(comment);
+        comments.add(comment2);
+//        douBanService.saveCommentListToRedis(comments);
+//        douBanService.findAllComments();
+    }
 }

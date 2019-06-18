@@ -12,9 +12,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import spring.dao.RedisRepository;
+import spring.dto.Comment;
 
 import java.io.IOException;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 /**
  * 描述:
@@ -279,6 +283,12 @@ public class DouBanService {
     }
 
 
+    /**
+     * get redis keys match following criterions
+     * 1. start with d
+     * 2. length less than 3
+     * @return
+     */
     public List<String> getTieziKeysRedis() {
         Set<String> redisKeys = redisTemplate.keys("d*");
         // Store the keys in a List
@@ -395,5 +405,43 @@ public class DouBanService {
         }
     }
 
+    public void addTopicUrl(String url) {
+        // get d[numbers] from redis
+//        Set<String> keys = redisTemplate.keys("d(\\d)+");
+        Set<String> keys = redisTemplate.keys("d*");
+        Pattern pattern = Pattern.compile("d(\\d)+");
+        System.err.println("keys.size() = " + keys.size());
+        List<String> list = new ArrayList<>();
+        for (String key : keys) {
+            System.err.println("key = " + key);
+            Matcher matcher = pattern.matcher(key);
+            boolean matches = matcher.matches();
+            if (matches) {
+                list.add(key);
+                System.err.println("matches = " + matcher.group());
+            }
+        }
+        // for testing purpose
+        list.add("d100");
+        System.err.println("list = " + list);
+        String max = Collections.max(list);
+        System.err.println("max = " + max);
+    }
+
+//    @Autowired won't wired in spring framework
+//    private RedisRepository redisRepository;
+
+//    public void saveCommentListToRedis(List<Comment> comments){
+//        for (Comment comment : comments) {
+//            redisRepository.save(comment);
+//        }
+//    }
+//
+//
+//    public void findAllComments(){
+//        List<Comment> comments = new ArrayList<>();
+//        redisRepository.findAll().forEach(comments::add);
+//        System.err.println("comments = " + comments);
+//    }
 }
 
