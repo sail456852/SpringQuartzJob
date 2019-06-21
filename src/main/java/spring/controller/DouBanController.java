@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import spring.douban.DouBanService;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 
@@ -37,10 +38,10 @@ public class DouBanController {
     @RequestMapping("/addUrls")
     public String addUrls(@RequestParam(value="url")String[] urls){
         System.err.println("urls = " + urls.length);
-        for (String url : urls) {
-            System.err.println("url = " + url);
-        }
-        return null;
+        List<String> list = Arrays.asList(urls);
+        list.forEach(System.out::println);
+        douBanService.addUrls(list);
+        return "call addUrls success";
     }
 
     /**

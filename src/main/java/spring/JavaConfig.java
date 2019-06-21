@@ -4,8 +4,12 @@ import org.quartz.Trigger;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
@@ -27,6 +31,8 @@ import java.util.Properties;
  */
 @Configuration
 @PropertySource("classpath:redis.properties")
+@ComponentScan("spring")
+@EnableRedisRepositories(basePackages = "spring.dao")
 public class JavaConfig {
 
     @Value("${mykey}")
@@ -134,4 +140,19 @@ public class JavaConfig {
         return viewResolver;
     }
 
+    @Bean
+    public RedisTemplate<String, Object> redisTemplate() {
+        RedisTemplate<String, Object> template = new RedisTemplate<>();
+        template.setConnectionFactory(jedisConnectionFactory());
+        return template;
+    }
+
+    @Bean
+    public JedisConnectionFactory jedisConnectionFactory() {
+        JedisConnectionFactory jedisConFactory
+                = new JedisConnectionFactory();
+        jedisConFactory.setHostName("localhost");
+        jedisConFactory.setPassword("aaa");
+        return jedisConFactory;
+    }
 }

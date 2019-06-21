@@ -18,6 +18,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.ObjectInputStream;
 import java.util.*;
+import java.util.stream.Stream;
 
 /**
  * Created by IntelliJ IDEA.<br/>
@@ -43,9 +44,8 @@ public class DouBanServiceTest {
     @Autowired
     private DouBanService douBanService;
 
-
-//    @Autowired
-//    private RedisRepository redisRepository;
+    @Autowired
+    private RedisRepository redisRepository;
 
     static String doubanLogonCookies = "doubanLogonCookies";
 
@@ -109,11 +109,6 @@ public class DouBanServiceTest {
         System.err.println("dlCookies = " + dlCookies);
     }
 
-    @Test
-    public void addTopicUrl() {
-        douBanService.addTopicUrl("fake");
-    }
-
 
     /**
      *  won't wired on spring only
@@ -122,15 +117,59 @@ public class DouBanServiceTest {
     public void saveCommentListToRedis() {
         ArrayList<Comment> comments = new ArrayList<>();
         Comment comment = new Comment();
-        comment.setContent("Comment Content example");
+        comment.setId(0);
         comment.setUrl("http://example.com");
         Comment comment2 = new Comment();
-        comment2.setContent("Comment Content 2 example");
+        comment2.setId(1);
         comment2.setUrl("http://example2.com");
+        List<String> cmts = new ArrayList<>();
+        cmts.add("Mary Jones");
+        cmts.add("Yori yagami");
+        comment2.setCmts(cmts);
         comments.add(comment);
         comments.add(comment2);
-//        System.err.println("redisRepository = " + redisRepository);
-//        douBanService.saveCommentListToRedis(comments);
-//        douBanService.findAllComments();
+        redisRepository.save(comments);
+        redisRepository.findAll().forEach(System.err::println);
+    }
+    
+    @Test
+    public void deleteAllComments() {
+        redisRepository.deleteAll();
+        redisRepository.findAll().forEach(System.err::println);
+    }
+
+    @Test
+    public void getMaxUrlNumber() {
+        douBanService.getMaxUrlNumber();
+    }
+
+    @Test
+    public void streamTest() {
+        List<String> list1 = new ArrayList<>();
+        List<String> list2 = new ArrayList<>();
+
+        list1.add("a");
+        list1.add("a");
+        list1.add("b");
+        list1.add("c");
+        list1.add("c");
+
+
+        list2.add("f");
+        list2.add("a");
+        list2.add("h");
+        list2.add("g");
+        list2.add("j");
+
+//        System.err.println("list1 = " + list1);
+//        System.out.println("list2 = " + list2);
+
+        Stream<String> stream1 = list1.stream();
+        Stream<String> stream2 = list2.stream();
+
+        Stream<String> concat = Stream.concat(stream1, stream2);
+        Stream<String> distinct = concat.distinct();
+        distinct.forEach(System.out::print);
+
     }
 }

@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
+import org.springframework.util.CollectionUtils;
 import spring.dao.RedisRepository;
 import spring.dto.Comment;
 
@@ -19,6 +20,7 @@ import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Stream;
 
 /**
  * 描述:
@@ -36,6 +38,9 @@ public class DouBanService {
 
     @Autowired
     private RedisTemplate redisTemplate;
+
+    @Autowired
+    private RedisRepository redisRepository;
 
     static {
         logger = LoggerFactory.getLogger(DouBanService.class);
@@ -405,43 +410,54 @@ public class DouBanService {
         }
     }
 
-    public void addTopicUrl(String url) {
+    public Integer getMaxUrlNumber() {
         // get d[numbers] from redis
 //        Set<String> keys = redisTemplate.keys("d(\\d)+");
         Set<String> keys = redisTemplate.keys("d*");
         Pattern pattern = Pattern.compile("d(\\d)+");
         System.err.println("keys.size() = " + keys.size());
         List<String> list = new ArrayList<>();
+        keys.add("d100");
+        keys.add("d109");
         for (String key : keys) {
             System.err.println("key = " + key);
             Matcher matcher = pattern.matcher(key);
             boolean matches = matcher.matches();
             if (matches) {
-                list.add(key);
+                String number = key.substring(1);
+                list.add(number);
                 System.err.println("matches = " + matcher.group());
             }
         }
         // for testing purpose
-        list.add("d100");
         System.err.println("list = " + list);
-        String max = Collections.max(list);
-        System.err.println("max = " + max);
+        Optional<String> max = list.stream().max(Comparator.comparing(Integer::valueOf));
+        System.err.println("max = " + max.orElse("empty"));
+        String value = max.orElse("empty");
+        System.err.println("value = " + value);
+        return Integer.valueOf(value);
     }
 
-//    @Autowired won't wired in spring framework
-//    private RedisRepository redisRepository;
+    public void addUrls(List<String> list) {
+        Integer maxUrlNumber = getMaxUrlNumber();
+        int newOrderMax = maxUrlNumber + 1;
+        if(CollectionUtils.isEmpty(list)){
+            System.err.println("DouBanService.addUrls url list empty");
+            return;
+        }
+        List<String> tieziUrlsRedis = getTieziUrlsRedis(getTieziKeysRedis());
+        // remove duplicated url
+        Stream<String> stream1 = tieziUrlsRedis.stream();
+        Stream<String> stream2 = list.stream();
 
-//    public void saveCommentListToRedis(List<Comment> comments){
-//        for (Comment comment : comments) {
-//            redisRepository.save(comment);
-//        }
-//    }
-//
-//
-//    public void findAllComments(){
-//        List<Comment> comments = new ArrayList<>();
-//        redisRepository.findAll().forEach(comments::add);
-//        System.err.println("comments = " + comments);
-//    }
+        stream1.forEach(String::trim);
+        stream2.forEach(String::trim);
+
+        for (String url : list) {
+            String key = "d" + newOrderMax;
+            setRedis(key , url,-1);
+        }
+        
+    }
 }
 
