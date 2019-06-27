@@ -11,7 +11,6 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.scheduling.annotation.EnableScheduling;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
 import spring.douban.DouBanService;
 import spring.utils.EmailUtils;
@@ -61,8 +60,8 @@ public class TestJobDetail {
     public void timedJob2() throws IOException, ClassNotFoundException {
         Date date = new Date();
         logger.info("timedJob() \"job start at\": " + date);
-        List<String> keys = douBanService.getTieziKeysRedis();
-        List<String> urls = douBanService.getTieziUrlsRedis(keys);
+        List<String> keys = douBanService.getKeysStartWithD();
+        List<String> urls = douBanService.getRedisValuesByKeys(keys);
         System.err.println("urls = " + urls);
         douBanService.callComment(true, urls); // use cookies file
     }

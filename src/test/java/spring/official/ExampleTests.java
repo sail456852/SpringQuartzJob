@@ -57,4 +57,5 @@ public class ExampleTests {
         String msgBodyStr = "Java Test from Test Class";
         emailUtils.sendTemplateMail("sail456852@163.com", "sail456852@163.com", "java test", "pay-notshow", msgBodyStr);
     }
+
 }

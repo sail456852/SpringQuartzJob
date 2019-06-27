@@ -8,9 +8,13 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.PropertySource;
+import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
+import org.springframework.util.CollectionUtils;
+import spring.JavaConfig;
 import spring.dao.RedisRepository;
 import spring.dto.Comment;
 
@@ -36,7 +40,8 @@ import java.util.stream.Stream;
  * <div class="member-info1">我是小组的成员</div>
  */
 @RunWith(SpringRunner.class)
-@ContextConfiguration("classpath:spring.xml")
+//@ContextConfiguration("classpath:spring.xml")
+@ContextConfiguration(classes = JavaConfig.class)
 @WebAppConfiguration
 @PropertySource(value = "classpath:redis.properties")
 public class DouBanServiceTest {
@@ -46,6 +51,9 @@ public class DouBanServiceTest {
 
     @Autowired
     private RedisRepository redisRepository;
+
+    @Autowired
+    private RedisTemplate redisTemplate;
 
     static String doubanLogonCookies = "doubanLogonCookies";
 
@@ -161,15 +169,49 @@ public class DouBanServiceTest {
         list2.add("g");
         list2.add("j");
 
-//        System.err.println("list1 = " + list1);
-//        System.out.println("list2 = " + list2);
-
         Stream<String> stream1 = list1.stream();
         Stream<String> stream2 = list2.stream();
 
         Stream<String> concat = Stream.concat(stream1, stream2);
         Stream<String> distinct = concat.distinct();
         distinct.forEach(System.out::print);
+    }
 
+    @Test
+    public void setRedis() {
+        String yuzhenTest = "yuzhenTest";
+        String yzTestValue = "yzTestValue";
+        douBanService.setRedis(yuzhenTest, yzTestValue, 3600);
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        Object o = valueOperations.get(yuzhenTest);
+        String redis = (String) o;
+        boolean equals = o.equals(yzTestValue);
+        System.err.println("equals = " + equals);
+        System.err.println("redis = " + redis);
+    }
+
+    @Test
+    public void getRedis() {
+        String yuzhenTest = "yuzhenTest";
+        String redis = douBanService.getRedis(yuzhenTest);
+        System.err.println("redis = " + redis);
+    }
+
+    @Test
+    public void getKeysStartWithD() {
+        List<String> keysStartWithD = douBanService.getKeysStartWithD();
+        keysStartWithD.forEach(System.err::println);
+        List<String> urls = douBanService.getRedisValuesByKeys(keysStartWithD);
+        if (CollectionUtils.isEmpty(urls)) {
+            return;
+        }
+        String url = "change me";
+        ArrayList<String> list = new ArrayList<>();
+        urls.forEach( v -> list.add(v.toString()));
+        list.forEach(System.err::println);
+        // find a match using parallelStream
+        boolean b = list.parallelStream().anyMatch(s -> s.equals(url));
+        System.err.println("b = " + b);
+        urls.forEach(System.out::println);
     }
 }

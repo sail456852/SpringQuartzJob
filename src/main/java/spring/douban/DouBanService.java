@@ -14,12 +14,12 @@ import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;
 import spring.dao.RedisRepository;
-import spring.dto.Comment;
 
 import java.io.IOException;
 import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 /**
@@ -70,10 +70,8 @@ public class DouBanService {
         System.err.println("doc = " + doc.toString());
         Elements join_group_comfirm = doc.getElementsByClass("join_group_comfirm");
         System.out.println("join_group_comfirm = " + join_group_comfirm.toString());
-        if (join_group_comfirm == null || join_group_comfirm.size() == 0) {
-            return true; // confirm is null then joined
-        }
-        return false; // not joined
+        return join_group_comfirm == null || join_group_comfirm.size() == 0; // confirm is null then joined
+        // not joined
     }
 
     /**
@@ -105,7 +103,7 @@ public class DouBanService {
 
         if (imgEle != null) {
             for (Element element : attribute) {
-                if (element.attr("name").toString().equals("captcha-id")) {
+                if (element.attr("name").equals("captcha-id")) {
                     captchaId = element.attr("value");
                 }
             }
@@ -243,7 +241,7 @@ public class DouBanService {
                 return;
             }
             for (Element element : attribute) {
-                if (element.attr("name").toString().equals("captcha-id")) {
+                if (element.attr("name").equals("captcha-id")) {
                     captcha = element.attr("value");
                 }
             }
@@ -291,26 +289,26 @@ public class DouBanService {
     /**
      * get redis keys match following criterions
      * 1. start with d
-     * 2. length less than 3
+     * 2. in the format of d[digitals]
      * @return
      */
-    public List<String> getTieziKeysRedis() {
+    public List<String> getKeysStartWithD() {
         Set<String> redisKeys = redisTemplate.keys("d*");
-        // Store the keys in a List
-        List<String> keysList = new ArrayList<>();
-        Iterator<String> it = redisKeys.iterator();
-        while (it.hasNext()) {
-            String data = it.next();
-            if (!StringUtils.isEmpty(data) && data.length() <= 3)
-                keysList.add(data);
+        ArrayList<String> result= new ArrayList<>();
+        if (CollectionUtils.isEmpty(redisKeys)) {
+            return new ArrayList<>();
         }
-        for (String s : keysList) {
-            System.err.println("s = " + s);
-        }
-        return keysList;
+        Pattern pattern = Pattern.compile("d(\\d)+");
+        redisKeys.stream().forEach(v -> {
+            Matcher matcher = pattern.matcher(v);
+            if (matcher.matches()) {
+                result.add(v);
+            }
+        });
+        return result;
     }
 
-    public List<String> getTieziUrlsRedis(List<String> keys) {
+    public List<String> getRedisValuesByKeys(List<String> keys) {
         ArrayList<String> list = new ArrayList<>();
         for (String key : keys) {
             ValueOperations valueOperations = redisTemplate.opsForValue();
@@ -323,13 +321,30 @@ public class DouBanService {
 
     public String getRedis(String key) {
         ValueOperations valueOperations = redisTemplate.opsForValue();
+
         Object value = valueOperations.get(key);
-        return value == null ? null : value.toString();
+        return value == null ? null : (String)value;
     }
 
     public void setRedis(String key, String value, long timeOut) {
         ValueOperations valueOperations = redisTemplate.opsForValue();
         valueOperations.set(key, value, timeOut);
+    }
+
+    public void setRedisLong(String key, Long value, long timeOut) {
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        String valueStr = String.valueOf(value);
+        valueOperations.set(key, valueStr);
+    }
+
+    public long getRedisLong(String key) {
+        ValueOperations valueOperations = redisTemplate.opsForValue();
+        Object value = valueOperations.get(key);
+        long valueLong = 0;
+        if(value instanceof String){
+            valueLong = Long.valueOf(String.valueOf(value));
+        }
+        return value == null ? 0 : valueLong;
     }
 
     private void printRangeKeys(ValueOperations valueOperations) {
@@ -400,41 +415,38 @@ public class DouBanService {
             Connection.Response response = downloadThisLinkWithCookies(href, Connection.Method.GET);// call with method method
             int code = response.statusCode();
             System.err.println("code = " + code);
-            if (code == 304 || code == 200)
-                return true;
-            else
-                return false;
+            return code == 304 || code == 200;
         } else {
             System.err.println("DouBanService.joinGroup join_group_confirm not found, maybe already joined");
             return true;
         }
     }
 
+    /**
+     *  return d* max number in redis
+     *  if matching keys is empty, return 0
+     * @return
+     */
     public Integer getMaxUrlNumber() {
         // get d[numbers] from redis
 //        Set<String> keys = redisTemplate.keys("d(\\d)+");
         Set<String> keys = redisTemplate.keys("d*");
         Pattern pattern = Pattern.compile("d(\\d)+");
-        System.err.println("keys.size() = " + keys.size());
         List<String> list = new ArrayList<>();
-        keys.add("d100");
-        keys.add("d109");
+        if (CollectionUtils.isEmpty(keys)) {
+            return 0;
+        }
         for (String key : keys) {
-            System.err.println("key = " + key);
             Matcher matcher = pattern.matcher(key);
             boolean matches = matcher.matches();
             if (matches) {
                 String number = key.substring(1);
                 list.add(number);
-                System.err.println("matches = " + matcher.group());
             }
         }
         // for testing purpose
-        System.err.println("list = " + list);
         Optional<String> max = list.stream().max(Comparator.comparing(Integer::valueOf));
-        System.err.println("max = " + max.orElse("empty"));
         String value = max.orElse("empty");
-        System.err.println("value = " + value);
         return Integer.valueOf(value);
     }
 
@@ -445,19 +457,39 @@ public class DouBanService {
             System.err.println("DouBanService.addUrls url list empty");
             return;
         }
-        List<String> tieziUrlsRedis = getTieziUrlsRedis(getTieziKeysRedis());
+        List<String> tieziUrlsRedis = getRedisValuesByKeys(getKeysStartWithD());
         // remove duplicated url
         Stream<String> stream1 = tieziUrlsRedis.stream();
         Stream<String> stream2 = list.stream();
+        Stream<String> concat = Stream.concat(stream1, stream2);
+        Stream<String> distinct = concat.distinct();
+        List<String> collect = distinct.collect(Collectors.toList());
 
-        stream1.forEach(String::trim);
-        stream2.forEach(String::trim);
-
-        for (String url : list) {
+        for (String url : collect) {
             String key = "d" + newOrderMax;
-            setRedis(key , url,-1);
+            setRedis(key , url,3600);
         }
         
     }
+
+    public void cleanUp() {
+        List<String> tieziKeysRedis = getKeysStartWithD();
+        if(!CollectionUtils.isEmpty(tieziKeysRedis)){
+            tieziKeysRedis.forEach(redisTemplate::delete);
+        }
+    }
+
+    public void removeUrl(String url) {
+        List<String> keysStartWithD = getKeysStartWithD();
+        List<String> urls = getRedisValuesByKeys(keysStartWithD);
+        if (CollectionUtils.isEmpty(urls)) {
+           return;
+        }
+        Optional<String> any = urls.stream().filter(url::equals).findAny();
+        any.orElse("empty");
+        if(any.equals("empty")) return;
+        redisTemplate.delete(url);
+    }
+
 }
 

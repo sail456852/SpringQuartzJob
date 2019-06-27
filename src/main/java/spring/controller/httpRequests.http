@@ -10,3 +10,10 @@ http://localhost:8080/getMap.do
 ###
 
 http://localhost:8080/addUrls
+
+###
+
+http://localhost:8080/getUrls
+
+### html
+http://localhost:8080/index.html

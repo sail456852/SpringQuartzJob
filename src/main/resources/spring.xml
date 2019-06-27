@@ -22,7 +22,7 @@
                                 expression="org.springframework.web.bind.annotation.RestControllerAdvice"/>
     </context:component-scan>
 
-<!--    important to return collection to browser-->
+    <!--    important to return collection to browser-->
     <mvc:annotation-driven>
         <mvc:message-converters>
             <bean class="org.springframework.http.converter.StringHttpMessageConverter"/>
@@ -39,19 +39,22 @@
 
 
     <!--@author: eugene, @date: 2018/12/28 redis start-->
-    <bean
-            id="stringRedisSerializer"
-            class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+    <bean id="stringRedisSerializer" class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
 
     <!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">-->
     <!--<property name="connectionFactory" ref="connectionFactory"/>-->
     <!--</bean>-->
-
+    <!--        defaultSerializer -> String serializer, when saved in redis, there maybe
+      \x00... in front of your saved string value, but it's okay, when you retrieve it back
+      from redis, using redisTemplate defined here
+     https://stackoverflow.com/questions/13215024/why-is-data-getting-stored-with-weird-keys-in-redis-when-using-jedis-with-spring
+      -->
     <bean id="redisTemplate"
           class="org.springframework.data.redis.core.RedisTemplate"
-          p:connection-factory-ref="connectionFactory">
-        <property name="defaultSerializer" ref="stringRedisSerializer"/>
-    </bean>
+          p:connection-factory-ref="connectionFactory"
+          p:keySerializer-ref="stringRedisSerializer"
+          p:valueSerializer-ref="stringRedisSerializer"
+    />
 
     <bean id="connectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory">
         <property name="hostName" value="${redis.host}"/>
@@ -71,19 +74,19 @@
          servlet container context
     -->
     <!--<bean id="testService" class="org.mockito.Mockito" factory-method="mock">-->
-        <!--<constructor-arg value="spring.service.TestService"/>-->
+    <!--<constructor-arg value="spring.service.TestService"/>-->
     <!--</bean>-->
 
     <!--@author: eugene, @date: 2018/12/28 redis ends-->
 
     <!--@author: eugene @date: 2019/1/11 job scheduler start -->
     <!--<bean name="exampleJob" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">-->
-        <!--<property name="jobClass" value="spring.timedjob.ExampleJob"/>-->
-        <!--<property name="jobDataAsMap">-->
-            <!--<map>-->
-                <!--<entry key="timeout" value="5"/>-->
-            <!--</map>-->
-        <!--</property>-->
+    <!--<property name="jobClass" value="spring.timedjob.ExampleJob"/>-->
+    <!--<property name="jobDataAsMap">-->
+    <!--<map>-->
+    <!--<entry key="timeout" value="5"/>-->
+    <!--</map>-->
+    <!--</property>-->
     <!--</bean>-->
     <!--@author: eugene @date: 2019/1/11 job scheduler end -->
 

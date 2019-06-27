@@ -96,8 +96,8 @@ public class TestAnything {
 
     @org.junit.Test
     public void testDoubanComment() throws IOException, ClassNotFoundException {
-        List<String> keys = douBanService.getTieziKeysRedis();
-        List<String> urls = douBanService.getTieziUrlsRedis(keys);
+        List<String> keys = douBanService.getKeysStartWithD();
+        List<String> urls = douBanService.getRedisValuesByKeys(keys);
         System.err.println("urls = " + urls);
         douBanService.callComment(false, urls); // use cookies file
     }

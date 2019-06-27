@@ -10,6 +10,7 @@ import org.springframework.context.annotation.PropertySource;
 import org.springframework.data.redis.connection.jedis.JedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.scheduling.quartz.CronTriggerFactoryBean;
@@ -20,6 +21,7 @@ import org.thymeleaf.spring5.templateresolver.SpringResourceTemplateResolver;
 import org.thymeleaf.spring5.view.ThymeleafViewResolver;
 import spring.timedjob.TestJobDetail;
 
+import java.nio.charset.Charset;
 import java.util.Properties;
 
 /**
@@ -66,7 +68,6 @@ public class JavaConfig {
     public CronTriggerFactoryBean timeTriggerTestBean(@Qualifier("testJobBean")
                                                               MethodInvokingJobDetailFactoryBean testJobBean) {
         CronTriggerFactoryBean trigger = new CronTriggerFactoryBean();
-//        System.err.println("JavaConfig.timeTriggerTestBean");
         trigger.setJobDetail(testJobBean.getObject());
         trigger.setCronExpression("0/5 * * * * ?"); // TODO(1) change here to meet your need
         trigger.setName("test-trigger");
@@ -81,7 +82,6 @@ public class JavaConfig {
      * SchedulerFactory -> Trigger -> Job -> JobDetail
      * METHOD 2: Annotation Method Mostly used Simple
      * or you just use Job -> JobDetail (with Annotation)
-     * @param testTrigger
      * DISABLE THIS TRIGGER METHOD, use simple annoation
      * @return
      */
@@ -144,6 +144,8 @@ public class JavaConfig {
     public RedisTemplate<String, Object> redisTemplate() {
         RedisTemplate<String, Object> template = new RedisTemplate<>();
         template.setConnectionFactory(jedisConnectionFactory());
+        template.setKeySerializer(new StringRedisSerializer());
+        template.setValueSerializer(new StringRedisSerializer());
         return template;
     }
 
