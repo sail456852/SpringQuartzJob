@@ -64,6 +64,10 @@ public class DouBanService {
      */
     public boolean checkJoinedGroup(String url, Connection.Method method) throws IOException {
         Connection.Response html = downloadThisLinkWithCookies(url, method);
+        if(html == null){
+            logger.info("checkJoinedGroup() topic page download null joined failed ");
+            return false;
+        }
         int code = html.statusCode();
         System.err.println("code = " + code);
         Document doc = html.parse();
