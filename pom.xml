@@ -208,11 +208,6 @@
             <version>3.17</version>
         </dependency>
         <dependency>
-            <groupId>org.apache.poi</groupId>
-            <artifactId>poi-ooxml</artifactId>
-            <version>3.15</version>
-        </dependency>
-        <dependency>
             <groupId>jdom</groupId>
             <artifactId>jdom</artifactId>
             <version>1.0</version>
@@ -241,11 +236,6 @@
             <version>1.0.0</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.fasterxml.jackson.core</groupId>
-            <artifactId>jackson-databind</artifactId>
-            <version>2.9.4</version>
-        </dependency>
         <dependency>
             <groupId>com.thoughtworks.xstream</groupId>
             <artifactId>xstream</artifactId>
@@ -363,7 +353,7 @@
                     </webApp>
                     <scanIntervalSeconds>10</scanIntervalSeconds>
                     <httpConnector>
-                        <port>8080</port>
+                        <port>11111</port>
                     </httpConnector>
                     <reload>manual</reload>
                 </configuration>
